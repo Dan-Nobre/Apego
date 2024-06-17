@@ -14,8 +14,9 @@
 		6505DB9B2C20A0F50048CA79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */; };
 		6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA62C20A2BB0048CA79 /* Util.swift */; };
 		6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA92C20A2CD0048CA79 /* Models.swift */; };
+		8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */; };
+		8C201D322C20D3D5001D7636 /* customButtonCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D312C20D3D5001D7636 /* customButtonCam.swift */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
-		8C79F2852C20AE8500E915BB /* TeladeInicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C79F2842C20AE8500E915BB /* TeladeInicio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,9 @@
 		6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6505DBA62C20A2BB0048CA79 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		6505DBA92C20A2CD0048CA79 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicioView.swift; sourceTree = "<group>"; };
+		8C201D312C20D3D5001D7636 /* customButtonCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButtonCam.swift; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		8C79F2842C20AE8500E915BB /* TeladeInicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +135,7 @@
 		8C79F2862C20AE9200E915BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8C79F2842C20AE8500E915BB /* TeladeInicio.swift */,
+				8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +157,7 @@
 		8C79F2892C20AEBD00E915BB /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
+				8C201D312C20D3D5001D7636 /* customButtonCam.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -263,10 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6505DB942C20A0F40048CA79 /* ContentView.swift in Sources */,
+				8C201D322C20D3D5001D7636 /* customButtonCam.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
-				8C79F2852C20AE8500E915BB /* TeladeInicio.swift in Sources */,
 				6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */,
 				6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */,
+				8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */,
 				6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
