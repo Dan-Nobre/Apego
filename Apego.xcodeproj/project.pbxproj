@@ -12,6 +12,8 @@
 		6505DB962C20A0F40048CA79 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DB952C20A0F40048CA79 /* Item.swift */; };
 		6505DB982C20A0F50048CA79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6505DB972C20A0F50048CA79 /* Assets.xcassets */; };
 		6505DB9B2C20A0F50048CA79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */; };
+		6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA62C20A2BB0048CA79 /* Util.swift */; };
+		6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA92C20A2CD0048CA79 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		6505DB952C20A0F40048CA79 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6505DB972C20A0F50048CA79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6505DBA62C20A2BB0048CA79 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		6505DBA92C20A2CD0048CA79 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +57,13 @@
 		6505DB902C20A0F40048CA79 /* Apego */ = {
 			isa = PBXGroup;
 			children = (
-				6505DB912C20A0F40048CA79 /* ApegoApp.swift */,
+				6505DBAB2C20A2D40048CA79 /* Features */,
+				6505DBA82C20A2C20048CA79 /* Models */,
+				6505DBA32C20A2810048CA79 /* Resources */,
+				6505DBA22C20A2390048CA79 /* App */,
+				6505DBA12C20A22C0048CA79 /* Utils */,
 				6505DB932C20A0F40048CA79 /* ContentView.swift */,
 				6505DB952C20A0F40048CA79 /* Item.swift */,
-				6505DB972C20A0F50048CA79 /* Assets.xcassets */,
 				6505DB992C20A0F50048CA79 /* Preview Content */,
 			);
 			path = Apego;
@@ -68,6 +75,93 @@
 				6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6505DBA12C20A22C0048CA79 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6505DBA52C20A2A20048CA79 /* Tokens */,
+				6505DBA62C20A2BB0048CA79 /* Util.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6505DBA22C20A2390048CA79 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6505DB912C20A0F40048CA79 /* ApegoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6505DBA32C20A2810048CA79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6505DB972C20A0F50048CA79 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6505DBA52C20A2A20048CA79 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		6505DBA82C20A2C20048CA79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6505DBA92C20A2CD0048CA79 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6505DBAB2C20A2D40048CA79 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				6505DBAC2C20A2DC0048CA79 /* TeladeInicio */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		6505DBAC2C20A2DC0048CA79 /* TeladeInicio */ = {
+			isa = PBXGroup;
+			children = (
+				6505DBB02C20A2FC0048CA79 /* ViewModel */,
+				6505DBAF2C20A2F60048CA79 /* View */,
+				6505DBAE2C20A2EF0048CA79 /* Componentes */,
+				6505DBAD2C20A2E90048CA79 /* Model */,
+			);
+			path = TeladeInicio;
+			sourceTree = "<group>";
+		};
+		6505DBAD2C20A2E90048CA79 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6505DBAE2C20A2EF0048CA79 /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Componentes;
+			sourceTree = "<group>";
+		};
+		6505DBAF2C20A2F60048CA79 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6505DBB02C20A2FC0048CA79 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +237,8 @@
 				6505DB942C20A0F40048CA79 /* ContentView.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
 				6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */,
+				6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */,
+				6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
