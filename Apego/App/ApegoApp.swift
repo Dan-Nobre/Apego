@@ -25,7 +25,7 @@ struct ApegoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TeladeInicioView()
         }
         .modelContainer(sharedModelContainer)
     }
