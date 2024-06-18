@@ -10,6 +10,7 @@ import PhotosUI
 
 struct TeladeInicioView: View {
     @State private var title = "Organizar"
+    @State var showSheet: Bool = false
     
     var body: some View {
         NavigationView {
@@ -19,15 +20,16 @@ struct TeladeInicioView: View {
                 Text("Adicione suas peças")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundStyle(.black.opacity(0.8))
-                Text("Use a \(Image(systemName:"camera.viewfinder"))para adicionar items no seu guarda roupa")
+                Text("Use a \(Image(systemName: "camera.viewfinder"))para adicionar items no seu guarda roupa")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 17, weight: .semibold))
                     .foregroundColor(.gray.opacity(0.8))
             }
                 .navigationTitle(title)
                 .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         CustomButtonCam()
+                            .padding(.trailing, 20)
                             .padding(.top, 95)
                     }
                 }
