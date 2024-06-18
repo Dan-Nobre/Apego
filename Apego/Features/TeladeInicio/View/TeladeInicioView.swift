@@ -30,3 +30,19 @@ struct TeladeInicioView: View {
 #Preview {
     TeladeInicioView()
 }
+struct CircularImageView: View {
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+    }
+}
+struct Placeholder: View {
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+    }
+}
+
+
+struct ImagePicker: UIViewControllerRepresentable{
+    @Binding var IsPresented: Bool
+    @Binding var image: UIImage?
+}
