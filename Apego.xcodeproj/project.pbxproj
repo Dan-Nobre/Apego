@@ -14,6 +14,10 @@
 		6505DB9B2C20A0F50048CA79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */; };
 		6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA62C20A2BB0048CA79 /* Util.swift */; };
 		6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA92C20A2CD0048CA79 /* Models.swift */; };
+		65312D1D2C21D51800E2684E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D1C2C21D51800E2684E /* TabBar.swift */; };
+		65312D1F2C21D56400E2684E /* ApegoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D1E2C21D56400E2684E /* ApegoView.swift */; };
+		65312D212C21D57B00E2684E /* CombinarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D202C21D57B00E2684E /* CombinarView.swift */; };
+		65312D232C21D59100E2684E /* OrganizarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D222C21D59100E2684E /* OrganizarView.swift */; };
 		8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */; };
 		8C201D322C20D3D5001D7636 /* CustomButtonCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D312C20D3D5001D7636 /* CustomButtonCam.swift */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
@@ -28,6 +32,10 @@
 		6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6505DBA62C20A2BB0048CA79 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		6505DBA92C20A2CD0048CA79 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		65312D1C2C21D51800E2684E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		65312D1E2C21D56400E2684E /* ApegoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApegoView.swift; sourceTree = "<group>"; };
+		65312D202C21D57B00E2684E /* CombinarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinarView.swift; sourceTree = "<group>"; };
+		65312D222C21D59100E2684E /* OrganizarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarView.swift; sourceTree = "<group>"; };
 		8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicioView.swift; sourceTree = "<group>"; };
 		8C201D312C20D3D5001D7636 /* CustomButtonCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonCam.swift; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -124,9 +132,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		65312D1B2C21D50100E2684E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				65312D1C2C21D51800E2684E /* TabBar.swift */,
+				65312D1E2C21D56400E2684E /* ApegoView.swift */,
+				65312D202C21D57B00E2684E /* CombinarView.swift */,
+				65312D222C21D59100E2684E /* OrganizarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		8C79F2832C20AE2200E915BB /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				65312D1B2C21D50100E2684E /* TabBar */,
 				8C79F28A2C20AECD00E915BB /* TeladeInicio */,
 			);
 			path = Features;
@@ -265,7 +285,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65312D212C21D57B00E2684E /* CombinarView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* ContentView.swift in Sources */,
+				65312D232C21D59100E2684E /* OrganizarView.swift in Sources */,
+				65312D1F2C21D56400E2684E /* ApegoView.swift in Sources */,
+				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
+				65312D1D2C21D51800E2684E /* TabBar.swift in Sources */,
+				8C79F2852C20AE8500E915BB /* TeladeInicio.swift in Sources */,
 				8C201D322C20D3D5001D7636 /* CustomButtonCam.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
 				6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */,
