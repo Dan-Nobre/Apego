@@ -6,43 +6,34 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct TeladeInicioView: View {
     @State private var title = "Organizar"
+    
     var body: some View {
-        NavigationStack {
-            Image("avatar")
-                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .navigationTitle($title)
-            Text("Adicione suas peças")
-                .font(.system(size: 20, weight: .semibold))
-                .foregroundStyle(.black.opacity(0.8))
-            Text("Use a 􀎼 para adicionar items no seu guarda roupa ")
-                .multilineTextAlignment(.center)
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundStyle(.gray.opacity(0.8))
-                .frame(width: 400, height: 5)
+        NavigationView {
+            VStack {
+                Image("avatar")
+                
+                Text("Adicione suas peças")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundStyle(.black.opacity(0.8))
+                Text("Use a \(Image(systemName:"camera.viewfinder"))para adicionar items no seu guarda roupa")
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundColor(.gray.opacity(0.8))
+            }
+                .navigationTitle(title)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        CustomButtonCam()
+                            .padding(.top, 95)
+                    }
+                }
+            }
         }
-        
     }
-}
-
 #Preview {
     TeladeInicioView()
-}
-struct CircularImageView: View {
-    var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-    }
-}
-struct Placeholder: View {
-    var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-    }
-}
-
-
-struct ImagePicker: UIViewControllerRepresentable{
-    @Binding var IsPresented: Bool
-    @Binding var image: UIImage?
 }

@@ -15,7 +15,7 @@
 		6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA62C20A2BB0048CA79 /* Util.swift */; };
 		6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA92C20A2CD0048CA79 /* Models.swift */; };
 		8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */; };
-		8C201D322C20D3D5001D7636 /* customButtonCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D312C20D3D5001D7636 /* customButtonCam.swift */; };
+		8C201D322C20D3D5001D7636 /* CustomButtonCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D312C20D3D5001D7636 /* CustomButtonCam.swift */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 		6505DBA62C20A2BB0048CA79 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		6505DBA92C20A2CD0048CA79 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicioView.swift; sourceTree = "<group>"; };
-		8C201D312C20D3D5001D7636 /* customButtonCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButtonCam.swift; sourceTree = "<group>"; };
+		8C201D312C20D3D5001D7636 /* CustomButtonCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonCam.swift; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -157,7 +157,7 @@
 		8C79F2892C20AEBD00E915BB /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
-				8C201D312C20D3D5001D7636 /* customButtonCam.swift */,
+				8C201D312C20D3D5001D7636 /* CustomButtonCam.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6505DB942C20A0F40048CA79 /* ContentView.swift in Sources */,
-				8C201D322C20D3D5001D7636 /* customButtonCam.swift in Sources */,
+				8C201D322C20D3D5001D7636 /* CustomButtonCam.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
 				6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */,
 				6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */,
