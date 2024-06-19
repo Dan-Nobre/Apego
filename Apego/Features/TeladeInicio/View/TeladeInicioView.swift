@@ -45,20 +45,12 @@ struct TeladeInicioView: View {
                 
             }
             .sheet(isPresented: $showSheet) {
-                AddPhoto()
+                AddPhoto(showSheet: .constant(true))
             }
         }
         
     }
 }
-
-struct AddPhoto: View {
-    var body: some View {
-        Text("Olá, aqui você pode adicionar uma foto!")
-    }
-}
-
-
 #Preview {
     TeladeInicioView()
 }
