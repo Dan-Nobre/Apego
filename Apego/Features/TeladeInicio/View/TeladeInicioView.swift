@@ -36,9 +36,8 @@ struct TeladeInicioView: View {
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 30, height: 30)
-                                    .foregroundColor(.principal) // Ajuste a cor conforme necessário
+                                    .foregroundColor(.principal)
                                     }
-//                            .padding(.bottom, -95)
                         }
                         
                     }
