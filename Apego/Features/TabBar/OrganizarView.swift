@@ -19,6 +19,7 @@ struct OrganizarView: View {
     }
 }
 
+
 #Preview {
     OrganizarView()
 }
