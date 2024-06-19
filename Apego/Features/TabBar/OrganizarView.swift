@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct OrganizarView: View {
-    @State private var selectedImages = [Image] ()
+    @State private var selectedImages = [Image]()
+    
     var body: some View {
         NavigationView{
             BotaoVariasImagens(selectedImages: $selectedImages)
@@ -17,7 +18,6 @@ struct OrganizarView: View {
         }
     }
 }
-
 
 #Preview {
     OrganizarView()
