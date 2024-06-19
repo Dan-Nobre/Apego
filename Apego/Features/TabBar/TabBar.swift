@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBar: View {
     var body: some View {
         TabView{
-            OrganizarView()
+            TeladeInicioView()
                 .tabItem{
                     Label("Organizar", systemImage: "cabinet")
                 }

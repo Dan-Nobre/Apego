@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct OrganizarView: View {
+    @State private var selectedImages = [Image] ()
     var body: some View {
         NavigationView{
-            Text("Hello Word")
+            BotaoVariasImagens(selectedImages: $selectedImages)
                 .navigationTitle("Organizar")
                 .navigationBarTitleDisplayMode(.automatic)
         }
