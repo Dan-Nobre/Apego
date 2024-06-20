@@ -10,6 +10,9 @@ struct AddPhoto: View {
     @State private var isLoading = false
     @State private var clothingType: String = "Tipo de roupa desconhecido"
     
+    @State private var clothingColor: String = "Cor desconhecida"
+    
+    
     var body: some View {
         VStack {
             if let image = selectedImage {
@@ -25,17 +28,27 @@ struct AddPhoto: View {
             
             Text(clothingType)
                 .padding()
-            
+            Text(clothingColor)
+                .padding()
             Button(action: {
                 showSheet = false // Fechar o sheet
             }) {
                 Text("Tirar uma foto")
                     .foregroundColor(.white)
                     .padding()
-                    .background(Color.blue)
+                    .background(Color.green)
                     .cornerRadius(10)
             }
-            
+            Button(action: {
+                
+                presentPicker.toggle()
+            }) {
+                Text("Adicionar foto da galeria")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.green)
+                    .cornerRadius(10)
+            }
             Button(action: {
                 showSheet = false // Fechar o sheet
             }) {
@@ -45,20 +58,9 @@ struct AddPhoto: View {
                     .background(Color.blue)
                     .cornerRadius(10)
             }
-            
-            Button(action: {
-                // Abrir a galeria de fotos
-                presentPicker.toggle()
-            }) {
-                Text("Adicionar foto da galeria")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.green)
-                    .cornerRadius(10)
-            }
             .padding(.top, 10)
             .sheet(isPresented: $presentPicker, content: {
-                PHPickerViewController.View(image: $selectedImage, isLoading: $isLoading, clothingType: $clothingType)
+                PHPickerViewController.View(image: $selectedImage, isLoading: $isLoading, clothingType: $clothingType, clothingColor: $clothingColor)
             })
             .padding(.top, 10)
             
@@ -71,7 +73,7 @@ struct AddPhoto: View {
             Spacer()
         }
         .onDisappear {
-            // Limpar a imagem selecionada ao fechar o sheet
+            
             selectedImage = nil
         }
     }
@@ -83,6 +85,7 @@ extension PHPickerViewController {
         @Binding var image: UIImage?
         @Binding var isLoading: Bool
         @Binding var clothingType: String
+        @Binding var clothingColor: String
         
         func makeUIViewController(context: Context) -> PHPickerViewController {
             var configuration = PHPickerConfiguration()
@@ -120,6 +123,7 @@ extension PHPickerViewController {
                         DispatchQueue.main.async {
                             self.parent.image = image
                             self.detectClothingType(image)
+                            self.detectClothingColor(image)
                         }
                     }
                 }
@@ -127,30 +131,76 @@ extension PHPickerViewController {
             
             func detectClothingType(_ image: UIImage) {
                 // Configuração modelo
+                
+                print("Iniciando detecção de cor...")
                 let configuration = MLModelConfiguration()
-                configuration.computeUnits = .cpuAndGPU 
-           
-                guard let model = try? VNCoreMLModel(for: modelosRoupa(configuration: configuration).model) else {
+                configuration.computeUnits = .cpuAndGPU
+                
+                guard let model = try? VNCoreMLModel(for: MyImageClassifierCP(configuration: configuration).model) else {
                     print("Falha ao carregar o modelo")
                     return
                 }
                 
-                // Criar a requisição Core ML
-                let request = VNCoreMLRequest(model: model) { (request, error) in
+                //  requisição ML Type
+                let request = VNCoreMLRequest(model: model) { request, error in
                     if let error = error {
                         print("Erro ao processar a imagem: \(error.localizedDescription)")
                         return
                     }
-                    
-                    guard let results = request.results as? [VNRecognizedObjectObservation],
-                          let topResult = results.first else {
+                    if let results = request.results as? [VNClassificationObservation],
+                       let topResult = results.first { DispatchQueue.main.async {
+                           self.parent.isLoading = false
+                           self.parent.clothingType = "Tipo de roupa: \(topResult.identifier) - Confiança: \(topResult.confidence)"
+                           print("Resultado da detecção de cor:", self.parent.clothingColor)
+                           
+                       }
+                    } else {
                         print("Falha ao processar a imagem")
+                    }
+                }
+                
+                // Criar um handler para a imagem
+                guard let ciImage = CIImage(image: image) else {
+                    print("Não foi possível criar CIImage a partir da UIImage")
+                    return
+                }
+                
+                let handler = VNImageRequestHandler(ciImage: ciImage)
+                
+                DispatchQueue.global(qos: .userInteractive).async {
+                    do {
+                        try handler.perform([request])
+                    } catch {
+                        print("Falha ao executar a solicitação: \(error.localizedDescription)")
+                    }
+                }
+            }
+            func detectClothingColor(_ image: UIImage) {
+                let configuration = MLModelConfiguration()
+                configuration.computeUnits = .cpuAndGPU
+                
+                guard let model = try? VNCoreMLModel(for: Cores(configuration: configuration).model) else {
+                    print("Falha ao carregar o modelo de cor")
+                    return
+                }
+                
+                //  requisição ML Color
+                let request = VNCoreMLRequest(model: model) { request, error in
+                    if let error = error {
+                        print("Erro ao processar a imagem: \(error.localizedDescription)")
                         return
                     }
-                    
-                    DispatchQueue.main.async {
-                        self.parent.isLoading = false
-                        self.parent.clothingType = "Tipo de roupa: \(topResult.labels.first?.identifier) - Confiança: \(topResult.labels.first?.confidence)"
+                    if let results = request.results as? [VNClassificationObservation],
+                       let topResult = results.first {
+                        DispatchQueue.main.async {
+                            self.parent.isLoading = false
+                            self.parent.clothingColor = "Cor: \(topResult.identifier) - Confiança: \(topResult.confidence)"
+                            
+                            print("Resultado da detecção de cor:", self.parent.clothingColor)
+                            
+                        }
+                    } else {
+                        print("Falha ao processar a imagem para cor")
                     }
                 }
                 
@@ -173,8 +223,6 @@ extension PHPickerViewController {
         }
     }
 }
-
 #Preview {
     AddPhoto(showSheet: .constant(true))
 }
-
