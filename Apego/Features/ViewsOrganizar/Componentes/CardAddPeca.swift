@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CardAddPeca: View {
+    @State private var isPresented = false
     var body: some View {
         Button {
-            
+            isPresented.toggle()
         } label: {
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
@@ -24,9 +25,21 @@ struct CardAddPeca: View {
             }
         }
         .buttonStyle(PlainButtonStyle())
-        .sheet {
-            
-        }
+        .sheet(isPresented: $isPresented, content: {
+            VStack{
+                BotaoFoto()
+                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                BotaoRolo()
+                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                BotaoCancelar()
+                    .buttonStyle(MySecButtonStyle(color: Color.cinzaClaro))
+                    
+            }
+//            .presentationDetents([.height(300)])
+            .padding(.top, 44)
+                .frame(width: 393, height: 272)
+                .presentationDetents([.fraction(0.25)])
+        })
     }
 }
 
