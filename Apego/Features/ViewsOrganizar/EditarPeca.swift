@@ -7,9 +7,28 @@
 
 import SwiftUI
 
+struct EditPecas: View {
+    @State private var isActive: Bool = false
+    var body: some View {
+        NavigationView{
+            NavigationLink(destination: EditarPeca()) {
+                Text("oi")
+            }
+            
+        }
+    }
+}
+
 struct EditarPeca: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            VStack{
+                CardRoupa()
+                    .padding(.bottom, 28)
+                Tab()
+                Spacer()
+            }
+        }
     }
 }
 
