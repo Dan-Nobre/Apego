@@ -1,14 +1,13 @@
 //
-//  TeladeInicioView.swift
+//  Inicio.swift
 //  Apego
 //
-//  Created by Taissa Vitoria Rodrigues de Paula on 17/06/24.
+//  Created by Taissa Vitoria Rodrigues de Paula on 21/06/24.
 //
 
 import SwiftUI
-import PhotosUI
 
-struct TeladeInicioView: View {
+struct Inicio: View {
     @State private var title = "Organizar"
     @State private var showSheet = false
     
@@ -38,7 +37,6 @@ struct TeladeInicioView: View {
                                     .scaledToFill()
                                     .frame(width: 30, height: 30)
                                     .foregroundColor(.principal)
-                                    .zIndex(1.0)
                             }
                         }
                         
@@ -46,12 +44,13 @@ struct TeladeInicioView: View {
                 
             }
             .sheet(isPresented: $showSheet) {
-                AdicionarPecasSheet()
-            }
+                AddPhoto(showSheet: .constant(true))
             }
         }
         
     }
+}
+
 #Preview {
-    TeladeInicioView()
+    Inicio()
 }

@@ -8,40 +8,40 @@
 import SwiftUI
 
 struct AdicionarPecas: View {
-    @State private var isActive: Bool = false
+    @State private var showSheet = false
+    
     var body: some View {
-        NavigationView{
-            NavigationLink(destination: AdicionarPecasSheet()) {
-                Text("oi")
+        NavigationView {
+            VStack {
+                // Botão que mostra a sheet
+//                Text("oi")
+//                    .font(.system(size: 20, weight: .semibold))
+//                    .foregroundColor(Color.blue)
+//                    .onTapGesture {
+//                        showSheet.toggle()
+//                    }
+                
             }
-            
-        }
-    }
-}
-
-
-struct AdicionarPecasSheet: View {
-    var body: some View {
-        NavigationView{
-            VStack{
-                HStack{
-                    CardAddPeca()
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        showSheet.toggle()
+                    }) 
+                    {
+                        Image(systemName: "camera.viewfinder")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.principal)
+                    }
                 }
-                .padding(.top, 64)
-                CardInfo()
-                    .padding(.top, 31)
-                BotaoContinuar()
-                    .buttonStyle(MySecButtonStyle(color: .cinzaClaro))
-                    .padding(.top, 25)
-                Spacer()
+            }
+            .sheet(isPresented: $showSheet) {
+                AdicionarPecasSheet()
             }
         }
-        .navigationTitle("ADICIONAR PEÇAS")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
-
-
 #Preview {
     AdicionarPecas()
 }

@@ -13,7 +13,7 @@ struct CardAddPeca: View {
         Button {
             isPresented.toggle()
         } label: {
-            ZStack{
+            ZStack {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(style: StrokeStyle(lineWidth: 2, dash: [5, 5]))
                     .foregroundColor(.gray)
@@ -26,7 +26,7 @@ struct CardAddPeca: View {
         }
         .buttonStyle(PlainButtonStyle())
         .sheet(isPresented: $isPresented, content: {
-            VStack{
+            VStack {
                 BotaoFoto()
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
                 BotaoRolo()
