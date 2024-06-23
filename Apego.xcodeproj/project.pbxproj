@@ -24,9 +24,9 @@
 		65312D1F2C21D56400E2684E /* ApegoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D1E2C21D56400E2684E /* ApegoView.swift */; };
 		65312D212C21D57B00E2684E /* CombinarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D202C21D57B00E2684E /* CombinarView.swift */; };
 		655173542C2238CE002948AA /* Botoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655173532C2238CE002948AA /* Botoes.swift */; };
+		65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */; };
 		8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */; };
 		8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CE2C25B5A1005A1260 /* Inicio.swift */; };
-		8C1298D12C25B900005A1260 /* SelectedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298D02C25B900005A1260 /* SelectedImagesView.swift */; };
 		8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */; };
 		8C31F9282C23B4130007FD86 /* Cores.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C31F9272C23B4130007FD86 /* Cores.mlmodel */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
@@ -55,9 +55,9 @@
 		65312D1E2C21D56400E2684E /* ApegoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApegoView.swift; sourceTree = "<group>"; };
 		65312D202C21D57B00E2684E /* CombinarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinarView.swift; sourceTree = "<group>"; };
 		655173532C2238CE002948AA /* Botoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Botoes.swift; sourceTree = "<group>"; };
+		65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImagesView.swift; sourceTree = "<group>"; };
 		8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPecasSheet.swift; sourceTree = "<group>"; };
 		8C1298CE2C25B5A1005A1260 /* Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inicio.swift; sourceTree = "<group>"; };
-		8C1298D02C25B900005A1260 /* SelectedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImagesView.swift; sourceTree = "<group>"; };
 		8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicioView.swift; sourceTree = "<group>"; };
 		8C31F9272C23B4130007FD86 /* Cores.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Cores.mlmodel; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -230,8 +230,8 @@
 		8C79F2892C20AEBD00E915BB /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
-				8C1298D02C25B900005A1260 /* SelectedImagesView.swift */,
 				655173532C2238CE002948AA /* Botoes.swift */,
+				65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 				6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */,
 				650BDC022C246213005F1D56 /* AdicionarPecas.swift in Sources */,
 				651F979D2C22FF1C00B830E5 /* Estilos.swift in Sources */,
-				8C1298D12C25B900005A1260 /* SelectedImagesView.swift in Sources */,
+				65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */,
 				8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */,
 				8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */,
 				650BDC072C246A9D005F1D56 /* CardInfo.swift in Sources */,
@@ -514,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
-				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
+				DEVELOPMENT_TEAM = 55WBX8T52B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -543,7 +543,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
-				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
+				DEVELOPMENT_TEAM = 55WBX8T52B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
