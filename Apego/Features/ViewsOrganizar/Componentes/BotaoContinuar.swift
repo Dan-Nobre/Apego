@@ -10,16 +10,34 @@ import SwiftUI
 let imageStore = ImageStore()
 
 struct BotaoContinuar: View {
-//    @State private var isPresented = true
+    @State private var isPresented = false
     var body: some View {
         Button(action:{
-//            isPresented.toggle()
+            isPresented.toggle()
         }, label: {
             VStack{
                 VStack{
                     Text("Continuar")
                 }
             }
+        })
+        .sheet(isPresented: $isPresented, content: {
+            VStack {
+                BotaoFoto()
+                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                    .padding(.bottom, 15)
+                BotaoRolo()
+                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                    .padding(.bottom, 15)
+                BotaoCancelar()
+                    .buttonStyle(MySecButtonStyle(color: Color.cinzinha))
+                    
+            }
+            .bold()
+//            .presentationDetents([.height(300)])
+            .padding(.top, 44)
+                .frame(width: 393, height: 272)
+                .presentationDetents([.fraction(0.30)])
         })
     }
 }

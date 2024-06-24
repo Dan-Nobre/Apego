@@ -26,6 +26,7 @@ struct EditarPeca: View {
                 CardRoupa()
                     .padding(.bottom, 28)
                 Tab()
+                    .padding()
                 Spacer()
             }
         }
