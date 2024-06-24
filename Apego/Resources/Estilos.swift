@@ -15,7 +15,7 @@ struct MySecButtonStyle: ButtonStyle {
         configuration.label
             .frame(width: 352, height: 49)
             .background(color)
-            .cornerRadius(40)
+            .cornerRadius(10)
             .foregroundColor(.black)
             .font(.body)
     }
@@ -45,7 +45,7 @@ struct MyButtonStyle: ButtonStyle {
         configuration.label
             .frame(width: 352, height: 49)
             .background(color)
-            .cornerRadius(40)
+            .cornerRadius(10)
             .foregroundColor(.white)
             .font(.body)
     }

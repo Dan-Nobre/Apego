@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EdicaoGeralPecas: View {
     @State private var categoriaSelecionada: String?
+    
+    let categorias = ["Categoria 1", "Categoria 2", "Categoria 3"] // TAISSA SO P COMPILAR
     var body: some View {
         VStack{
             MyDropDown(title: "Categoria", prompt: "Selecione a categoria", options: categorias, selection: $categoriaSelecionada)

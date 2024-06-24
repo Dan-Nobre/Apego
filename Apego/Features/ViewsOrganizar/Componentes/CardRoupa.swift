@@ -29,5 +29,5 @@ struct CardRoupaMenor: View {
 }
 
 #Preview {
-    CardRoupa()
+    CardRoupaMenor()
 }
