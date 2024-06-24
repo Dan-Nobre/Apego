@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CBD2F6A2C29C46900459CAA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBD2F692C29C46800459CAA /* ContentView.swift */; };
+		4CE212862C28AA210074BE42 /* SaveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE212852C28AA210074BE42 /* SaveImageView.swift */; };
+		4CE212892C28B22E0074BE42 /* ImageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE212882C28B22E0074BE42 /* ImageListView.swift */; };
+		4CE2128B2C28B5890074BE42 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2128A2C28B5890074BE42 /* ImagePicker.swift */; };
+		4CE738662C27AF960092E692 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE738652C27AF960092E692 /* PersistenceController.swift */; };
+		4CE738682C27B0790092E692 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE738672C27B0790092E692 /* ImageEntity.swift */; };
 		6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DB912C20A0F40048CA79 /* ApegoApp.swift */; };
 		6505DB942C20A0F40048CA79 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DB932C20A0F40048CA79 /* TextField.swift */; };
 		6505DB962C20A0F40048CA79 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DB952C20A0F40048CA79 /* Item.swift */; };
@@ -20,7 +26,7 @@
 		650BDC0A2C247230005F1D56 /* BotaoContinuar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650BDC092C247230005F1D56 /* BotaoContinuar.swift */; };
 		650BDC0C2C24CF34005F1D56 /* EditarPeca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650BDC0B2C24CF34005F1D56 /* EditarPeca.swift */; };
 		651F979D2C22FF1C00B830E5 /* Estilos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651F979C2C22FF1C00B830E5 /* Estilos.swift */; };
-		65312D1D2C21D51800E2684E /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D1C2C21D51800E2684E /* MyTabBar.swift */; };
+		65312D1D2C21D51800E2684E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D1C2C21D51800E2684E /* TabBar.swift */; };
 		65312D1F2C21D56400E2684E /* ApegoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D1E2C21D56400E2684E /* ApegoView.swift */; };
 		65312D212C21D57B00E2684E /* CombinarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D202C21D57B00E2684E /* CombinarView.swift */; };
 		655173542C2238CE002948AA /* Botoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655173532C2238CE002948AA /* Botoes.swift */; };
@@ -29,8 +35,8 @@
 		656CBC022C25B3F7007C7AF7 /* MyTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBC012C25B3F7007C7AF7 /* MyTab.swift */; };
 		656CBC042C25B596007C7AF7 /* EdicaoGeralPecas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */; };
 		65D0D10A2C28732A00BD74AC /* CombinacoesNaPeca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */; };
-		65DF21062C27146B0066DDE5 /* OrganizarViewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF21052C27146B0066DDE5 /* OrganizarViewsModel.swift */; };
 		65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */; };
+		65DF21062C27146B0066DDE5 /* OrganizarViewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF21052C27146B0066DDE5 /* OrganizarViewsModel.swift */; };
 		8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */; };
 		8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CE2C25B5A1005A1260 /* Inicio.swift */; };
 		8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */; };
@@ -43,6 +49,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CBD2F692C29C46800459CAA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4CE212852C28AA210074BE42 /* SaveImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageView.swift; sourceTree = "<group>"; };
+		4CE212882C28B22E0074BE42 /* ImageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListView.swift; sourceTree = "<group>"; };
+		4CE2128A2C28B5890074BE42 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4CE738652C27AF960092E692 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		4CE738672C27B0790092E692 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
 		6505DB8E2C20A0F40048CA79 /* Apego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6505DB912C20A0F40048CA79 /* ApegoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApegoApp.swift; sourceTree = "<group>"; };
 		6505DB932C20A0F40048CA79 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -57,7 +69,7 @@
 		650BDC092C247230005F1D56 /* BotaoContinuar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoContinuar.swift; sourceTree = "<group>"; };
 		650BDC0B2C24CF34005F1D56 /* EditarPeca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPeca.swift; sourceTree = "<group>"; };
 		651F979C2C22FF1C00B830E5 /* Estilos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estilos.swift; sourceTree = "<group>"; };
-		65312D1C2C21D51800E2684E /* MyTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
+		65312D1C2C21D51800E2684E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		65312D1E2C21D56400E2684E /* ApegoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApegoView.swift; sourceTree = "<group>"; };
 		65312D202C21D57B00E2684E /* CombinarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinarView.swift; sourceTree = "<group>"; };
 		655173532C2238CE002948AA /* Botoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Botoes.swift; sourceTree = "<group>"; };
@@ -66,8 +78,8 @@
 		656CBC012C25B3F7007C7AF7 /* MyTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTab.swift; sourceTree = "<group>"; };
 		656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdicaoGeralPecas.swift; sourceTree = "<group>"; };
 		65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinacoesNaPeca.swift; sourceTree = "<group>"; };
-		65DF21052C27146B0066DDE5 /* OrganizarViewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewsModel.swift; sourceTree = "<group>"; };
 		65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImagesView.swift; sourceTree = "<group>"; };
+		65DF21052C27146B0066DDE5 /* OrganizarViewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewsModel.swift; sourceTree = "<group>"; };
 		8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPecasSheet.swift; sourceTree = "<group>"; };
 		8C1298CE2C25B5A1005A1260 /* Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inicio.swift; sourceTree = "<group>"; };
 		8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicioView.swift; sourceTree = "<group>"; };
@@ -90,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CE212842C28A9F60074BE42 /* TestViewsFunc */ = {
+			isa = PBXGroup;
+			children = (
+				4CE212852C28AA210074BE42 /* SaveImageView.swift */,
+			);
+			path = TestViewsFunc;
+			sourceTree = "<group>";
+		};
+		4CE212872C28B20B0074BE42 /* ShowImage */ = {
+			isa = PBXGroup;
+			children = (
+				4CE212882C28B22E0074BE42 /* ImageListView.swift */,
+			);
+			path = ShowImage;
+			sourceTree = "<group>";
+		};
 		6505DB852C20A0F40048CA79 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +149,7 @@
 				6505DBA12C20A22C0048CA79 /* Utils */,
 				6505DB932C20A0F40048CA79 /* TextField.swift */,
 				6505DB952C20A0F40048CA79 /* Item.swift */,
+				4CBD2F692C29C46800459CAA /* ContentView.swift */,
 				6505DB992C20A0F50048CA79 /* Preview Content */,
 			);
 			path = Apego;
@@ -171,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				6505DBA92C20A2CD0048CA79 /* Models.swift */,
+				4CE738652C27AF960092E692 /* PersistenceController.swift */,
+				4CE738672C27B0790092E692 /* ImageEntity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,7 +236,7 @@
 		65312D1B2C21D50100E2684E /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				65312D1C2C21D51800E2684E /* MyTabBar.swift */,
+				65312D1C2C21D51800E2684E /* TabBar.swift */,
 				65312D1E2C21D56400E2684E /* ApegoView.swift */,
 				65312D202C21D57B00E2684E /* CombinarView.swift */,
 			);
@@ -223,10 +254,13 @@
 		8C79F2832C20AE2200E915BB /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				4CE212872C28B20B0074BE42 /* ShowImage */,
+				4CE212842C28A9F60074BE42 /* TestViewsFunc */,
 				650BDC002C2461FA005F1D56 /* ViewsOrganizar */,
 				8CFBA3E42C2204830001E7D9 /* AddPhoto */,
 				65312D1B2C21D50100E2684E /* TabBar */,
 				8C79F28A2C20AECD00E915BB /* TeladeInicio */,
+				4CE2128A2C28B5890074BE42 /* ImagePicker.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -383,22 +417,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				65312D212C21D57B00E2684E /* CombinarView.swift in Sources */,
+				4CE738662C27AF960092E692 /* PersistenceController.swift in Sources */,
 				8CFBA3E62C22049F0001E7D9 /* AddPhoto.swift in Sources */,
+				4CE2128B2C28B5890074BE42 /* ImagePicker.swift in Sources */,
+				4CE212862C28AA210074BE42 /* SaveImageView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */,
-				6505DB942C20A0F40048CA79 /* ContentView.swift in Sources */,
+				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				650BDC0C2C24CF34005F1D56 /* EditarPeca.swift in Sources */,
 				65312D1F2C21D56400E2684E /* ApegoView.swift in Sources */,
 				650BDC052C246292005F1D56 /* CardAddPeca.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
 				655173542C2238CE002948AA /* Botoes.swift in Sources */,
-				65312D1D2C21D51800E2684E /* MyTabBar.swift in Sources */,
+				4CE212892C28B22E0074BE42 /* ImageListView.swift in Sources */,
+				65312D1D2C21D51800E2684E /* TabBar.swift in Sources */,
+				65312D1D2C21D51800E2684E /* TabBar.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
 				656CBC022C25B3F7007C7AF7 /* MyTab.swift in Sources */,
 				8CFBA3F92C234B000001E7D9 /* MyImageClassifierCP.mlmodel in Sources */,
+				4CE738682C27B0790092E692 /* ImageEntity.swift in Sources */,
 				6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */,
 				6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */,
 				650BDC022C246213005F1D56 /* AdicionarPecas.swift in Sources */,
+				4CBD2F6A2C29C46900459CAA /* ContentView.swift in Sources */,
 				651F979D2C22FF1C00B830E5 /* Estilos.swift in Sources */,
 				65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */,
 				8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */,

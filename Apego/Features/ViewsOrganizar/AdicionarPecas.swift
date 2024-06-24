@@ -14,19 +14,19 @@ struct AdicionarPecas: View {
         NavigationView {
             VStack {
                 // Botão que mostra a sheet
-//                Text("oi")
-//                    .font(.system(size: 20, weight: .semibold))
-//                    .foregroundColor(Color.blue)
-//                    .onTapGesture {
-//                        showSheet.toggle()
-//                    }
+                //                Text("oi")
+                //                    .font(.system(size: 20, weight: .semibold))
+                //                    .foregroundColor(Color.blue)
+                //                    .onTapGesture {
+                //                        showSheet.toggle()
+                //                    }
                 
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         showSheet.toggle()
-                    }) 
+                    })
                     {
                         Image(systemName: "camera.viewfinder")
                             .resizable()
@@ -42,6 +42,7 @@ struct AdicionarPecas: View {
         }
     }
 }
+
 #Preview {
     AdicionarPecas()
 }

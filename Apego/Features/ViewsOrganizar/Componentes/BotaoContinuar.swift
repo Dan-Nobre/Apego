@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let imageStore = ImageStore()
+
 struct BotaoContinuar: View {
 //    @State private var isPresented = true
     var body: some View {
