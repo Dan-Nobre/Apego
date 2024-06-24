@@ -21,6 +21,11 @@ struct AdicionarPecas: View {
 
 
 struct AdicionarPecasSheet: View {
+    @State private var image: UIImage? = nil
+    @State private var imageName: String = ""
+    @State private var showingImagePicker = false
+    let imageStore =  ImageStore()
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -30,11 +35,43 @@ struct AdicionarPecasSheet: View {
                 .padding(.top, 64)
                 CardInfo()
                     .padding(.top, 31)
-                BotaoContinuar()
+                Button("Select Image") {
+                    showingImagePicker = true
+                }
+                .padding()
+                
+                TextField("Enter image name", text: $imageName)
+                    .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                if let image = image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                }
+                Button("Save Image") {
+                    if let image = image, !imageName.isEmpty {
+                        if let imageData = image.jpegData(compressionQuality: 1.0) {
+                            let newImage = ImageData(name: imageName, imageData: imageData)
+                            imageStore.saveImage(newImage)
+                        }
+                    }
+                }
+//                BotaoContinuar()
+////                    if let image = image, !imageName.isEmpty{
+////                        if let imageData = image.jpegData(compressionQuality:1.0){
+////                            let newImage = ImageData(name: imageName, imageData: imageData)
+////                            imageStore.saveImage(newImage)
+////                        }
+////                    }
                     .buttonStyle(MySecButtonStyle(color: .cinzaClaro))
                     .padding(.top, 25)
                 Spacer()
             }
+        }
+        .sheet(isPresented: $showingImagePicker) {
+            CustomImagePicker(image: $image)
         }
         .navigationTitle("ADICIONAR PEÇAS")
         .navigationBarTitleDisplayMode(.inline)
