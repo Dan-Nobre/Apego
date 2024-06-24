@@ -82,7 +82,6 @@ struct BotaoVariasImagens: View {
         }
     }
 }
-
 struct BotaoCancelar: View {
     @State private var isPresented = true
     var body: some View {
@@ -98,7 +97,6 @@ struct BotaoCancelar: View {
     }
 }
 
-
 #Preview {
-    BotaoFoto()
+    BotaoRolo()
 }

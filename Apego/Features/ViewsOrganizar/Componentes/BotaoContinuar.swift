@@ -23,6 +23,22 @@ struct BotaoContinuar: View {
         })
     }
 }
+
+struct BotaoFinalizar: View {
+//    @State private var isPresented = true
+    var body: some View {
+        Button(action:{
+//            isPresented.toggle()
+        }, label: {
+            VStack{
+                VStack{
+                    Text("Finalizar")
+                }
+            }
+        })
+    }
+}
+
 #Preview {
     BotaoContinuar()
 }

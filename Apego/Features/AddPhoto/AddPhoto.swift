@@ -11,8 +11,6 @@ struct AddPhoto: View {
     @State private var clothingType: String = "Tipo de roupa desconhecido"
     
     @State private var clothingColor: String = "Cor desconhecida"
-    
-    
     var body: some View {
         VStack {
             if let image = selectedImage {
@@ -32,7 +30,8 @@ struct AddPhoto: View {
                 .padding()
             Button(action: {
                 showSheet = false // Fechar o sheet
-            }) {
+            }) 
+            {
                 Text("Tirar uma foto")
                     .foregroundColor(.white)
                     .padding()
@@ -42,7 +41,8 @@ struct AddPhoto: View {
             Button(action: {
                 
                 presentPicker.toggle()
-            }) {
+            }) 
+            {
                 Text("Adicionar foto da galeria")
                     .foregroundColor(.white)
                     .padding()
@@ -51,7 +51,8 @@ struct AddPhoto: View {
             }
             Button(action: {
                 showSheet = false // Fechar o sheet
-            }) {
+            }) 
+            {
                 Text("Cancelar")
                     .foregroundColor(.white)
                     .padding()
