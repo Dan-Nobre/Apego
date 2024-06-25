@@ -12,7 +12,7 @@ let imageStore = ImageStore()
 struct BotaoContinuar: View {
     @State private var isPresented = false
     var body: some View {
-        Button(action:{
+        Button(action:  {
             isPresented.toggle()
         }, label: {
             VStack{

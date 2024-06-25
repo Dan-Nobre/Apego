@@ -9,25 +9,42 @@ import SwiftUI
 import PhotosUI
 
 struct BotaoFoto: View {
+    @State private var inputImage: UIImage?
+    @State private var isShowingPicker = false
+    
     var body: some View {
-        Button(action:{
-            
-        }, label: {
-            VStack{
-                VStack{
+        VStack {
+            Button(action: {
+                let picker = CustomImagePicker(image: $inputImage)
+            }) { VStack {
                     Text("Tirar nova foto")
                 }
             }
-        })
+            
+            .sheet(isPresented: $isShowingPicker) {
+                           CustomImagePicker(image: $inputImage)
+            }
+            
+            if let inputImage = inputImage {
+                Image(uiImage: inputImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300, height: 300)
+            }
+        }
+        .onChange(of: inputImage) { _, newImage  in
+            // nova imagem
+        }
     }
 }
+
 
 struct BotaoRolo: View {
     @State private var avatarItem: PhotosPickerItem?
     @State private var avatarImage: Image?
     
     var body: some View {
-            VStack{
+            VStack {
                 PhotosPicker("Selecionar do rolo da câmera", selection: $avatarItem, matching: .images)
                 
                 avatarImage?
@@ -54,9 +71,9 @@ struct BotaoVariasImagens: View {
     
     
     var body: some View {
-        NavigationStack{
-            ScrollView{
-                LazyVStack{
+        NavigationStack {
+            ScrollView {
+                LazyVStack {
                     ForEach(0..<selectedImages.count, id: \.self) {
                         i in selectedImages[i]
                             .resizable()
@@ -98,5 +115,5 @@ struct BotaoCancelar: View {
 }
 
 #Preview {
-    BotaoRolo()
+    BotaoFoto()
 }

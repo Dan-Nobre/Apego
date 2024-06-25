@@ -11,9 +11,12 @@ import SwiftData
 @main
 struct ApegoApp: App {
     
-    var body: some Scene{
+    @StateObject private var pipeline = EffectsPipeline()
+    var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            TeladeInicioView()
+                .environmentObject(pipeline)
         }
     }
 //    var sharedModelContainer: ModelContainer = {

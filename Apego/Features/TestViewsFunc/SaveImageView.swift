@@ -66,9 +66,9 @@ struct SaveImageView: View {
                 
                 Spacer()
             }
-            .sheet(isPresented: $showingImagePicker) {
-                ImagePicker(image: $image)
-            }
+//            .sheet(isPresented: $showingImagePicker) {
+//                ImagePicker(image: $image)
+//            } // EU COMENTEI SO P RODAR PQ ESTAVA DANDO ERRO - TAISSA
             .navigationTitle("Save Images")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: EditButton())

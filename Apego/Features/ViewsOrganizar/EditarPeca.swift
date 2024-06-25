@@ -10,7 +10,7 @@ import SwiftUI
 struct EditPecas: View {
     @State private var isActive: Bool = false
     var body: some View {
-        NavigationView{
+        NavigationView {
             NavigationLink(destination: EditarPeca()) {
                 Text("oi")
             }
@@ -21,8 +21,8 @@ struct EditPecas: View {
 
 struct EditarPeca: View {
     var body: some View {
-        NavigationView{
-            VStack{
+        NavigationView {
+            VStack {
                 CardRoupa()
                     .padding(.bottom, 28)
                 Tab()

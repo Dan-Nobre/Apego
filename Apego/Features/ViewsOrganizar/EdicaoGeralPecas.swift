@@ -12,7 +12,7 @@ struct EdicaoGeralPecas: View {
     
     let categorias = ["Categoria 1", "Categoria 2", "Categoria 3"] // TAISSA SO P COMPILAR
     var body: some View {
-        VStack{
+        VStack {
             MyDropDown(title: "Categoria", prompt: "Selecione a categoria", options: categorias, selection: $categoriaSelecionada)
                 .padding(.top, 14)
                 .padding(.bottom, 14)

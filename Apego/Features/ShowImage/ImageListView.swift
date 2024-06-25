@@ -12,7 +12,7 @@ struct ImageListView: View {
     let imageStore = ImageStore()
     
     var body: some View {
-        List{
+        List {
             ForEach(images) { imageData in
                 VStack{
                     if let uiImage = UIImage(data: imageData.imageData){

@@ -22,6 +22,9 @@ struct CustomImagePicker: UIViewControllerRepresentable {
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.image = uiImage
+                print("Imagem selecionada: \(uiImage.size)")
+            } else {
+                print("Falha ao selecionar imagem")
             }
             parent.presentationMode.wrappedValue.dismiss()
         }
@@ -37,7 +40,28 @@ struct CustomImagePicker: UIViewControllerRepresentable {
         return picker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context){}
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+}
+
+//TAISSA
+struct ImagePicker: UIViewControllerRepresentable {
+    var sourceType: UIImagePickerController.SourceType = .camera
+    
+    func makeUIViewControllerCam(context: UIViewControllerRepresentableContext<ImagePicker) ->
+    UIImagePickerController {
+        let imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = sourceType
+        
+        return imagePicker 
+        
+    }
+
+    func updateUIViewControllerCam(_ uiViewController: UIImagePickerController, context: Context) {
+        
+    }
+
+    
 }
 
 //#Preview {
