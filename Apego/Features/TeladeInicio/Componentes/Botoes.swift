@@ -15,14 +15,12 @@ struct BotaoFoto: View {
     var body: some View {
         VStack {
             Button(action: {
-//                let picker = CustomImagePicker(image: $inputImage)
-            }) { VStack {
-                    Text("Tirar nova foto")
-                }
+                self.isShowingPicker = true
+            }) {
+                Text("Tirar nova foto")
             }
-            
             .sheet(isPresented: $isShowingPicker) {
-//                           CustomImagePicker(image: $inputImage)
+                CameraImagePicker(image: self.$inputImage)
             }
             
             if let inputImage = inputImage {
@@ -32,12 +30,11 @@ struct BotaoFoto: View {
                     .frame(width: 300, height: 300)
             }
         }
-        .onChange(of: inputImage) { _, newImage  in
-            // nova imagem
+        .onChange(of: inputImage) {
+            print("Nova imagem capturada")
+        }
         }
     }
-}
-
 
 struct BotaoRolo: View {
     @State private var avatarItem: PhotosPickerItem?
