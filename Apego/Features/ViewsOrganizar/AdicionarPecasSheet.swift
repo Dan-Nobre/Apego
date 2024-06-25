@@ -37,8 +37,12 @@ import SwiftUI
 //}
 
 struct AdicionarPecasSheet: View {
+    
+    @State var showNextView: Bool = false
+    @State var selectedImages: [Image] = []
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text("Adicione peças!")
                     .bold()
@@ -76,25 +80,26 @@ struct AdicionarPecasSheet: View {
                         + Text(" do local podem atraplahar no recorte do fundo")
                     }
                     .padding(.bottom, 15)
-
-                    BotaoContinuar()
-                        .buttonStyle(MyButtonStyle(color: Color.accentColor))
-                                        .padding(.top, 20)
+                    
+//                    BotaoContinuar(selectedImages: $selectedImages)
+//                        .buttonStyle(MyButtonStyle(color: Color.accentColor))
+//                        .padding(.top, 20)
                 }
                 .bold()
                 .padding()
             }
         }
-        .navigationTitle("Adicionar peças")
-        .navigationBarTitleDisplayMode(.inline)
-//        .toolbar {
-//            ToolbarItem(placement: .cancellationAction) {
-//                Button("Close") {
-//                    // Código para fechar a sheet
-//                    // É automaticamente gerenciado pelo .sheet em AdicionarPecas
-//                }
-//            }
-//        }
+//        .navigationTitle("Adicionar peças")
+//        .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(isPresented: $showNextView) {
+            Text("\(selectedImages.count)")
+        }
+        .onChange(of: selectedImages) { _, newValue in
+            print(newValue.count)
+            if !newValue.isEmpty {
+                showNextView = true
+            }
+        }
     }
 }
 

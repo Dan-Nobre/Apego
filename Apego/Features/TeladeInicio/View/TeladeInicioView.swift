@@ -15,7 +15,7 @@ struct TeladeInicioView: View {
     @State private var pecas: [String] = []
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Text(" ").font(.system(size: .leastNormalMagnitude)) // gambiarra pra fixar large title :P triste
                 ScrollView {
@@ -45,18 +45,7 @@ struct TeladeInicioView: View {
                 .toolbar {
                     
                     ToolbarItem(placement: .topBarTrailing) {
-                        //                            Button(action: {
-                        //                                showSheet.toggle()
-                        //                            })
-                        //                            {
-                        //                                Image(systemName: "camera.viewfinder")
-                        //                                    .resizable()
-                        //                                    .scaledToFill()
-                        //                                    .frame(width: 30, height: 30)
-                        //                                    .foregroundColor(.principal)
-                        //                                    .zIndex(1.0)
-                        //                            }
-                        NavigationLink(destination: AdicionarPecasSheet()){
+                        NavigationLink(destination: Adicionar()){
                             Image(systemName: "camera.viewfinder")
                                 .resizable()
                                 .scaledToFill()

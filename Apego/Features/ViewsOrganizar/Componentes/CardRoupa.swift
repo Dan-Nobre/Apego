@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct CardRoupa: View {
+    let roupa: UIImage
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16){
-            Image("Roupa1")
+            Image(uiImage: roupa)
                 .resizable()
                 .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                 .frame(width: 194, height: 207)

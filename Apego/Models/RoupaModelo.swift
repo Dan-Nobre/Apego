@@ -12,17 +12,17 @@ import SwiftData
 //categoria
 //cor
 
+@Model
 
-
-class ImageData: Identifiable, Codable{
+final class RoupaModelo {
     var id: UUID
-    var name: String
+    var categoria: String
     var imageData: Data
     
     
     init(name: String, imageData: Data) {
         self.id = UUID()
-        self.name = name
+        self.categoria = name
         self.imageData = imageData
     }
 }

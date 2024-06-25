@@ -15,8 +15,7 @@ struct ApegoApp: App {
     var body: some Scene {
         
         WindowGroup {
-            TeladeInicioView()
-                .environmentObject(pipeline)
+            TabBar()
         }
     }
 //    var sharedModelContainer: ModelContainer = {
