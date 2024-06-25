@@ -11,12 +11,6 @@ import CoreImage.CIFilterBuiltins
 import UIKit
 import Vision
 
-//enum Effect: String, Equatable, CaseIterable {
-//    case none = "None"
-//    case highlight = "Highlight"
-//    case bokeh = "Bokeh Halo"
-//    case noir = "Noir"
-//}
 
 enum Background: String, Equatable, CaseIterable {
     case original = "Original"
@@ -31,6 +25,7 @@ final class EffectsPipeline: ObservableObject {
 //    @Published var effect: Effect = .none
     @Published var background: Background = .original
     @Published var subjectPosition: CGPoint? = nil
+    @Published var inputImages: [CIImage] = []
 
     private var processingQueue = DispatchQueue(label: "EffectsProcessing")
     private var cancellables: [AnyCancellable] = []
