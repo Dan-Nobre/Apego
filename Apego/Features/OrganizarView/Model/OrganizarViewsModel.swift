@@ -39,3 +39,4 @@ struct Subtitles {
 //                        }
 //                        .padding(.bottom, 20)
 //                    }
+
