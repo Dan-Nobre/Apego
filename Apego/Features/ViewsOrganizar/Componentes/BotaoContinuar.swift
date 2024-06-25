@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-let imageStore = ImageStore()
+//let imageStore = ImageStore()
 
 struct BotaoContinuar: View {
     @State private var isPresented = false
+    @Binding var selectedImages: [Image]
+    
     var body: some View {
         Button(action:{
             isPresented.toggle()
@@ -26,7 +28,7 @@ struct BotaoContinuar: View {
                 BotaoFoto()
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
                     .padding(.bottom, 15)
-                BotaoRolo()
+                BotaoVariasImagens(selectedImages: $selectedImages)
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
                     .padding(.bottom, 15)
                 BotaoCancelar()
@@ -34,7 +36,6 @@ struct BotaoContinuar: View {
                     
             }
             .bold()
-//            .presentationDetents([.height(300)])
             .padding(.top, 44)
                 .frame(width: 393, height: 272)
                 .presentationDetents([.fraction(0.30)])
@@ -57,6 +58,21 @@ struct BotaoFinalizar: View {
     }
 }
 
-#Preview {
-    BotaoContinuar()
+struct BotaoSalvar: View {
+//    @State private var isPresented = true
+    var body: some View {
+        Button(action:{
+//            isPresented.toggle()
+        }, label: {
+            VStack{
+                VStack{
+                    Text("Salvar")
+                }
+            }
+        })
+    }
 }
+
+//#Preview {
+//    BotaoContinuar()
+//}

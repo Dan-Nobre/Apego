@@ -28,6 +28,7 @@ struct Subtitles {
     
 }
 
+
 //ForEach(0..<Subtitles.iconesAdd.count) { index in
 //                        HStack{
 //                            VStack(alignment: .center){
