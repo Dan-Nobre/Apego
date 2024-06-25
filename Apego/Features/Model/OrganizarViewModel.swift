@@ -1,37 +1,24 @@
 //
-//  TeladeInicioView.swift
+//  OrganizarView.swift
 //  Apego
 //
-//  Created by Taissa Vitoria Rodrigues de Paula on 17/06/24.
+//  Created by Taissa Vitoria Rodrigues de Paula on 24/06/24.
 //
 
 import SwiftUI
-import PhotosUI
 
-struct TeladeInicioView: View {
+struct OrganizarViewModel: View {
     @State private var title = "Organizar"
     @State private var showSheet = false
     
     @State private var pecas: [String] = []
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             VStack {
-                Text(" ").font(.system(size: .leastNormalMagnitude)) // gambiarra pra fixar large title :P triste
                 ScrollView {
                     if pecas.isEmpty {
-                        VStack {
-                            Image("avatar")
-                            Text("Adicione suas peças")
-                                .font(.system(size: 20, weight: .semibold))
-                                .foregroundColor(Color.black.opacity(0.8))
-                            
-                            Text("Use a \(Image(systemName: "camera.viewfinder")) para adicionar itens no seu guarda-roupa")
-                                .multilineTextAlignment(.center)
-                                .font(.system(size: 17, weight: .semibold))
-                                .foregroundColor(Color.gray.opacity(0.8))
-                        }
-                        .containerRelativeFrame(.vertical)
+                        
                     } else {
                         ForEach(pecas, id: \.self) {
                             Text($0)
@@ -45,7 +32,7 @@ struct TeladeInicioView: View {
                 .toolbar {
                     
                     ToolbarItem(placement: .topBarTrailing) {
-                        NavigationLink(destination: Adicionar()){
+                        NavigationLink(destination: AdicionarPecasSheet()){
                             Image(systemName: "camera.viewfinder")
                                 .resizable()
                                 .scaledToFill()
@@ -63,8 +50,7 @@ struct TeladeInicioView: View {
             }
         }
     }
-    
 }
 #Preview {
-    TeladeInicioView()
+    OrganizarViewModel()
 }

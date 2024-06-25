@@ -36,6 +36,7 @@ struct BotaoContinuar: View {
                     
             }
             .bold()
+//            .presentationDetents([.height(300)])
             .padding(.top, 44)
                 .frame(width: 393, height: 272)
                 .presentationDetents([.fraction(0.30)])

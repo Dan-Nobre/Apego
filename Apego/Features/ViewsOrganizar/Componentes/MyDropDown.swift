@@ -21,8 +21,8 @@ struct MyDropDown: View {
                 .font(.footnote)
                 .foregroundStyle(.gray)
                 .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-            VStack{
-                HStack{
+            VStack {
+                HStack {
                     Text(prompt)
                     
                     Spacer()
