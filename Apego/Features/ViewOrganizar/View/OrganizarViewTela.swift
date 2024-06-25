@@ -11,6 +11,7 @@ struct OrganizarViewTela: View {
     @ObservedObject var viewModel = ClothingViewModel()
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
+    let editarPecaTip = EditarPecaTip()
     
     let categories = ["Sem categoria", "Camisas", "Blusas", "Shorts", "Saias", "Vestidos"]
     var body: some View {
@@ -30,35 +31,35 @@ struct OrganizarViewTela: View {
                                                      Color.white: Color.principal)
                                     .background(viewModel.selectedCategory == category ? Color.principal : Color.bege)
                                     .cornerRadius(10)
-                                    .padding(0.5)
-                                    
-                                
-                                    
+                                    .padding(2)
                             }
                         }
                     }
                     .padding()
                 }
-       
-      
+ 
                 ScrollView {
                     if viewModel.filteredPecas.isEmpty {
                         Text("Nenhuma peça encontrada")
                             .padding()
                     } else {
-                        ForEach(viewModel.filteredPecas) { peca in
-                            VStack {
-                                Image(uiImage: peca.image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 50)
-                                    .padding()
-                                    .background(Color.secondary.opacity(0.1))
-                                    .cornerRadius(8)
-                            
+                        LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                            ForEach(viewModel.filteredPecas) { peca in
+                                VStack {
+                                    Image(uiImage: peca.image)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 50)
+                                        .padding()
+                                        .background(Color.secondary.opacity(0.1))
+                                        .cornerRadius(8)
+                    
+                                }
+                                .popoverTip(editarPecaTip)
+                                .padding()
                             }
-                            .padding()
                         }
+                        .padding()
                     }
                 }
                 .navigationTitle("Organizar")
@@ -82,4 +83,3 @@ struct OrganizarViewTela: View {
 #Preview {
     OrganizarViewTela()
 }
-

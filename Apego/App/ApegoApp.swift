@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import TipKit
 
 @main
 struct ApegoApp: App {
@@ -16,6 +17,10 @@ struct ApegoApp: App {
         
         WindowGroup {
             TabBar()
+                .task {
+                    try? Tips.configure([
+                        .datastoreLocation(.applicationDefault)])
+                }
         }
     }
 //    var sharedModelContainer: ModelContainer = {
