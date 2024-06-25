@@ -15,14 +15,14 @@ struct BotaoFoto: View {
     var body: some View {
         VStack {
             Button(action: {
-                let picker = CustomImagePicker(image: $inputImage)
+//                let picker = CustomImagePicker(image: $inputImage)
             }) { VStack {
                     Text("Tirar nova foto")
                 }
             }
             
             .sheet(isPresented: $isShowingPicker) {
-                           CustomImagePicker(image: $inputImage)
+//                           CustomImagePicker(image: $inputImage)
             }
             
             if let inputImage = inputImage {

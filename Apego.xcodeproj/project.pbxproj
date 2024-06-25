@@ -35,7 +35,6 @@
 		656CBC002C25A7DD007C7AF7 /* CardRoupa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBBFF2C25A7DD007C7AF7 /* CardRoupa.swift */; };
 		656CBC022C25B3F7007C7AF7 /* MyTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBC012C25B3F7007C7AF7 /* MyTab.swift */; };
 		656CBC042C25B596007C7AF7 /* EdicaoGeralPecas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */; };
-		658835932C29B00E0095E0C2 /* CamPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658835922C29B00E0095E0C2 /* CamPreview.swift */; };
 		658835952C29B03E0095E0C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658835942C29B03E0095E0C2 /* ViewController.swift */; };
 		65D0D10A2C28732A00BD74AC /* CombinacoesNaPeca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */; };
 		65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */; };
@@ -46,6 +45,7 @@
 		8C72EB592C2AE35600307987 /* EffectsPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB582C2AE35600307987 /* EffectsPipeline.swift */; };
 		8C72EB5B2C2AE4DB00307987 /* RemoverFundo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB5A2C2AE4DB00307987 /* RemoverFundo.swift */; };
 		8C72EB5F2C2B047C00307987 /* VielModelCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB5E2C2B047C00307987 /* VielModelCam.swift */; };
+		8C72EB612C2B2DE400307987 /* CamPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB602C2B2DE400307987 /* CamPreview.swift */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
 		8CE8D1082C2A31CF0011BA83 /* OrganizarViewTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */; };
 		8CE8D10A2C2A363C0011BA83 /* ModelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */; };
@@ -86,7 +86,6 @@
 		656CBBFF2C25A7DD007C7AF7 /* CardRoupa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRoupa.swift; sourceTree = "<group>"; };
 		656CBC012C25B3F7007C7AF7 /* MyTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTab.swift; sourceTree = "<group>"; };
 		656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdicaoGeralPecas.swift; sourceTree = "<group>"; };
-		658835922C29B00E0095E0C2 /* CamPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamPreview.swift; sourceTree = "<group>"; };
 		658835942C29B03E0095E0C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinacoesNaPeca.swift; sourceTree = "<group>"; };
 		65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImagesView.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		8C72EB582C2AE35600307987 /* EffectsPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsPipeline.swift; sourceTree = "<group>"; };
 		8C72EB5A2C2AE4DB00307987 /* RemoverFundo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoverFundo.swift; sourceTree = "<group>"; };
 		8C72EB5E2C2B047C00307987 /* VielModelCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VielModelCam.swift; sourceTree = "<group>"; };
+		8C72EB602C2B2DE400307987 /* CamPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamPreview.swift; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewTela.swift; sourceTree = "<group>"; };
 		8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFilter.swift; sourceTree = "<group>"; };
@@ -228,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				650BDC032C246274005F1D56 /* Componentes */,
-				65DF21042C27144D0066DDE5 /* Model */,
 				6521B11E2C2B02A600E2E3FE /* AdicionarView.swift */,
 				8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */,
 				650BDC0B2C24CF34005F1D56 /* EditarPeca.swift */,
@@ -247,8 +246,8 @@
 				650BDC092C247230005F1D56 /* BotaoContinuar.swift */,
 				656CBBFF2C25A7DD007C7AF7 /* CardRoupa.swift */,
 				656CBC012C25B3F7007C7AF7 /* MyTab.swift */,
+				8C72EB602C2B2DE400307987 /* CamPreview.swift */,
 				65600FAA2C25C1C4004557B6 /* MyDropDown.swift */,
-				658835922C29B00E0095E0C2 /* CamPreview.swift */,
 				658835942C29B03E0095E0C2 /* ViewController.swift */,
 			);
 			path = Componentes;
@@ -512,7 +511,6 @@
 				4CE212862C28AA210074BE42 /* SaveImageView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */,
-				658835932C29B00E0095E0C2 /* CamPreview.swift in Sources */,
 				6521B1212C2B08E900E2E3FE /* FinalizarView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				650BDC0C2C24CF34005F1D56 /* EditarPeca.swift in Sources */,
@@ -544,7 +542,6 @@
 				8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */,
 				8C72EB5B2C2AE4DB00307987 /* RemoverFundo.swift in Sources */,
 				650BDC072C246A9D005F1D56 /* CardInfo.swift in Sources */,
-				65DF21062C27146B0066DDE5 /* OrganizarViewsModel.swift in Sources */,
 				658835952C29B03E0095E0C2 /* ViewController.swift in Sources */,
 				656CBC042C25B596007C7AF7 /* EdicaoGeralPecas.swift in Sources */,
 				65600FAB2C25C1C4004557B6 /* MyDropDown.swift in Sources */,
@@ -552,6 +549,7 @@
 				650BDC0A2C247230005F1D56 /* BotaoContinuar.swift in Sources */,
 				8C31F9282C23B4130007FD86 /* Cores.mlmodel in Sources */,
 				8CFBA3EB2C220BFB0001E7D9 /* RemoveBackground.swift in Sources */,
+				8C72EB612C2B2DE400307987 /* CamPreview.swift in Sources */,
 				6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
