@@ -4,33 +4,35 @@
 ////  Created by Daniel Nobre on 17/06/24.
 ////
 //
-import SwiftUI
-
-struct ContentView: View{
-    var body: some View {
-        NavigationView{
-            VStack {
-                NavigationLink(destination: SaveImageView()) {
-                    Text("Save New Image")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
-                
-                NavigationLink(destination: ImageListView()) {
-                    Text("View Saved Images")
-                        .padding()
-                        .background()
-                        .foregroundColor(Color.green)
-                        .foregroundColor(.white)
-                        .cornerRadius(8)
-                }
-            }
-            .navigationTitle("Image Storage")
-        }
-    }
-}
+//import SwiftUI
+//import SwiftData
+//
+//struct ContentView: View{
+//    @Environment
+//    var body: some View {
+//        NavigationView{
+//            VStack {
+//                NavigationLink(destination: SaveImageView()) {
+//                    Text("Save New Image")
+//                        .padding()
+//                        .background(Color.blue)
+//                        .foregroundColor(.white)
+//                        .cornerRadius(8)
+//                }
+//                
+//                NavigationLink(destination: ImageListView()) {
+//                    Text("View Saved Images")
+//                        .padding()
+//                        .background()
+//                        .foregroundColor(Color.green)
+//                        .foregroundColor(.white)
+//                        .cornerRadius(8)
+//                }
+//            }
+//            .navigationTitle("Image Storage")
+//        }
+//    }
+//}
 
 
 //import SwiftUI

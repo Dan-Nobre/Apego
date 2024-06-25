@@ -12,7 +12,7 @@
 		4CE212892C28B22E0074BE42 /* ImageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE212882C28B22E0074BE42 /* ImageListView.swift */; };
 		4CE2128B2C28B5890074BE42 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2128A2C28B5890074BE42 /* ImagePicker.swift */; };
 		4CE738662C27AF960092E692 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE738652C27AF960092E692 /* PersistenceController.swift */; };
-		4CE738682C27B0790092E692 /* ImageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE738672C27B0790092E692 /* ImageEntity.swift */; };
+		4CE738682C27B0790092E692 /* RoupaModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE738672C27B0790092E692 /* RoupaModelo.swift */; };
 		6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DB912C20A0F40048CA79 /* ApegoApp.swift */; };
 		6505DB942C20A0F40048CA79 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DB932C20A0F40048CA79 /* TextField.swift */; };
 		6505DB962C20A0F40048CA79 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DB952C20A0F40048CA79 /* Item.swift */; };
@@ -20,12 +20,13 @@
 		6505DB9B2C20A0F50048CA79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */; };
 		6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA62C20A2BB0048CA79 /* Util.swift */; };
 		6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505DBA92C20A2CD0048CA79 /* Models.swift */; };
-		650BDC022C246213005F1D56 /* AdicionarPecas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650BDC012C246213005F1D56 /* AdicionarPecas.swift */; };
 		650BDC052C246292005F1D56 /* CardAddPeca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650BDC042C246292005F1D56 /* CardAddPeca.swift */; };
 		650BDC072C246A9D005F1D56 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650BDC062C246A9D005F1D56 /* CardInfo.swift */; };
 		650BDC0A2C247230005F1D56 /* BotaoContinuar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650BDC092C247230005F1D56 /* BotaoContinuar.swift */; };
 		650BDC0C2C24CF34005F1D56 /* EditarPeca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650BDC0B2C24CF34005F1D56 /* EditarPeca.swift */; };
 		651F979D2C22FF1C00B830E5 /* Estilos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651F979C2C22FF1C00B830E5 /* Estilos.swift */; };
+		6521B11F2C2B02A600E2E3FE /* AdicionarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521B11E2C2B02A600E2E3FE /* AdicionarView.swift */; };
+		6521B1212C2B08E900E2E3FE /* FinalizarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521B1202C2B08E900E2E3FE /* FinalizarView.swift */; };
 		65312D1D2C21D51800E2684E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D1C2C21D51800E2684E /* TabBar.swift */; };
 		65312D1F2C21D56400E2684E /* ApegoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D1E2C21D56400E2684E /* ApegoView.swift */; };
 		65312D212C21D57B00E2684E /* CombinarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65312D202C21D57B00E2684E /* CombinarView.swift */; };
@@ -34,6 +35,8 @@
 		656CBC002C25A7DD007C7AF7 /* CardRoupa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBBFF2C25A7DD007C7AF7 /* CardRoupa.swift */; };
 		656CBC022C25B3F7007C7AF7 /* MyTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBC012C25B3F7007C7AF7 /* MyTab.swift */; };
 		656CBC042C25B596007C7AF7 /* EdicaoGeralPecas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */; };
+		658835932C29B00E0095E0C2 /* CamPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658835922C29B00E0095E0C2 /* CamPreview.swift */; };
+		658835952C29B03E0095E0C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658835942C29B03E0095E0C2 /* ViewController.swift */; };
 		65D0D10A2C28732A00BD74AC /* CombinacoesNaPeca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */; };
 		65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */; };
 		65DF21062C27146B0066DDE5 /* OrganizarViewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DF21052C27146B0066DDE5 /* OrganizarViewsModel.swift */; };
@@ -54,7 +57,7 @@
 		4CE212882C28B22E0074BE42 /* ImageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListView.swift; sourceTree = "<group>"; };
 		4CE2128A2C28B5890074BE42 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4CE738652C27AF960092E692 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		4CE738672C27B0790092E692 /* ImageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEntity.swift; sourceTree = "<group>"; };
+		4CE738672C27B0790092E692 /* RoupaModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoupaModelo.swift; sourceTree = "<group>"; };
 		6505DB8E2C20A0F40048CA79 /* Apego.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Apego.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6505DB912C20A0F40048CA79 /* ApegoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApegoApp.swift; sourceTree = "<group>"; };
 		6505DB932C20A0F40048CA79 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -63,12 +66,13 @@
 		6505DB9A2C20A0F50048CA79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6505DBA62C20A2BB0048CA79 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		6505DBA92C20A2CD0048CA79 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		650BDC012C246213005F1D56 /* AdicionarPecas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPecas.swift; sourceTree = "<group>"; };
 		650BDC042C246292005F1D56 /* CardAddPeca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddPeca.swift; sourceTree = "<group>"; };
 		650BDC062C246A9D005F1D56 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		650BDC092C247230005F1D56 /* BotaoContinuar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotaoContinuar.swift; sourceTree = "<group>"; };
 		650BDC0B2C24CF34005F1D56 /* EditarPeca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPeca.swift; sourceTree = "<group>"; };
 		651F979C2C22FF1C00B830E5 /* Estilos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estilos.swift; sourceTree = "<group>"; };
+		6521B11E2C2B02A600E2E3FE /* AdicionarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarView.swift; sourceTree = "<group>"; };
+		6521B1202C2B08E900E2E3FE /* FinalizarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalizarView.swift; sourceTree = "<group>"; };
 		65312D1C2C21D51800E2684E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		65312D1E2C21D56400E2684E /* ApegoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApegoView.swift; sourceTree = "<group>"; };
 		65312D202C21D57B00E2684E /* CombinarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinarView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		656CBBFF2C25A7DD007C7AF7 /* CardRoupa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRoupa.swift; sourceTree = "<group>"; };
 		656CBC012C25B3F7007C7AF7 /* MyTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTab.swift; sourceTree = "<group>"; };
 		656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdicaoGeralPecas.swift; sourceTree = "<group>"; };
+		658835922C29B00E0095E0C2 /* CamPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamPreview.swift; sourceTree = "<group>"; };
+		658835942C29B03E0095E0C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinacoesNaPeca.swift; sourceTree = "<group>"; };
 		65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImagesView.swift; sourceTree = "<group>"; };
 		65DF21052C27146B0066DDE5 /* OrganizarViewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewsModel.swift; sourceTree = "<group>"; };
@@ -201,7 +207,7 @@
 			children = (
 				6505DBA92C20A2CD0048CA79 /* Models.swift */,
 				4CE738652C27AF960092E692 /* PersistenceController.swift */,
-				4CE738672C27B0790092E692 /* ImageEntity.swift */,
+				4CE738672C27B0790092E692 /* RoupaModelo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,13 +215,14 @@
 		650BDC002C2461FA005F1D56 /* ViewsOrganizar */ = {
 			isa = PBXGroup;
 			children = (
-				65DF21042C27144D0066DDE5 /* Model */,
 				650BDC032C246274005F1D56 /* Componentes */,
-				650BDC012C246213005F1D56 /* AdicionarPecas.swift */,
+				65DF21042C27144D0066DDE5 /* Model */,
+				6521B11E2C2B02A600E2E3FE /* AdicionarView.swift */,
 				8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */,
 				650BDC0B2C24CF34005F1D56 /* EditarPeca.swift */,
 				656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */,
 				65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */,
+				6521B1202C2B08E900E2E3FE /* FinalizarView.swift */,
 			);
 			path = ViewsOrganizar;
 			sourceTree = "<group>";
@@ -229,6 +236,8 @@
 				656CBBFF2C25A7DD007C7AF7 /* CardRoupa.swift */,
 				656CBC012C25B3F7007C7AF7 /* MyTab.swift */,
 				65600FAA2C25C1C4004557B6 /* MyDropDown.swift */,
+				658835922C29B00E0095E0C2 /* CamPreview.swift */,
+				658835942C29B03E0095E0C2 /* ViewController.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -423,6 +432,8 @@
 				4CE212862C28AA210074BE42 /* SaveImageView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */,
+				658835932C29B00E0095E0C2 /* CamPreview.swift in Sources */,
+				6521B1212C2B08E900E2E3FE /* FinalizarView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				650BDC0C2C24CF34005F1D56 /* EditarPeca.swift in Sources */,
 				65312D1F2C21D56400E2684E /* ApegoView.swift in Sources */,
@@ -435,10 +446,10 @@
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
 				656CBC022C25B3F7007C7AF7 /* MyTab.swift in Sources */,
 				8CFBA3F92C234B000001E7D9 /* MyImageClassifierCP.mlmodel in Sources */,
-				4CE738682C27B0790092E692 /* ImageEntity.swift in Sources */,
+				6521B11F2C2B02A600E2E3FE /* AdicionarView.swift in Sources */,
+				4CE738682C27B0790092E692 /* RoupaModelo.swift in Sources */,
 				6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */,
 				6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */,
-				650BDC022C246213005F1D56 /* AdicionarPecas.swift in Sources */,
 				4CBD2F6A2C29C46900459CAA /* ContentView.swift in Sources */,
 				651F979D2C22FF1C00B830E5 /* Estilos.swift in Sources */,
 				65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */,
@@ -448,6 +459,7 @@
 				8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */,
 				650BDC072C246A9D005F1D56 /* CardInfo.swift in Sources */,
 				65DF21062C27146B0066DDE5 /* OrganizarViewsModel.swift in Sources */,
+				658835952C29B03E0095E0C2 /* ViewController.swift in Sources */,
 				656CBC042C25B596007C7AF7 /* EdicaoGeralPecas.swift in Sources */,
 				65600FAB2C25C1C4004557B6 /* MyDropDown.swift in Sources */,
 				8CFBA3E92C2204F10001E7D9 /* ViewModel.swift in Sources */,
@@ -591,6 +603,7 @@
 				DEVELOPMENT_TEAM = 55WBX8T52B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "O aplicativo usa a câmera para detectar objetos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -620,6 +633,7 @@
 				DEVELOPMENT_TEAM = 55WBX8T52B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "O aplicativo usa a câmera para detectar objetos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

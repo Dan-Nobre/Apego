@@ -13,7 +13,7 @@ struct ApegoApp: App {
     
     var body: some Scene{
         WindowGroup {
-            ContentView()
+            TabBar()
         }
     }
 //    var sharedModelContainer: ModelContainer = {

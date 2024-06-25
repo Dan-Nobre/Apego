@@ -13,14 +13,6 @@ struct AdicionarPecas: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Botão que mostra a sheet
-                //                Text("oi")
-                //                    .font(.system(size: 20, weight: .semibold))
-                //                    .foregroundColor(Color.blue)
-                //                    .onTapGesture {
-                //                        showSheet.toggle()
-                //                    }
-                
             }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
