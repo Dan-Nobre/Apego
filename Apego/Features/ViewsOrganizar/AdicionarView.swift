@@ -52,12 +52,19 @@ struct BotaoGaleria: View {
     @State private var selectedItens = [PhotosPickerItem]()
     @State var showingPhotosPicker: Bool = false
     @Binding var selectedImages: [UIImage]
+    @Binding var selectedCam: [UIImage]
     @Binding var showGaleriaSelecionada: Bool
+    @Binding var showCamSelecionada: Bool
     
     var body: some View {
         NavigationStack {
             VStack {
-                BotaoFoto()
+                
+                Button("Tirar foto") {
+                    showCamSelecionada = true
+                }
+                
+                BotaoFoto(showCam: $showBotaoCam, selectedCam: $selectedCam)
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
                     .padding(.bottom, 15)
                 Button("Selecionar da Galeria") {
