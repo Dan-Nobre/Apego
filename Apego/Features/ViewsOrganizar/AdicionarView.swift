@@ -17,19 +17,22 @@ struct Adicionar: View {
     @State var selectedImages: [UIImage] = []
     @State var showBotaoGaleria: Bool = false
     @State var showGaleriaSelecionada: Bool = false
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView {
                 AdicionarPecasSheet()
                 Button("Continue") {
                     showBotaoGaleria = true
                 }
                 .buttonStyle(MyButtonStyle(color: Color.accentColor))
                 .padding(.top, 20)
+                .padding(.bottom, 20)
                 .bold()
                 Spacer()
             }
+            .scrollIndicators(.hidden)
             .navigationDestination(isPresented: $showGaleriaSelecionada) {
                 Finalizar(roupas: $selectedImages)
             }
@@ -65,7 +68,9 @@ struct BotaoGaleria: View {
                 }
                 .buttonStyle(MyButtonStyle(color: Color.accentColor))
                 .padding(.bottom, 15)
-                BotaoCancelar()
+                Button("Cancelar") {
+                            dismiss()
+                        }
                     .buttonStyle(MySecButtonStyle(color: Color.cinzinha))
                     
             }

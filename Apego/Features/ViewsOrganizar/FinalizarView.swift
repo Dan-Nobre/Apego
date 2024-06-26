@@ -6,22 +6,29 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Finalizar: View {
     @Binding var roupas: [UIImage]
-    
+    @Environment(\.modelContext) private var modelContext
+    @State private var selectedImage: UIImage?
+
     var body: some View {
         NavigationStack{
             
             VStack{
-                HStack{
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
                     ForEach(roupas, id: \.self) { roupa in
                         CardRoupa(roupa: roupa)
                     }
-//                    CardRoupa(roupas:)
                 }
                 .padding()
-                BotaoSalvar()
+                Button(action: save) { // Passando a função save() como ação do botão
+                            VStack {
+                                Text("Salvar")
+                            }
+                        }
+                        .padding()
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
                 Spacer()
             }
@@ -29,15 +36,15 @@ struct Finalizar: View {
         .navigationTitle("Adicione peças")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
     func save() {
-        let imageDatas = roupas.map { $0.jpegData(compressionQuality: 1.0) }
+        for roupa in roupas {
+            let foto = roupa.jpegData(compressionQuality: 1.0)!
+            let model = RoupaModelo(categoria: "", foto: foto)
+            modelContext.insert(model)
+            
+        }
         // codigo que salva no swift data
     }
+
 }
 
-#Preview {
-    Finalizar(roupas: .constant([
-        .roupa1
-    ]))
-}

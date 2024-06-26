@@ -7,19 +7,21 @@
 
 import SwiftUI
 import PhotosUI
+import SwiftData
 
 struct TeladeInicioView: View {
     @State private var title = "Organizar"
     @State private var showSheet = false
+    @Query private var roupas: [RoupaModelo]
     
-    @State private var pecas: [String] = []
+//    @State private var pecas: [String] = []
     
     var body: some View {
         NavigationStack {
             VStack {
                 Text(" ").font(.system(size: .leastNormalMagnitude)) // gambiarra pra fixar large title :P triste
                 ScrollView {
-                    if pecas.isEmpty {
+                    if roupas.isEmpty {
                         VStack {
                             Image("avatar")
                             Text("Adicione suas peças")
@@ -33,9 +35,12 @@ struct TeladeInicioView: View {
                         }
                         .containerRelativeFrame(.vertical)
                     } else {
-                        ForEach(pecas, id: \.self) {
-                            Text($0)
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2)) {
+                            ForEach(roupas, id: \.self) { roupa in
+                                CardRoupa2(roupa: roupa)
+                            }
                         }
+                        .padding()
                     }
                 }
                 .scrollIndicators(.hidden)
@@ -67,4 +72,5 @@ struct TeladeInicioView: View {
 }
 #Preview {
     TeladeInicioView()
+        .modelContainer(for: RoupaModelo.self, inMemory: true)
 }

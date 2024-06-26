@@ -61,9 +61,10 @@ struct BotaoFinalizar: View {
 
 struct BotaoSalvar: View {
 //    @State private var isPresented = true
+    
     var body: some View {
         Button(action:{
-//            isPresented.toggle()
+            
         }, label: {
             VStack{
                 VStack{
@@ -73,7 +74,6 @@ struct BotaoSalvar: View {
         })
     }
 }
-
 //#Preview {
 //    BotaoContinuar()
 //}
