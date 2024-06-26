@@ -16,7 +16,9 @@ struct ApegoApp: App {
         
         WindowGroup {
             TabBar()
+                .preferredColorScheme(.light)
         }
+        .modelContainer(for: RoupaModelo.self)
     }
 //    var sharedModelContainer: ModelContainer = {
 ////        let schema = Schema([
