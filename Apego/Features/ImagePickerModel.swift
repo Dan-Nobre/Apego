@@ -1,25 +1,32 @@
+//
+//  ImagePicker.swift
+//  Apego
+//
+//  Created by Maria Eduarda on 23/06/24.
+//
+//
 import SwiftUI
 import UIKit
 
-struct CustomImagePicker: UIViewControllerRepresentable {
-    @Binding var image: UIImage?
-    @Environment(\.presentationMode) var presentationMode
+struct ImagePickerModel: UIViewControllerRepresentable {
+    @Binding var imageData: Data
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        var parent: CustomImagePicker
+        let parent: ImagePickerModel
         
-        init(parent: CustomImagePicker) {
+        init(parent: ImagePickerModel) {
             self.parent = parent
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let uiImage = info[.originalImage] as? UIImage {
-                parent.image = uiImage
-                print("Imagem selecionada: \(uiImage.size)")
-            } else {
-                print("Falha ao selecionar imagem")
+            if let uiImage = info[.originalImage] as? UIImage, let data = uiImage.jpegData(compressionQuality: 1.0) {
+                parent.imageData = data
             }
-            parent.presentationMode.wrappedValue.dismiss()
+            picker.dismiss(animated: true)
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            picker.dismiss(animated: true)
         }
     }
     
@@ -35,7 +42,8 @@ struct CustomImagePicker: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
-//TAISSA 
+
+//TAISSA
 struct CameraImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Environment(\.presentationMode) var presentationMode

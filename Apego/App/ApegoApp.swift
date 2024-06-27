@@ -27,6 +27,9 @@ struct ApegoApp: App {
         }
         .modelContainer(for: RoupaModelo.self)
     }
+    
+    
+    
 //    var sharedModelContainer: ModelContainer = {
 ////        let schema = Schema([
 ////            Item.self,

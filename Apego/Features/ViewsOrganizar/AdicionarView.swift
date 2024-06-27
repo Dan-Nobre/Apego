@@ -38,10 +38,10 @@ struct Adicionar: View {
         .navigationTitle("Adicionar peças")
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showBotaoGaleria) {
-            BotaoGaleria(
-                selectedImages: $selectedImages,
-                showGaleriaSelecionada: $showGaleriaSelecionada
-            )
+//            BotaoGaleria(
+//                selectedImages: $selectedImages,
+//                showGaleriaSelecionada: $showGaleriaSelecionada
+//            )
         }
     }
 }
@@ -77,7 +77,7 @@ struct BotaoGaleria: View {
         .photosPicker(isPresented: $showingPhotosPicker, selection: $selectedItens, matching: .images)
         .toolbar {
             Button("Select Imagens") {
-                showingPhotosPicker = true
+//                showingPhotosPicker = true
             }
         }
         .onChange(of: selectedItens) { _ in

@@ -10,6 +10,7 @@ import PhotosUI
 import SwiftData
 
 struct TeladeInicioView: View {
+    @Environment (\.modelContext) private var modelContext
     @State private var title = "Organizar"
     @State private var showSheet = false
     @Query private var roupas: [RoupaModelo]
@@ -37,7 +38,9 @@ struct TeladeInicioView: View {
                     } else {
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2)) {
                             ForEach(roupas, id: \.self) { roupa in
-                                CardRoupa2(roupa: roupa)
+                                CardRoupa2(roupa: roupa, deleteAction: {
+                                    deleteItem(roupa)
+                                })
                             }
                         }
                         .padding()
@@ -68,6 +71,23 @@ struct TeladeInicioView: View {
             }
         }
     }
+    
+    private func deleteItem(_ roupa: RoupaModelo) {
+        withAnimation{
+            modelContext.delete(roupa)
+            saveContext()
+        }
+    }
+    private func saveContext() {
+        do{
+            try modelContext.save()
+        }catch {
+            //tratamento de erro
+            let nsError = error as NSError
+            fatalError("Erro ao salvar contexto: \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     
 }
 #Preview {

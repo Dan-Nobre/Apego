@@ -38,10 +38,17 @@ struct Finalizar: View {
     }
     func save() {
         for roupa in roupas {
-            let foto = roupa.jpegData(compressionQuality: 1.0)!
-            let model = RoupaModelo(categoria: "", foto: foto)
-            modelContext.insert(model)
+            let fotoData = roupa.jpegData(compressionQuality: 1.0)!
+            let novaRoupa = RoupaModelo(nome: "", categoria: "", foto: fotoData, cor:"")
+            modelContext.insert(novaRoupa)
             
+        }
+        
+        do{
+            try modelContext.save()
+        }catch{
+            let nsError = error as NSError
+            fatalError("Erro ao salvar o contexto: file: \(nsError),  \(nsError.userInfo)")
         }
         // codigo que salva no swift data
     }

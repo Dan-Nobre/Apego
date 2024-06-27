@@ -62,6 +62,7 @@ struct CardRoupaMenor: View {
 
 struct CardRoupa2: View {
     var roupa: RoupaModelo
+    var deleteAction: () -> Void
 
     var body: some View {
         VStack {
@@ -93,6 +94,12 @@ struct CardRoupa2: View {
                     .frame(width: 100, height: 100)
                     .foregroundColor(.gray)
                     .cornerRadius(8)
+            }
+            Button(action: {
+                deleteAction()
+            }) {
+                Image(systemName: "deletar")
+                    .foregroundColor(.red)
             }
         }
 //        .padding()
