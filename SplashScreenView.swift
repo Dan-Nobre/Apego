@@ -8,57 +8,52 @@
 import SwiftUI
 import simple_keyframe_animations
 
-
 struct SplashScreenView: View {
-    @State private var isAtivado = false
-    @State private var size = 0.8
+    @Binding var isActivated: Bool
+    @State private var scale: CGFloat = 0.8
     @State private var opacity = 0.5
 
     var body: some View {
-        if isAtivado {
-            TabBar()
-        } else {
-            GeometryReader { geometry in
-                VStack {
-                    Spacer()
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
 
-                    Image("fonte2")
-                        .frame(width: geometry.size.width, height: geometry.size.height / 2)
-                        .background(Color.clear)
-                        .offset(y: 150)
-//                        .scaleEffect(size)
-                        .
-                       
-                
+                Image("fonte2")
+                    .frame(width: geometry.size.width, height: geometry.size.height / 2)
+                    .offset(y: 150)
+                    .scaleEffect(scale)
+                    .opacity(opacity)
+                    .boingEffect(duration: .constant(10), startAnimation: .constant(true))
+//                    .blooming(duration: .constant(1), startAnimation: .constant(true))
 
-//                        .onAppear {
-//                            withAnimation(.easeInOut(duration: 3.0)) {
-//                                self.size = 0.9
-//                                self.opacity = 1.0
-//                            }
-//                            
-//                            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-//                                self.isAtivado = true
-//                            }
-//                        }
-                    
-                    Spacer()
-                        .frame(height: 80)
-                    
-                    Image("splash")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .offset(y:25)
+                Spacer().frame(height: 80)
+
+                Image("splash")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .offset(y: 30)
+            }
+            .background(Color.principal)
+            .edgesIgnoringSafeArea(.all)
+            .onAppear {
+                withAnimation {
+                    scale = 0.9
+                    opacity = 1.0
                 }
-                .background(Color.principal)
-                .edgesIgnoringSafeArea(.all)
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    isActivated = true
+                }
             }
         }
     }
 }
 
+struct SplashScreenView_Previews: PreviewProvider {
+    @State static var isActivated = false
 
-#Preview {
-    SplashScreenView()
+    static var previews: some View {
+        SplashScreenView(isActivated: $isActivated)
+    }
 }

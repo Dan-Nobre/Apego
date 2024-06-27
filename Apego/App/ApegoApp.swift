@@ -11,18 +11,16 @@ import TipKit
 
 @main
 struct ApegoApp: App {
-    @StateObject private var pipeline = EffectsPipeline()
-    
+    @State private var isActivated = false
+
     var body: some Scene {
         WindowGroup {
-            SplashScreenView() // Mostra a SplashScreen até que a transição para TabBar ocorra
-                .task {
-                    try? Tips.configure([
-                        .datastoreLocation(.applicationDefault)
-                    ])
-                }
-                .preferredColorScheme(.light)
+            if isActivated {
+                TabBar()
+                    .preferredColorScheme(.light)
+            } else {
+                SplashScreenView(isActivated: $isActivated)
+            }
         }
-        .modelContainer(for: RoupaModelo.self)
     }
 }
