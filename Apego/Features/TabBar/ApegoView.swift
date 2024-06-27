@@ -10,7 +10,7 @@ import SwiftUI
 struct ApegoView: View {
     var body: some View {
         NavigationView{
-            Text("Hello Word")
+            Text("Tudo quieto por enquanto 👀")
                 .navigationTitle("Apego")
                 .navigationBarTitleDisplayMode(.automatic)
         }

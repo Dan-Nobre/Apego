@@ -17,11 +17,15 @@ struct ApegoApp: App {
         
         WindowGroup {
             TabBar()
+
                 .task {
                     try? Tips.configure([
                         .datastoreLocation(.applicationDefault)])
                 }
+                .preferredColorScheme(.light)
+
         }
+        .modelContainer(for: RoupaModelo.self)
     }
 //    var sharedModelContainer: ModelContainer = {
 ////        let schema = Schema([

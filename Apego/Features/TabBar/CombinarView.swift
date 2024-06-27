@@ -10,7 +10,7 @@ import SwiftUI
 struct CombinarView: View {
     var body: some View {
         NavigationView{
-            Text("Hello Word")
+            Text("Tudo quieto por enquanto 👀")
                 .navigationTitle("Combinar Roupas")
                 .navigationBarTitleDisplayMode(.automatic)
         }

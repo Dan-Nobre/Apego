@@ -700,7 +700,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
-				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
+				DEVELOPMENT_TEAM = 55WBX8T52B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "O aplicativo usa a câmera para detectar objetos";
@@ -730,7 +730,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
-				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
+				DEVELOPMENT_TEAM = 55WBX8T52B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "O aplicativo usa a câmera para detectar objetos";
