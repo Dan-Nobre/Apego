@@ -41,6 +41,8 @@
 		8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */; };
 		8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CE2C25B5A1005A1260 /* Inicio.swift */; };
 		8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */; };
+		8C20CD5C2C2DE5C300895246 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C20CD5B2C2DE5C300895246 /* SplashScreenView.swift */; };
+		8C20CD5F2C2DEFE600895246 /* simple-keyframe-animations in Frameworks */ = {isa = PBXBuildFile; productRef = 8C20CD5E2C2DEFE600895246 /* simple-keyframe-animations */; };
 		8C31F9282C23B4130007FD86 /* Cores.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C31F9272C23B4130007FD86 /* Cores.mlmodel */; };
 		8C72EB592C2AE35600307987 /* EffectsPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB582C2AE35600307987 /* EffectsPipeline.swift */; };
 		8C72EB5B2C2AE4DB00307987 /* RemoverFundo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB5A2C2AE4DB00307987 /* RemoverFundo.swift */; };
@@ -94,6 +96,7 @@
 		8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPecasSheet.swift; sourceTree = "<group>"; };
 		8C1298CE2C25B5A1005A1260 /* Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inicio.swift; sourceTree = "<group>"; };
 		8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicioView.swift; sourceTree = "<group>"; };
+		8C20CD5B2C2DE5C300895246 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8C31F9272C23B4130007FD86 /* Cores.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Cores.mlmodel; sourceTree = "<group>"; };
 		8C72EB582C2AE35600307987 /* EffectsPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsPipeline.swift; sourceTree = "<group>"; };
 		8C72EB5A2C2AE4DB00307987 /* RemoverFundo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoverFundo.swift; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C20CD5F2C2DEFE600895246 /* simple-keyframe-animations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8C1298CE2C25B5A1005A1260 /* Inicio.swift */,
+				8C20CD5B2C2DE5C300895246 /* SplashScreenView.swift */,
 				8CFBA3F82C234B000001E7D9 /* MyImageClassifierCP.mlmodel */,
 				8C31F9272C23B4130007FD86 /* Cores.mlmodel */,
 				8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */,
@@ -443,6 +448,9 @@
 			dependencies = (
 			);
 			name = Apego;
+			packageProductDependencies = (
+				8C20CD5E2C2DEFE600895246 /* simple-keyframe-animations */,
+			);
 			productName = Apego;
 			productReference = 6505DB8E2C20A0F40048CA79 /* Apego.app */;
 			productType = "com.apple.product-type.application";
@@ -471,6 +479,9 @@
 				Base,
 			);
 			mainGroup = 6505DB852C20A0F40048CA79;
+			packageReferences = (
+				8C20CD5D2C2DEFE600895246 /* XCRemoteSwiftPackageReference "simple-keyframe-animations" */,
+			);
 			productRefGroup = 6505DB8F2C20A0F40048CA79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -525,6 +536,7 @@
 				4CE212862C28AA210074BE42 /* SaveImageView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */,
+				8C20CD5C2C2DE5C300895246 /* SplashScreenView.swift in Sources */,
 				6521B1212C2B08E900E2E3FE /* FinalizarView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				650BDC0C2C24CF34005F1D56 /* EditarPeca.swift in Sources */,
@@ -774,6 +786,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C20CD5D2C2DEFE600895246 /* XCRemoteSwiftPackageReference "simple-keyframe-animations" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/juliasaboya/simple-keyframe-animations.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C20CD5E2C2DEFE600895246 /* simple-keyframe-animations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C20CD5D2C2DEFE600895246 /* XCRemoteSwiftPackageReference "simple-keyframe-animations" */;
+			productName = "simple-keyframe-animations";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6505DB862C20A0F40048CA79 /* Project object */;
 }

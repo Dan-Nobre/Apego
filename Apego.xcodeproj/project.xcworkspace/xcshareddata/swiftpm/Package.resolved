@@ -1,0 +1,15 @@
+{
+  "originHash" : "ae25ae92594c1b2c8db8403bf671a6454212cbe4994afca483f68ae3edd48fe4",
+  "pins" : [
+    {
+      "identity" : "simple-keyframe-animations",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/juliasaboya/simple-keyframe-animations.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "43e587ea49558f80f8888ea07c1fe28dedfcad52"
+      }
+    }
+  ],
+  "version" : 3
+}
