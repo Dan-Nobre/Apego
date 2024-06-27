@@ -13,13 +13,13 @@ import SwiftUI
 //cor
 
 @Model
-final class RoupaModelo {
+final class RoupaModelo: ObservableObject {
     
     var id: UUID
     var categoria: String
     let foto: Data?
     
-    init(categoria: String, foto: Data) {
+    init(categoria: String, foto: Data? = nil) {
         self.id = UUID()
         self.categoria = categoria
         self.foto = foto

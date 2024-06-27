@@ -62,6 +62,7 @@ struct CardRoupaMenor: View {
 
 struct CardRoupa2: View {
     var roupa: RoupaModelo
+    @State var isSelected: Bool
 
     var body: some View {
         VStack {
@@ -69,13 +70,13 @@ struct CardRoupa2: View {
                 Image(uiImage: uiImage)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 170, height: 170)
                     .cornerRadius(8)
             } else {
                 Image(systemName: "photo")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 100, height: 100)
+                    .frame(width: 170, height: 170)
                     .foregroundColor(.gray)
                     .cornerRadius(8)
             }
@@ -83,7 +84,6 @@ struct CardRoupa2: View {
         .padding()
         .background(Color.white)
         .cornerRadius(8)
-        .shadow(radius: 4)
     }
 }
 
