@@ -27,8 +27,8 @@ struct CardAddPeca: View {
         .buttonStyle(PlainButtonStyle())
         .sheet(isPresented: $isPresented, content: {
             VStack {
-                BotaoFoto(showCam: $isPresented, selectedCam: $)
-                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+//                BotaoFoto(showCam: $isPresented, selectedCam: $)
+//                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
                 BotaoRolo()
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
               
