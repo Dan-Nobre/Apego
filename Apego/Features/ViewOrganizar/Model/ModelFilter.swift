@@ -14,8 +14,10 @@ class ClothingViewModel: ObservableObject {
     
     init() {
         // Inicialmente, todas as peças são filtradas
-        let exemploPeca = Peca(name: "Camisa Azul", image: UIImage(systemName: "photo")!, color: "Azul", category: "Camisas")
-               pecas.append(exemploPeca)
+        let exemploPeca1 = Peca(name: "Camisa Azul", image: UIImage(systemName: "photo")!, color: "Azul", category: "Camisas")
+               pecas.append(exemploPeca1)
+        let exemploPeca2 = Peca(name: "Camisa Vermelha", image: UIImage(systemName: "photo")!, color: "Azul", category: "Camisas")
+               pecas.append(exemploPeca2)
         filterClothing(by: selectedCategory)
     }
     

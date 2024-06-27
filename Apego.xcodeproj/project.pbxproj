@@ -46,6 +46,8 @@
 		8C72EB5B2C2AE4DB00307987 /* RemoverFundo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB5A2C2AE4DB00307987 /* RemoverFundo.swift */; };
 		8C72EB5F2C2B047C00307987 /* VielModelCam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB5E2C2B047C00307987 /* VielModelCam.swift */; };
 		8C72EB612C2B2DE400307987 /* CamPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB602C2B2DE400307987 /* CamPreview.swift */; };
+		8C72EB642C2B56AD00307987 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB632C2B56AD00307987 /* Tip.swift */; };
+		8C72EB662C2B56CA00307987 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB652C2B56CA00307987 /* TipView.swift */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
 		8CE8D1082C2A31CF0011BA83 /* OrganizarViewTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */; };
 		8CE8D10A2C2A363C0011BA83 /* ModelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */; };
@@ -97,6 +99,8 @@
 		8C72EB5A2C2AE4DB00307987 /* RemoverFundo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoverFundo.swift; sourceTree = "<group>"; };
 		8C72EB5E2C2B047C00307987 /* VielModelCam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VielModelCam.swift; sourceTree = "<group>"; };
 		8C72EB602C2B2DE400307987 /* CamPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamPreview.swift; sourceTree = "<group>"; };
+		8C72EB632C2B56AD00307987 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
+		8C72EB652C2B56CA00307987 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewTela.swift; sourceTree = "<group>"; };
 		8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFilter.swift; sourceTree = "<group>"; };
@@ -286,6 +290,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		8C72EB622C2B569300307987 /* TipDicas */ = {
+			isa = PBXGroup;
+			children = (
+				8C72EB632C2B56AD00307987 /* Tip.swift */,
+				8C72EB652C2B56CA00307987 /* TipView.swift */,
+			);
+			path = TipDicas;
+			sourceTree = "<group>";
+		};
 		8C79F2832C20AE2200E915BB /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */,
+				8C72EB622C2B569300307987 /* TipDicas */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,7 +551,9 @@
 				651F979D2C22FF1C00B830E5 /* Estilos.swift in Sources */,
 				65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */,
 				8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */,
+				8C72EB642C2B56AD00307987 /* Tip.swift in Sources */,
 				65D0D10A2C28732A00BD74AC /* CombinacoesNaPeca.swift in Sources */,
+				8C72EB662C2B56CA00307987 /* TipView.swift in Sources */,
 				656CBC002C25A7DD007C7AF7 /* CardRoupa.swift in Sources */,
 				8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */,
 				8C72EB5B2C2AE4DB00307987 /* RemoverFundo.swift in Sources */,
