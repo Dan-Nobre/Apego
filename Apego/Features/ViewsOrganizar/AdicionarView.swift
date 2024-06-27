@@ -15,6 +15,7 @@ import _PhotosUI_SwiftUI
 struct Adicionar: View {
     
     @State var selectedImages: [UIImage] = []
+    @State var selectedCam: [UIImage] = []
     @State var showBotaoGaleria: Bool = false
     @State var showGaleriaSelecionada: Bool = false
     @Environment(\.dismiss) private var dismiss
@@ -42,7 +43,7 @@ struct Adicionar: View {
         .sheet(isPresented: $showBotaoGaleria) {
             BotaoGaleria(
                 selectedImages: $selectedImages,
-                showGaleriaSelecionada: $showGaleriaSelecionada
+                selectedCam: $selectedCam, showGaleriaSelecionada: $showGaleriaSelecionada
             )
         }
     }
@@ -57,19 +58,19 @@ struct BotaoGaleria: View {
     @Binding var selectedImages: [UIImage]
     @Binding var selectedCam: [UIImage]
     @Binding var showGaleriaSelecionada: Bool
-    @Binding var showCamSelecionada: Bool
+//    @Binding var showCamSelecionada: Bool
     
     var body: some View {
         NavigationStack {
             VStack {
                 
-                Button("Tirar foto") {
-                    showCamSelecionada = true
-                }
+//                Button("Tirar foto") {
+//                    showCamSelecionada = true
+//                }
                 
-                BotaoFoto(showCam: $showBotaoCam, selectedCam: $selectedCam)
-                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
-                    .padding(.bottom, 15)
+//                BotaoFoto(showCam: $showBotaoCam, selectedCam: $selectedCam)
+//                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+//                    .padding(.bottom, 15)
                 Button("Selecionar da Galeria") {
                     showingPhotosPicker = true
                 }
