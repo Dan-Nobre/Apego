@@ -11,6 +11,9 @@ import PhotosUI
 struct BotaoFoto: View {
     @State private var inputImage: UIImage?
     @State private var isShowingPicker = false
+    @Environment(\.dismiss) var dismiss
+    @Binding var selectedImages: [UIImage]
+    @Binding var showGaleriaSelecionada: Bool
     
     var body: some View {
         VStack {
@@ -30,11 +33,16 @@ struct BotaoFoto: View {
                     .frame(width: 300, height: 300)
             }
         }
-        .onChange(of: inputImage) {
-            print("Nova imagem capturada")
-        }
+        .onChange(of: inputImage) { newImage in
+            if let newImage = newImage {
+                selectedImages.append(newImage)
+                dismiss()
+                showGaleriaSelecionada = true
+            }
         }
     }
+}
+
 
 struct BotaoRolo: View {
     @State private var avatarItem: PhotosPickerItem?

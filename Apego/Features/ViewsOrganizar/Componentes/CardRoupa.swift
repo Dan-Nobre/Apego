@@ -66,11 +66,26 @@ struct CardRoupa2: View {
     var body: some View {
         VStack {
             if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(8)
+//                Image(uiImage: uiImage)
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 170, height: 170)
+//                    .cornerRadius(8)
+                RoundedRectangle(cornerRadius: 11)
+                    .stroke(
+                        .gray.opacity(0.5),
+                        style: .init(
+                            lineWidth: 3,
+                            dash: [5,5]
+                        )
+                    )
+                    .overlay {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFill()
+                    }
+                    .aspectRatio(1, contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 11))
             } else {
                 Image(systemName: "photo")
                     .resizable()
@@ -80,10 +95,10 @@ struct CardRoupa2: View {
                     .cornerRadius(8)
             }
         }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(8)
-        .shadow(radius: 4)
+//        .padding()
+//        .background(Color.white)
+//        .cornerRadius(8)
+//        .shadow(radius: 4)
     }
 }
 

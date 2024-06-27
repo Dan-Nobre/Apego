@@ -25,9 +25,9 @@ struct BotaoContinuar: View {
         })
         .sheet(isPresented: $isPresented, content: {
             VStack {
-                BotaoFoto()
-                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
-                    .padding(.bottom, 15)
+//                BotaoFoto()
+//                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+//                    .padding(.bottom, 15)
                 BotaoVariasImagens(selectedImages: $selectedImages)
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
                     .padding(.bottom, 15)
