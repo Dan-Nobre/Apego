@@ -13,12 +13,10 @@ import _PhotosUI_SwiftUI
 }
 
 struct Adicionar: View {
-    
     @State var selectedImages: [UIImage] = []
     @State var showBotaoGaleria: Bool = false
     @State var showGaleriaSelecionada: Bool = false
-    @Environment(\.dismiss) private var dismiss
-    
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -49,40 +47,31 @@ struct Adicionar: View {
 }
 
 struct BotaoGaleria: View {
-    
     @Environment(\.dismiss) var dismiss
-    
     @State private var selectedItens = [PhotosPickerItem]()
-    @State var showingPhotosPicker: Bool = false
+    @State private var showingPhotosPicker: Bool = false
     @Binding var selectedImages: [UIImage]
-    @Binding var selectedCam: [UIImage]
     @Binding var showGaleriaSelecionada: Bool
-    @Binding var showCamSelecionada: Bool
-    
+
     var body: some View {
         NavigationStack {
             VStack {
-                
-                Button("Tirar foto") {
-                    showCamSelecionada = true
-                }
-                
-                BotaoFoto(showCam: $showBotaoCam, selectedCam: $selectedCam)
+                BotaoFoto(selectedImages: $selectedImages, showGaleriaSelecionada: $showGaleriaSelecionada)
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
                     .padding(.bottom, 15)
+
                 Button("Selecionar da Galeria") {
                     showingPhotosPicker = true
                 }
                 .buttonStyle(MyButtonStyle(color: Color.accentColor))
                 .padding(.bottom, 15)
+
                 Button("Cancelar") {
-                            dismiss()
-                        }
-                    .buttonStyle(MySecButtonStyle(color: Color.cinzinha))
-                    
+                    dismiss()
+                }
+                .buttonStyle(MySecButtonStyle(color: Color.cinzinha))
             }
             .bold()
-            
         }
         .presentationDetents([.fraction(0.35)])
         .photosPicker(isPresented: $showingPhotosPicker, selection: $selectedItens, matching: .images)
@@ -91,18 +80,14 @@ struct BotaoGaleria: View {
                 showingPhotosPicker = true
             }
         }
-        .onChange(of: selectedItens){
+        .onChange(of: selectedItens) { _ in
             Task {
-                selectedImages.removeAll()
-                
                 for item in selectedItens {
                     if let imageData = try? await item.loadTransferable(type: Data.self), let image = UIImage(data: imageData) {
                         selectedImages.append(image)
                     }
                 }
-                
                 dismiss()
-                
                 showGaleriaSelecionada = true
             }
         }
