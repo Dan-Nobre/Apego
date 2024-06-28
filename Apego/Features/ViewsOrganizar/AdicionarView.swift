@@ -14,6 +14,7 @@ import _PhotosUI_SwiftUI
 
 struct Adicionar: View {
     @State var selectedImages: [UIImage] = []
+    @State var selectedCam: [UIImage] = []
     @State var showBotaoGaleria: Bool = false
     @State var showGaleriaSelecionada: Bool = false
 
