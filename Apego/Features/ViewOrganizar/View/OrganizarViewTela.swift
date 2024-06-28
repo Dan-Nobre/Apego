@@ -27,6 +27,7 @@ struct OrganizarViewTela: View {
                             }) {
                                 Text(category)
                                     .padding(8)
+                                    .padding(.horizontal, 8)
                                     .foregroundColor(viewModel.selectedCategory == category ?
                                                      Color.white: Color.principal)
                                     .background(viewModel.selectedCategory == category ? Color.principal : Color.bege)

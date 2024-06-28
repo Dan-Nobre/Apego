@@ -49,16 +49,54 @@ struct CardRoupa: View {
 }
 
 struct CardRoupaMenor: View {
+    var roupa: RoupaModelo
+    @State var isSelected: Bool = false
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 16){
-            Image("Roupa1")
-                .resizable()
-                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                .frame(width: 112, height: 112)
+        VStack {
+                    if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
+                        ZStack {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 110, height: 110)
+                                .cornerRadius(8)
+                            
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.botao.opacity(isSelected ? 0.2 : 0))
+                                .frame(width: 110, height: 110)
+                        }
+                        .cornerRadius(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(isSelected ? Color.botao : Color.clear, lineWidth: 3)
+                        )
+                        .onTapGesture {
+                            isSelected.toggle()
+                        }
+                    } else {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 110, height: 110)
+                            .foregroundColor(.gray)
+                            .cornerRadius(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(isSelected ? Color.botao : Color.clear, lineWidth: 3)
+                            )
+                            .background(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.botao.opacity(isSelected ? 0.5 : 0))
+                            )
+                            .cornerRadius(8)
+                            .onTapGesture {
+                                isSelected.toggle()
+                            }
+                    }
+                }
+            }
         }
-    }
-}
-
 
 struct CardRoupa2: View {
     var roupa: RoupaModelo
@@ -81,9 +119,6 @@ struct CardRoupa2: View {
                     .cornerRadius(8)
             }
         }
-        .padding()
-        .background(Color.white)
-        .cornerRadius(8)
     }
 }
 

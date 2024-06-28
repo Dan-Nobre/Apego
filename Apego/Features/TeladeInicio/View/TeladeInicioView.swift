@@ -3,9 +3,17 @@ import PhotosUI
 import SwiftData
 
 let categorias = ["Sem categoria", "Camisa", "Calça", "Vestido", "Casaco", "Short", "Saia", "Blusa", "Camiseta"]
-let cores = ["Vermelho", "Verde", "Azul", "Amarelo", "Preto", "Branco", "Roxo", "Laranja"]
+let cores = ["Sem cor", "Vermelho", "Verde", "Azul", "Amarelo", "Preto", "Branco", "Roxo", "Laranja"]
+
 
 struct TeladeInicioView: View {
+    
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.terroso
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.terroso], for: .normal)
+    }
+    
     @Environment(\.modelContext) private var modelContext
     
     @State private var title = "Organizar"
@@ -15,7 +23,7 @@ struct TeladeInicioView: View {
     
     @State var filteredPecas: [RoupaModelo] = []
     @State private var selectedCategory: String? = "Sem categoria"
-
+    
     
     private func filterClothing(by category: String?) {
         if let category = category, !category.isEmpty {
@@ -94,7 +102,7 @@ struct TeladeInicioView: View {
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 30, height: 30)
-                                .foregroundColor(.blue)
+                                .foregroundColor(Color.terroso)
                         }
                     }
                 }
@@ -125,6 +133,8 @@ struct RoupaDetailView: View {
     
     @State private var alerta = false
     
+    @State private var toggleState = false
+    
     func deletarPeca() {
         modelContext.delete(roupa)
         dismiss()
@@ -132,121 +142,174 @@ struct RoupaDetailView: View {
     
     
     var body: some View {
-
+        
+        VStack {
             VStack {
-                VStack {
-                    if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 200, height: 200)
-                            .cornerRadius(8)
-                    } else {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 200, height: 200)
-                            .foregroundColor(.gray)
-                            .cornerRadius(8)
-                    }
+                if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 200, height: 200)
+                        .cornerRadius(8)
+                } else {
+                    Image(systemName: "photo")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 200, height: 200)
+                        .foregroundColor(.gray)
+                        .cornerRadius(8)
                 }
-                .padding(30)
-                
-                VStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.blue.opacity(0.2))
-                            .frame(height: 30)
-                        
-                        Picker("View Selection", selection: $menuSelecionado) {
-                            Text("Geral").tag(0)
-                            Text("Combinações").tag(1)
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                    }
-                    
-                    if menuSelecionado == 0 {
-                        GeralView(roupa: roupa)
-                    } else {
-                        CombinacoesView(roupa: roupa)
-                    }
-                    
-                    Spacer()
-                }
-                .navigationTitle("Editar peça")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancelar") {
-                            dismiss()
-                        }
-                    }
-                }
-                
-                VStack {
-                    Text("Salvar")
-                }
-                .onTapGesture{
-                    alerta = true
-                } .alert(isPresented: $alerta) {
-                    Alert(
-                        title: Text("Excluir peça"),
-                        message: Text("Tem certeza que deseja excluir esta peça?"),
-                        primaryButton: .default(Text("Cancelar")),
-                        secondaryButton: .destructive(Text("Excluir"), action: deletarPeca)
-                    )
-                }
-                
-                .padding()
-                
             }
-            .padding(.horizontal, 20)
+            .padding(30)
+            
+            VStack {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.terroso.opacity(0.1))
+                        .frame(height: 30)
+                    
+                    Picker("View Selection", selection: $menuSelecionado) {
+                        Text("Geral").tag(0)
+                        Text("Combinações").tag(1)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                
+                if menuSelecionado == 0 {
+                    GeralView(roupa: roupa, isToggled: $toggleState)
+                } else {
+                    CombinacoesView(roupa: roupa)
+                }
+                
+                Spacer()
+            }
+            .navigationTitle("Editar peça")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancelar") {
+                        dismiss()
+                    }
+                }
+            }
+            
+            VStack {
+                Text("Excloi")
+            }
+            .onTapGesture{
+                alerta = true
+            } .alert(isPresented: $alerta) {
+                Alert(
+                    title: Text("Excluir peça"),
+                    message: Text("Tem certeza que deseja excluir esta peça?"),
+                    primaryButton: .default(Text("Cancelar")),
+                    secondaryButton: .destructive(Text("Excluir"), action: deletarPeca)
+                )
+            }
+            
+            
+        }
+        .padding(.horizontal, 20)
     }
 }
 
 
 struct GeralView: View {
     @Bindable var roupa: RoupaModelo
-    @State private var tempCategoriaSelecionada = ""
+    @State var tempCategoriaSelecionada: String
+    @State var tempCorSelecionada: String
     
     @State var corSelecionada = ""
     
+    @Binding var isToggled: Bool
+    
+    init(roupa: RoupaModelo, isToggled: Binding<Bool>) {
+        self.roupa = roupa
+        _tempCategoriaSelecionada = State(initialValue: roupa.categoria)
+        _tempCorSelecionada = State(initialValue: roupa.cor)
+        self._isToggled = isToggled
+    }
+    
     var body: some View {
         VStack {
-            
             VStack(alignment: .leading, spacing: 10) {
                 Text("Categoria")
                     .font(.headline)
                     .fontWeight(.medium)
                 
-                Picker("Categoria", selection: $tempCategoriaSelecionada) {
-                    ForEach(categorias, id: \.self) {
-                        Text($0)
+                Menu {
+                    Picker(selection: $tempCategoriaSelecionada, label: EmptyView()) {
+                        ForEach(categorias, id: \.self) {
+                            Text($0)
+                        }
                     }
+                    .pickerStyle(DefaultPickerStyle())
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(10)
+                    .onChange(of: tempCategoriaSelecionada) { novaCategoria in
+                        tempCategoriaSelecionada = novaCategoria
+                    }
+                    .onAppear {
+                        tempCategoriaSelecionada = roupa.categoria
+                    }
+                } label: {
+                    HStack {
+                        Text(tempCategoriaSelecionada)
+                            .padding(10)
+                        Spacer()
+                        Image(systemName: "chevron.up.chevron.down")
+                            .padding(10)
+                    }
+                    .background(Color.cinzinha.opacity(0.5))
+                    .cornerRadius(10)
+                    .foregroundColor(.black)
                 }
-                .pickerStyle(DefaultPickerStyle())
-                .frame(maxWidth: .infinity)
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(10)
-                .padding([.leading, .trailing])
-                
-                .onChange(of: tempCategoriaSelecionada) { novaCategoria in
-                    tempCategoriaSelecionada = novaCategoria
-                }
-                
-                .onAppear {
-                    tempCategoriaSelecionada = roupa.categoria
-                }
-                
             }
+            
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Cor")
+                    .font(.headline)
+                    .fontWeight(.medium)
+                
+                Menu {
+                    Picker(selection: $tempCorSelecionada, label: EmptyView()) {
+                        ForEach(cores, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(DefaultPickerStyle())
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(10)
+                    .onChange(of: tempCorSelecionada) { novaCor in
+                        tempCorSelecionada = novaCor
+                    }
+                    .onAppear {
+                        tempCorSelecionada = roupa.cor
+                    }
+                } label: {
+                    HStack {
+                        Text(tempCorSelecionada)
+                            .padding(10)
+                        Spacer()
+                        Image(systemName: "chevron.up.chevron.down")
+                            .padding(10)
+                    }
+                    .background(Color.cinzinha.opacity(0.5))
+                    .cornerRadius(10)
+                    .foregroundColor(.black)
+                }
+            }
+            
             Spacer()
             
             Button(action: {
                 roupa.categoria = tempCategoriaSelecionada
+                roupa.cor = tempCorSelecionada
+                isToggled = false
             }) {
                 Text("Salvar")
             }
-            .frame(width: 352, height: 56)
+            .frame(maxWidth: .infinity, maxHeight: 56)
             .background(Color.botao)
             .cornerRadius(10)
             .foregroundColor(.white)
@@ -256,13 +319,15 @@ struct GeralView: View {
     }
 }
 
+
 struct CombinacoesView: View {
     var roupa: RoupaModelo
-    
+    @Query var roupas: [RoupaModelo]
     var body: some View {
-        VStack {
-            Text("Combinações")
-            
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
+            ForEach(roupas, id: \.self) { roupa in
+                CardRoupaMenor(roupa: roupa, isSelected: false)
+            }
         }
     }
 }

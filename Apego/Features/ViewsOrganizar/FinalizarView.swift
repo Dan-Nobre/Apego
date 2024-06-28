@@ -35,10 +35,13 @@ struct Finalizar: View {
 
     func save() {
         for roupa in roupas {
-            let foto = roupa.jpegData(compressionQuality: 0.1)!
-            let model = RoupaModelo(categoria: "Sem categoria", foto: foto)
+            guard let foto = roupa.jpegData(compressionQuality: 0.1) else {
+                continue
+            }
+            let model = RoupaModelo(categoria: "Sem categoria", foto: foto, cor: "Azul", pecasCombinadas: [])
             modelContext.insert(model)
         }
         dismiss()
     }
+
 }
