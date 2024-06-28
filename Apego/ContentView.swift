@@ -4,35 +4,129 @@
 ////  Created by Daniel Nobre on 17/06/24.
 ////
 //
-//import SwiftUI
-//import SwiftData
-//
-//struct ContentView: View{
-//    @Environment
-//    var body: some View {
-//        NavigationView{
-//            VStack {
-//                NavigationLink(destination: SaveImageView()) {
-//                    Text("Save New Image")
-//                        .padding()
-//                        .background(Color.blue)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(8)
-//                }
-//                
-//                NavigationLink(destination: ImageListView()) {
-//                    Text("View Saved Images")
-//                        .padding()
-//                        .background()
-//                        .foregroundColor(Color.green)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(8)
-//                }
-//            }
-//            .navigationTitle("Image Storage")
-//        }
-//    }
+
+import SwiftUI
+import SwiftData
+
+
+struct ContentView: View{
+    @Environment (\.modelContext) private var modelContext
+    @Query private var roupas: [RoupaModelo]
+    @State private var nome: String = ""
+    @State private var categoria: String = ""
+    @State private var cor: String = ""
+    @State private var imageData: Data = Data()
+    @State private var showingImagePicker = false
+    
+    var body: some View {
+        VStack{
+            List{
+                ForEach(roupas, id: \.id) { roupa in
+                    HStack{
+                        if let imageData = roupa.foto, let image = UIImage(data: imageData) {
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle())
+                        }
+                        VStack(alignment: .leading) {
+                            Text(roupa.nome)
+                            Text(roupa.categoria).font(.subheadline).foregroundColor(.gray)
+                            Text(roupa.cor).font(.subheadline).foregroundColor(.gray)
+                        }
+                        Spacer()
+                        Button(action: {
+                            removeItem(roupa)
+                        }) {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
+                        }
+                    }
+                }
+                .onDelete(perform: removeItems)
+            }
+            
+            TextField("Nome", text: $nome)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            TextField("Categoria", text: $categoria)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            TextField("Cor", text: $cor)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            Button(action: {
+                showingImagePicker = true
+            }) {
+                Text("Selecionar Imagem")
+            }
+            .padding()
+            
+            Button(action: {
+                save()
+            }) {
+                Text("Adicionar Item")
+            }
+            .padding()
+        }
+        .navigationTitle("Gerenciamento de Roupas")
+        .sheet(isPresented: $showingImagePicker) {
+            ImagePickerModel(imageData: $imageData)
+        }
+    }
+    
+    private func save() {
+        withAnimation{
+            let novaRoupa = RoupaModelo(nome: nome, categoria: categoria,foto:imageData,cor: cor)
+            modelContext.insert(novaRoupa)
+            saveContext()
+            
+            // Limpar cache depois de add
+            nome = ""
+            categoria = ""
+            cor = ""
+            imageData = Data()
+        }
+    }
+    
+    
+    private func removeItem(_ roupa: RoupaModelo) {
+        withAnimation{
+            modelContext.delete(roupa)
+            saveContext()
+        }
+    }
+    
+    private func removeItems(at offset: IndexSet) {
+        withAnimation {
+            offset.map { roupas[$0] }.forEach(modelContext.delete)
+            saveContext()
+            }
+        }
+    
+    private func saveContext() {
+        do{
+            try modelContext.save()
+        } catch{
+            //tratamento de erro
+            let nsError = error as NSError
+            fatalError("Erro ao salvar o contexto: \(nsError), \(nsError.userInfo)")
+        }
+    }
+}
+    
+
+    
+    
+    
+    
+
+
+//#Preview {
+//    ContentView()
 //}
+
 
 
 //import SwiftUI

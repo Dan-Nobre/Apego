@@ -42,6 +42,19 @@ struct Finalizar: View {
             modelContext.insert(model)
         }
         dismiss()
+            let fotoData = roupa.jpegData(compressionQuality: 1.0)!
+            let novaRoupa = RoupaModelo(nome: "", categoria: "", foto: fotoData, cor:"")
+            modelContext.insert(novaRoupa)
+            
+        }
+        
+        do{
+            try modelContext.save()
+        }catch{
+            let nsError = error as NSError
+            fatalError("Erro ao salvar o contexto: file: \(nsError),  \(nsError.userInfo)")
+        }
+        // codigo que salva no swift data
     }
 
 }

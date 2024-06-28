@@ -7,7 +7,6 @@ let cores = ["Sem cor", "Vermelho", "Verde", "Azul", "Amarelo", "Preto", "Branco
 
 
 struct TeladeInicioView: View {
-    
     init() {
         UISegmentedControl.appearance().selectedSegmentTintColor = UIColor.terroso
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
@@ -15,12 +14,10 @@ struct TeladeInicioView: View {
     }
     
     @Environment(\.modelContext) private var modelContext
-    
     @State private var title = "Organizar"
     @State var showSheet = false
     @State var roupaSelecionada: RoupaModelo?
     @Query var roupas: [RoupaModelo]
-    
     @State var filteredPecas: [RoupaModelo] = []
     @State private var selectedCategory: String? = "Sem categoria"
     
@@ -52,8 +49,7 @@ struct TeladeInicioView: View {
                                 .foregroundColor(Color.gray.opacity(0.8))
                         }
                         .containerRelativeFrame(.vertical)
-                    } else {
-                        
+                    } else {   
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(categorias, id: \.self) { category in
@@ -222,8 +218,6 @@ struct GeralView: View {
     
     @State var corSelecionada = ""
     
-//    @Binding var isToggled: Bool
-    
     init(roupa: RoupaModelo, isToggled: Binding<Bool>) {
         self.roupa = roupa
         _tempCategoriaSelecionada = State(initialValue: roupa.categoria)
@@ -318,6 +312,21 @@ struct GeralView: View {
             .font(.body)
         }
         .padding()
+    }
+    private func deleteItem(_ roupa: RoupaModelo) {
+        withAnimation{
+            modelContext.delete(roupa)
+            saveContext()
+        }
+    }
+    private func saveContext() {
+        do{
+            try modelContext.save()
+        }catch {
+            //tratamento de erro
+            let nsError = error as NSError
+            fatalError("Erro ao salvar contexto: \(nsError), \(nsError.userInfo)")
+        }
     }
 }
 
