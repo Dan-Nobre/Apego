@@ -194,7 +194,7 @@ struct RoupaDetailView: View {
             }
             
             VStack {
-                Text("Excloi")
+                Text("Excluir peça")
             }
             .onTapGesture{
                 alerta = true
@@ -218,16 +218,17 @@ struct GeralView: View {
     @Bindable var roupa: RoupaModelo
     @State var tempCategoriaSelecionada: String
     @State var tempCorSelecionada: String
+    @Environment(\.dismiss) var dismiss
     
     @State var corSelecionada = ""
     
-    @Binding var isToggled: Bool
+//    @Binding var isToggled: Bool
     
     init(roupa: RoupaModelo, isToggled: Binding<Bool>) {
         self.roupa = roupa
         _tempCategoriaSelecionada = State(initialValue: roupa.categoria)
         _tempCorSelecionada = State(initialValue: roupa.cor)
-        self._isToggled = isToggled
+//        self._isToggled = isToggled
     }
     
     var body: some View {
@@ -305,7 +306,8 @@ struct GeralView: View {
             Button(action: {
                 roupa.categoria = tempCategoriaSelecionada
                 roupa.cor = tempCorSelecionada
-                isToggled = false
+//                isToggled = false
+                dismiss()
             }) {
                 Text("Salvar")
             }
