@@ -41,7 +41,7 @@ struct Adicionar: View {
         .sheet(isPresented: $showBotaoGaleria) {
             BotaoGaleria(
                 selectedImages: $selectedImages,
-                selectedCam: $selectedCam, showGaleriaSelecionada: $showGaleriaSelecionada
+                showGaleriaSelecionada: $showGaleriaSelecionada
             )
         }
     }

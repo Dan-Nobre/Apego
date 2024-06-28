@@ -38,7 +38,7 @@ struct Finalizar: View {
             guard let foto = roupa.jpegData(compressionQuality: 0.1) else {
                 continue
             }
-            let model = RoupaModelo(categoria: "Sem categoria", foto: foto, cor: "Azul", pecasCombinadas: [])
+            let model = RoupaModelo(categoria: "Sem categoria", foto: foto, cor: "Sem cor", pecasCombinadas: [])
             modelContext.insert(model)
         }
         dismiss()

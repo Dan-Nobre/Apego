@@ -180,8 +180,6 @@ struct RoupaDetailView: View {
                 } else {
                     CombinacoesView(roupa: roupa)
                 }
-                
-                Spacer()
             }
             .navigationTitle("Editar peça")
             .navigationBarTitleDisplayMode(.inline)
@@ -196,6 +194,8 @@ struct RoupaDetailView: View {
             VStack {
                 Text("Excluir peça")
             }
+            .underline()
+            .foregroundColor(.red)
             .onTapGesture{
                 alerta = true
             } .alert(isPresented: $alerta) {
