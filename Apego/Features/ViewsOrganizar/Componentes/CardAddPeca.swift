@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardAddPeca: View {
     @State private var isPresented = false
+    
     var body: some View {
         Button {
             isPresented.toggle()
@@ -41,12 +42,15 @@ struct CardAddPeca: View {
                 .frame(width: 393, height: 272)
                 .presentationDetents([.fraction(0.25)])
         })
+        .sheet(isPresented: $isPresented) {
+            Adicionar(selectedImages: [], selectedCam: [], showBotaoGaleria: false, showGaleriaSelecionada: false)
+        }
     }
 }
 
 struct CardAddPecaVariante: View {
     var body: some View {
-        ZStack{
+        ZStack {
             Rectangle()
                 .cornerRadius(10)
                 .frame(width: 106, height: 106)

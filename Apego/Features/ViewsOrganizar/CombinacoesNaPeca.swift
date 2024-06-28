@@ -10,20 +10,20 @@ import SwiftUI
 struct CombinacoesNaPeca: View {
     var body: some View {
         VStack{
-            HStack{
-                CardRoupaMenor()
-                CardRoupaMenor()
-                CardRoupaMenor()
-            }
-            .padding(.bottom, 8)
-            HStack{
-                CardRoupaMenor()
-                CardRoupaMenor()
-                CardRoupaMenor()
-            }
-            .padding(.bottom, 24)
-            BotaoFinalizar()
-                .buttonStyle(MyButtonStyle(color: Color.accentColor))
+//            HStack{
+//                CardRoupaMenor(roupa: <#T##RoupaModelo#>, isSelected: <#T##Bool#>)
+//                CardRoupaMenor()
+//                CardRoupaMenor()
+//            }
+//            .padding(.bottom, 8)
+//            HStack{
+//                CardRoupaMenor()
+//                CardRoupaMenor()
+//                CardRoupaMenor()
+//            }
+//            .padding(.bottom, 24)
+//            BotaoFinalizar()
+//                .buttonStyle(MyButtonStyle(color: Color.accentColor))
         }
         .padding(.top, 21)
     }
