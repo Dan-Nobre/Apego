@@ -35,6 +35,7 @@
 		656CBC002C25A7DD007C7AF7 /* CardRoupa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBBFF2C25A7DD007C7AF7 /* CardRoupa.swift */; };
 		656CBC022C25B3F7007C7AF7 /* MyTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBC012C25B3F7007C7AF7 /* MyTab.swift */; };
 		656CBC042C25B596007C7AF7 /* EdicaoGeralPecas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */; };
+		657A95CC2C2F01C300CFC9D4 /* FiltroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A95CB2C2F01C300CFC9D4 /* FiltroView.swift */; };
 		658835952C29B03E0095E0C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658835942C29B03E0095E0C2 /* ViewController.swift */; };
 		65D0D10A2C28732A00BD74AC /* CombinacoesNaPeca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */; };
 		65D0D10C2C28875500BD74AC /* SelectedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */; };
@@ -88,6 +89,7 @@
 		656CBBFF2C25A7DD007C7AF7 /* CardRoupa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRoupa.swift; sourceTree = "<group>"; };
 		656CBC012C25B3F7007C7AF7 /* MyTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTab.swift; sourceTree = "<group>"; };
 		656CBC032C25B596007C7AF7 /* EdicaoGeralPecas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdicaoGeralPecas.swift; sourceTree = "<group>"; };
+		657A95CB2C2F01C300CFC9D4 /* FiltroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroView.swift; sourceTree = "<group>"; };
 		658835942C29B03E0095E0C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65D0D1092C28732A00BD74AC /* CombinacoesNaPeca.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinacoesNaPeca.swift; sourceTree = "<group>"; };
 		65D0D10B2C28875500BD74AC /* SelectedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImagesView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				8C72EB602C2B2DE400307987 /* CamPreview.swift */,
 				65600FAA2C25C1C4004557B6 /* MyDropDown.swift */,
 				658835942C29B03E0095E0C2 /* ViewController.swift */,
+				657A95CB2C2F01C300CFC9D4 /* FiltroView.swift */,
 			);
 			path = Componentes;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				65312D1D2C21D51800E2684E /* TabBar.swift in Sources */,
 				65312D1D2C21D51800E2684E /* TabBar.swift in Sources */,
 				8C72EB5F2C2B047C00307987 /* VielModelCam.swift in Sources */,
+				657A95CC2C2F01C300CFC9D4 /* FiltroView.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
 				656CBC022C25B3F7007C7AF7 /* MyTab.swift in Sources */,
 				8CFBA3F92C234B000001E7D9 /* MyImageClassifierCP.mlmodel in Sources */,

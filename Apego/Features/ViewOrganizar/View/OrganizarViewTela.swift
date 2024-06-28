@@ -19,7 +19,7 @@ struct OrganizarViewTela: View {
             VStack {
              
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
+                    HStack(spacing: 5) {
                         ForEach(categories, id: \.self) { category in
                             Button(action: {
                                 viewModel.selectedCategory = category
@@ -29,7 +29,7 @@ struct OrganizarViewTela: View {
                                     .padding(8)
                                     .padding(.horizontal, 8)
                                     .foregroundColor(viewModel.selectedCategory == category ?
-                                                     Color.white: Color.principal)
+                                                Color.white: Color.principal)
                                     .background(viewModel.selectedCategory == category ? Color.principal : Color.bege)
                                     .cornerRadius(10)
                                     .padding(2)

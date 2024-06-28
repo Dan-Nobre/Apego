@@ -22,6 +22,7 @@ struct BotaoFoto: View {
             }) {
                 Text("Tirar nova foto")
             }
+            .buttonStyle(MySecButtonStyle(color: Color.accentColor))
             .sheet(isPresented: $isShowingPicker) {
                 CameraImagePicker(image: self.$inputImage)
             }

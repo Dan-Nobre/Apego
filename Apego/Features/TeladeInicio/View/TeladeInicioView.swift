@@ -142,74 +142,72 @@ struct RoupaDetailView: View {
     
     
     var body: some View {
-        
-        VStack {
+        NavigationView{
             VStack {
-                if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 200, height: 200)
-                        .cornerRadius(8)
-                } else {
-                    Image(systemName: "photo")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 200, height: 200)
-                        .foregroundColor(.gray)
-                        .cornerRadius(8)
-                }
-            }
-            .padding(30)
-            
-            VStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color.terroso.opacity(0.1))
-                        .frame(height: 30)
-                    
-                    Picker("View Selection", selection: $menuSelecionado) {
-                        Text("Geral").tag(0)
-                        Text("Combinações").tag(1)
+                VStack {
+                    if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 200, height: 200)
+                            .cornerRadius(8)
+                    } else {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 200, height: 200)
+                            .foregroundColor(.gray)
+                            .cornerRadius(8)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
                 }
+                .padding(20)
                 
-                if menuSelecionado == 0 {
-                    GeralView(roupa: roupa, isToggled: $toggleState)
-                } else {
-                    CombinacoesView(roupa: roupa)
-                }
-            }
-            .navigationTitle("Editar peça")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancelar") {
-                        dismiss()
+                VStack {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.terroso.opacity(0.1))
+                            .frame(height: 30)
+                        Picker("View Selection", selection: $menuSelecionado) {
+                            Text("Geral").tag(0)
+                            Text("Combinações").tag(1)
+                        }
+                        .pickerStyle(SegmentedPickerStyle())
+                    }
+                    
+                    if menuSelecionado == 0 {
+                        GeralView(roupa: roupa, isToggled: $toggleState)
+                    } else {
+                        CombinacoesView(roupa: roupa)
                     }
                 }
+                .navigationTitle("Editar peça")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Cancelar") {
+                            dismiss()
+                        }
+                    }
+                }
+            Text("Excluir peça")
+                .underline()
+                .foregroundColor(.red)
+                .onTapGesture{
+                    alerta = true
+                } .alert(isPresented: $alerta) {
+                    Alert(
+                        title: Text("Excluir peça"),
+                        message: Text("Tem certeza que deseja excluir esta peça?"),
+                        primaryButton: .default(Text("Cancelar")),
+                        secondaryButton: .destructive(Text("Excluir"), action: deletarPeca)
+                    )
+                }
+                .padding(.bottom, 10)
+                Spacer()
+                
             }
-            
-            VStack {
-                Text("Excluir peça")
-            }
-            .underline()
-            .foregroundColor(.red)
-            .onTapGesture{
-                alerta = true
-            } .alert(isPresented: $alerta) {
-                Alert(
-                    title: Text("Excluir peça"),
-                    message: Text("Tem certeza que deseja excluir esta peça?"),
-                    primaryButton: .default(Text("Cancelar")),
-                    secondaryButton: .destructive(Text("Excluir"), action: deletarPeca)
-                )
-            }
-            
-            
+            .padding(.horizontal, 20)
         }
-        .padding(.horizontal, 20)
     }
 }
 
@@ -311,11 +309,7 @@ struct GeralView: View {
             }) {
                 Text("Salvar")
             }
-            .frame(maxWidth: .infinity, maxHeight: 56)
-            .background(Color.botao)
-            .cornerRadius(10)
-            .foregroundColor(.white)
-            .font(.body)
+            .buttonStyle(MyButtonStyle(color: Color.accentColor))
         }
         .padding()
     }
@@ -326,10 +320,13 @@ struct CombinacoesView: View {
     var roupa: RoupaModelo
     @Query var roupas: [RoupaModelo]
     var body: some View {
-        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
-            ForEach(roupas, id: \.self) { roupa in
-                CardRoupaMenor(roupa: roupa, isSelected: false)
-            }
-        }
+//        ScrollView(.vertical, showsIndicators: false){
+//            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
+//                ForEach(roupas, id: \.self) { roupa in
+//                    CardRoupaMenor(roupa: roupa, isSelected: false)
+//                }
+//            }
+//        }
+        Text("Tudo queito por enquanto 👀")
     }
 }
