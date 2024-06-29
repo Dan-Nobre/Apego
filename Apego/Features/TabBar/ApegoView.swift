@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct ApegoView: View {
+    @State private var roupaSelecionada: RoupaModelo?
+
+//    let roupa: RoupaModelo
     var body: some View {
         NavigationView {
             VStack {
@@ -27,6 +30,6 @@ struct ApegoView: View {
     }
 }
 
-#Preview {
-    ApegoView()
-}
+//#Preview {
+//    ApegoView()
+//}

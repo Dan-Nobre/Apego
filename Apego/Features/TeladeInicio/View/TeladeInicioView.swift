@@ -29,6 +29,9 @@ struct TeladeInicioView: View {
     @State private var filteredPecas: [RoupaModelo] = []
     @State private var selectedCategory: String? = "Sem categoria"
     
+    @State private var showDesapegarView = false // view combinar
+
+    
     @State private var size = CGSize(width: 50, height: 50)
     @State private var isHeaderSticky = false
     @State private var headerOffset: CGFloat = 0
@@ -80,17 +83,8 @@ struct TeladeInicioView: View {
                         CombinarRoupaView(roupa: roupaSelecionada)
                     }
                 }
-                //                .blendMode(.multiply)
-                //                .background(.thickMaterial)
-                //
-                //                .toolbarBackground(
-                //                                ZStack {
-                //                                    (isHeaderSticky ? Color.white : Color.rosinha)
-                //                                    .blendMode(.multiply)
-                //                                    .background(.thickMaterial)
-                //                                }
-                //                            )
                 .background(roupas.isEmpty ? Color.terroso.opacity(0.2) : Color.white)
+            
             }
             .onChange(of: roupas) { _ in
                 filterClothing(by: selectedCategory)
@@ -135,7 +129,7 @@ struct TeladeInicioView: View {
     }
     private var semRoupasView: some View {
         VStack {
-            Image("avatar")
+            Image("bonecoavatar")
             Text("Adicione suas peças")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(Color.black.opacity(0.8))
@@ -169,9 +163,6 @@ struct TeladeInicioView: View {
             .padding()
             
             .background(isHeaderSticky ? Color.white : Color.rosinha)
-            //            .background(isHeaderSticky ? Color.white : Color.terroso.opacity(0.5))
-            //            .blendMode(isHeaderSticky ? .normal : .multiply)
-            //                                .background(.thinMaterial)
         }
     }
     
@@ -180,10 +171,6 @@ struct TeladeInicioView: View {
             ForEach(filteredPecas, id: \.self) { roupa in
                 
                 CardRoupa2(roupa: roupa, isSelected: roupa == roupaSelecionada)
-                    .onTapGesture {
-                        roupaSelecionada = roupa
-                        showSheetDetail.toggle()
-                    }
                     .contextMenu {
                         Button(action: {
                             roupaSelecionada = roupa
@@ -192,17 +179,33 @@ struct TeladeInicioView: View {
                             Label("Combinar", systemImage: "circlebadge.2")
                                 .foregroundColor(.red)
                         }
-                        Button(role: .destructive, action: {
+                        Button(action: {
                             roupaSelecionada = roupa
-                            alertaExcluir = true
-                            
+                           showDesapegarView = true
                         }) {
-                            Label("Apagar", systemImage: "trash")
+                            Label("Desapegar", systemImage: "shippingbox")
+                                .foregroundColor(.red)
                         }
                         
+                        Button(role: .destructive) {
+                            roupaSelecionada = roupa
+                            alertaExcluir = true
+                        } label: {
+                            Label("Apagar", systemImage: "trash")
+                        }
+                    }
+                    .onTapGesture {
+                        roupaSelecionada = roupa
+                        showSheetDetail.toggle()
                     }
             }
         }
+//        .fullScreenCover(isPresented: $showDesapegarView) {
+//            if let roupaSelecionada = roupaSelecionada {
+//                ApegoView(roupa: roupaSelecionada)
+//            }
+//        }
+        
         .alert(isPresented: $alertaExcluir) {
             Alert(
                 title: Text("Excluir peça"),
