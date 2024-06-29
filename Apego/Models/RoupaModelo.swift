@@ -11,11 +11,11 @@ import SwiftUI
 //cor
 
 @Model
-final class RoupaModelo: ObservableObject {
+final class RoupaModelo: ObservableObject, Identifiable, Hashable, Equatable {
     
     var id: UUID
     var categoria: String
-    let foto: Data?
+    @Attribute(.externalStorage) let foto: Data?
     var cor: String
     var pecasCombinadas: [RoupaModelo]
     

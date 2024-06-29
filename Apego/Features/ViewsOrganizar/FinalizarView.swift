@@ -22,6 +22,7 @@ struct Finalizar: View {
                 Button(action: save) {
                     VStack {
                         Text("Salvar")
+                            .bold()
                     }
                 }
                 .padding()
@@ -29,7 +30,7 @@ struct Finalizar: View {
                 Spacer()
             }
         }
-        .navigationTitle("Adicione peças")
+        .navigationTitle("Adicionar peças")
         .navigationBarTitleDisplayMode(.inline)
     }
 

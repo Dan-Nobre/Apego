@@ -22,7 +22,7 @@ struct Adicionar: View {
         NavigationStack {
             ScrollView {
                 AdicionarPecasSheet()
-                Button("Continue") {
+                Button("Continuar") {
                     showBotaoGaleria = true
                 }
                 .buttonStyle(MySecButtonStyle(color: Color.accentColor))
@@ -61,7 +61,7 @@ struct BotaoGaleria: View {
                     .padding(.bottom, 15)
                 
 
-                Button("Selecionar da Galeria") {
+                Button("Selecionar da galeria") {
                     showingPhotosPicker = true
                 }
                 .buttonStyle(MySecButtonStyle(color: Color.accentColor))
