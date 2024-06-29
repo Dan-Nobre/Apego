@@ -13,7 +13,7 @@ struct MySecButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(width: 352, height: 49)
+            .frame(width: 352, height: 52)
             .background(color)
             .cornerRadius(10)
             .foregroundColor(.black)
@@ -43,7 +43,7 @@ struct MyButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(width: 352, height: 49)
+            .frame(width: 352, height: 52)
             .background(color)
             .cornerRadius(10)
             .foregroundColor(.white)

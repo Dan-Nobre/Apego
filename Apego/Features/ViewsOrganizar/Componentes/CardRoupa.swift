@@ -47,6 +47,88 @@ struct CardRoupa: View {
     .navigationTitle("Adicione peças")
     .navigationBarTitleDisplayMode(.inline)
 }
+struct CardRoupaMenorCombo: View {
+    var roupa: RoupaModelo
+    var isSelected: Bool
+    
+    var body: some View {
+        VStack {
+            if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
+                ZStack {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 110, height: 110)
+                        .cornerRadius(8)
+                    
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.terroso.opacity(isSelected ? 0.05 : 0))
+                        .frame(width: 110, height: 110)
+                }
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(isSelected ? Color.terroso : Color.clear, lineWidth: 3)
+                )
+            } else {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 110, height: 110)
+                    .foregroundColor(.gray)
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(isSelected ? Color.terroso : Color.clear, lineWidth: 3)
+                    )
+                    .cornerRadius(8)
+            }
+        }
+    }
+}
+
+struct CardRoupaMenorComboHorizontal: View {
+    var roupa: RoupaModelo
+    var isSelected: Bool
+    
+    var body: some View {
+        VStack {
+            if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
+                ZStack {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 240, height: 240)
+                        .cornerRadius(8)
+                    
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.terroso.opacity(isSelected ? 0.05 : 0))
+                        .frame(width: 240, height: 240)
+                }
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(isSelected ? Color.terroso : Color.clear, lineWidth: 3)
+                )
+            } else {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 110, height: 110)
+                    .foregroundColor(.gray)
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(isSelected ? Color.terroso : Color.clear, lineWidth: 3)
+                    )
+                    .cornerRadius(8)
+            }
+        }
+    }
+}
+
+
+
 
 struct CardRoupaMenor: View {
     var roupa: RoupaModelo
@@ -54,54 +136,48 @@ struct CardRoupaMenor: View {
     
     var body: some View {
         VStack {
-                    if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
-                        ZStack {
-                            Image(uiImage: uiImage)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 110, height: 110)
-                                .cornerRadius(8)
-                            
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(Color.botao.opacity(isSelected ? 0.2 : 0))
-                                .frame(width: 110, height: 110)
-                        }
+            if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
+                ZStack {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 110, height: 110)
                         .cornerRadius(8)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(isSelected ? Color.botao : Color.clear, lineWidth: 3)
-                        )
-                        .onTapGesture {
-                            isSelected.toggle()
-                        }
-                    } else {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 110, height: 110)
-                            .foregroundColor(.gray)
-                            .cornerRadius(8)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(isSelected ? Color.botao : Color.clear, lineWidth: 3)
-                            )
-                            .background(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .fill(Color.botao.opacity(isSelected ? 0.5 : 0))
-                            )
-                            .cornerRadius(8)
-                            .onTapGesture {
-                                isSelected.toggle()
-                            }
-                    }
+                    
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color.botao.opacity(isSelected ? 0.2 : 0))
+                        .frame(width: 110, height: 110)
                 }
+                .cornerRadius(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(isSelected ? Color.botao : Color.clear, lineWidth: 3)
+                )
+            } else {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 110, height: 110)
+                    .foregroundColor(.gray)
+                    .cornerRadius(8)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(isSelected ? Color.botao : Color.clear, lineWidth: 3)
+                    )
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.botao.opacity(isSelected ? 0.5 : 0))
+                    )
+                    .cornerRadius(8)
             }
         }
+    }
+}
 
 struct CardRoupa2: View {
     var roupa: RoupaModelo
     @State var isSelected: Bool
-
+    
     var body: some View {
         VStack {
             if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
@@ -119,10 +195,10 @@ struct CardRoupa2: View {
                     .cornerRadius(8)
             }
         }
-//        .padding()
-//        .background(Color.white)
-//        .cornerRadius(8)
-//        .shadow(radius: 4)
+        //        .padding()
+        //        .background(Color.white)
+        //        .cornerRadius(8)
+        //        .shadow(radius: 4)
     }
 }
 

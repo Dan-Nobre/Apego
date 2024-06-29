@@ -15,7 +15,7 @@ struct AdicionarPecasSheet: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Adicione peças!")
+                Text("Adicionar peças!")
                     .bold()
                     .font(.system(size: 28))
                     .foregroundColor(.accentColor)
