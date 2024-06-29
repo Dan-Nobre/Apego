@@ -6,36 +6,100 @@
 //
 
 import SwiftUI
+import CoreML
+import Vision
 
 struct CardRoupa: View {
     let roupa: UIImage
+    @State private var clothingType = ""
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 11)
-            .stroke(
-                .gray.opacity(0.5),
-                style: .init(
-                    lineWidth: 3,
-                    dash: [5,5]
+        VStack {
+            RoundedRectangle(cornerRadius: 11)
+                .stroke(
+                    Color.gray.opacity(0.5),
+                    style: StrokeStyle(lineWidth: 3, dash: [5, 5])
                 )
-            )
-            .overlay {
-                Image(uiImage: roupa)
-                    .resizable()
-                    .scaledToFill()
+                .overlay {
+                    Image(uiImage: roupa)
+                        .resizable()
+                        .scaledToFill()
+                }
+                .aspectRatio(1, contentMode: .fit)
+                .clipShape(RoundedRectangle(cornerRadius: 11))
+                .onAppear {
+                    classifyClothingType(roupa)
+                }
+            Spacer()
+           
+            ZStack {
+//                RoundedRectangle(cornerRadius: 10)
+//                    .frame(width: 101, height: 37)
+//                    .foregroundColor(.bege)
+//                    .overlay {
+                        VStack {
+                            Text("Tipo de roupa")
+                                .font(.system(size: 13))
+                                .foregroundColor(.principal)
+                            Text(clothingType)
+                                .font(.system(size: 15, weight: .bold))
+                                .foregroundColor(.principal)
+                        }
+                    
             }
-            .aspectRatio(1, contentMode: .fit)
-            .clipShape(RoundedRectangle(cornerRadius: 11))
+        }
+    }
+    
+    private func classifyClothingType(_ image: UIImage) {
+        guard let model = try? VNCoreMLModel(for: MyImageClassifierCP(configuration: MLModelConfiguration()).model) else {
+            print("Failed to load CoreML model")
+            return
+        }
+        
+        let request = VNCoreMLRequest(model: model) { request, error in
+            if let error = error {
+                print("Erro ao processar a imagem: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let results = request.results as? [VNClassificationObservation],
+                  let topResult = results.first else {
+                print("Falha ao processar a imagem")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                clothingType = "\(topResult.identifier)"
+                print("Classificação bem-sucedida: \(topResult.identifier) com confiança de \(topResult.confidence)")
+
+            }
+            
+            print("Tipo de roupa detectado: \(topResult.identifier) - Confiança: \(topResult.confidence)")
+        }
+        
+        guard let ciImage = CIImage(image: image) else {
+            print("Unable to create CIImage")
+            return
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: ciImage)
+        DispatchQueue.global(qos: .userInteractive).async {
+            do {
+                try handler.perform([request])
+            } catch {
+                print("Failed to perform classification: \(error.localizedDescription)")
+            }
+        }
     }
 }
 
 #Preview {
-    NavigationStack{
+    NavigationStack {
         
         VStack {
             LazyVGrid(columns: Array(repeating: GridItem(.fixed(100)), count: 3)) {
                 ForEach([0,1,2], id: \.self) { _ in
-                    CardRoupa(roupa: .avatar)
+                    CardRoupa(roupa: UIImage(named: "bonecoavatar")!)
                 }
             }
             .padding()

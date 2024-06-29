@@ -41,7 +41,7 @@ struct TeladeInicioView: View {
                 ScrollView {
                     if roupas.isEmpty {
                         VStack {
-                            Image("avatar")
+                            Image("bonecoavatar")
                             Text("Adicione suas peças")
                                 .font(.system(size: 20, weight: .semibold))
                                 .foregroundColor(Color.black.opacity(0.8))
@@ -330,6 +330,13 @@ struct CombinacoesView: View {
             ForEach(roupas, id: \.self) { roupa in
                 CardRoupaMenor(roupa: roupa, isSelected: false)
             }
+            //        Text("Tudo Quieto por enquanto")
         }
+        Spacer()
     }
 }
+
+#Preview {
+   TeladeInicioView()
+}
+

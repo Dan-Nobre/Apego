@@ -8,42 +8,30 @@
 import SwiftUI
 import SwiftData
 import TipKit
+import simple_keyframe_animations
+
 
 @main
 struct ApegoApp: App {
     
     @StateObject private var pipeline = EffectsPipeline()
+    @State private var isSplashScreenActive = true // Controla a exibição da splash screen
+    
     var body: some Scene {
-        
         WindowGroup {
-            TabBar()
-
-                .task {
-                    try? Tips.configure([
-                        .datastoreLocation(.applicationDefault)])
-                }
-                .preferredColorScheme(.light)
-
+            if isSplashScreenActive {
+                SplashScreenView(isActivated: $isSplashScreenActive)
+            } else {
+                TabBar()
+                    .task {
+                        try? Tips.configure([
+                            .datastoreLocation(.applicationDefault)
+                        ])
+                    }
+                    .preferredColorScheme(.light)
+            }
         }
         .modelContainer(for: RoupaModelo.self)
     }
-//    var sharedModelContainer: ModelContainer = {
-////        let schema = Schema([
-////            Item.self,
-////        ])
-////        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-////
-////        do {
-////            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-////        } catch {
-////            fatalError("Could not create ModelContainer: \(error)")
-////        }
-////    }()
-////
-////    var body: some Scene {
-////        WindowGroup {
-////            TabBar()
-////        }
-////        .modelContainer(sharedModelContainer)
-////    }
 }
+

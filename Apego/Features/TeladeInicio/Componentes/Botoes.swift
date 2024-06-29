@@ -7,10 +7,13 @@
 
 import SwiftUI
 import PhotosUI
+import CoreML
+import Vision
 
 struct BotaoFoto: View {
     @State private var inputImage: UIImage?
     @State private var isShowingPicker = false
+    @State private var clothingType: String = "Desconhecido" // Adicionada a variável clothingType
     @Environment(\.dismiss) var dismiss
     @Binding var selectedImages: [UIImage]
     @Binding var showGaleriaSelecionada: Bool
@@ -23,7 +26,8 @@ struct BotaoFoto: View {
                 Text("Tirar nova foto")
             }
             .sheet(isPresented: $isShowingPicker) {
-                CameraImagePicker(image: self.$inputImage)
+                CameraImagePicker(image: self.$inputImage, clothingType: self.$clothingType) //sheet camera
+                    .ignoresSafeArea()
             }
             
             if let inputImage = inputImage {
@@ -32,10 +36,13 @@ struct BotaoFoto: View {
                     .scaledToFit()
                     .frame(width: 300, height: 300)
             }
+             // Mostrar o tipo de roupa detectad
+            
         }
         .onChange(of: inputImage) { newImage in
             if let newImage = newImage {
                 selectedImages.append(newImage)
+//                self.isShowingPicker // false fehcar o sheet n funcionou
                 dismiss()
                 showGaleriaSelecionada = true
             }
@@ -45,23 +52,26 @@ struct BotaoFoto: View {
 
 
 struct BotaoRolo: View {
-    @State private var avatarItem: PhotosPickerItem?
-    @State private var avatarImage: Image?
+    @State private var tirarRoloItem: PhotosPickerItem?
+    @State private var tirarRoloImage: Image?
+    @State private var clothingType: String = "Desconhecido" // Variável para armazenar o tipo de roupa detectado
+
+    
     
     var body: some View {
             VStack {
-                PhotosPicker("Selecionar do rolo da câmera", selection: $avatarItem, matching: .images)
+                PhotosPicker("Selecionar do rolo da câmera", selection: $tirarRoloItem, matching: .images)
                 
-                avatarImage?
+                tirarRoloImage?
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300, height: 300)
             }
             .buttonStyle(MyButtonStyle(color: Color.accentColor))
-            .onChange(of: avatarItem) {
+            .onChange(of: tirarRoloItem) {
                 Task {
-                    if let loaded = try? await avatarItem?.loadTransferable(type: Image.self){
-                        avatarImage = loaded
+                    if let loaded = try? await tirarRoloItem?.loadTransferable(type: Image.self){
+                        tirarRoloImage = loaded
                     } else {
                         print("failed")
                     }
@@ -121,71 +131,3 @@ struct BotaoCancelar: View {
 }
 
 
-// MARK: - Gabi daqui pra baixo
-//#Preview {
-//    TirarFotoView()
-//}
-//
-//struct TirarFotoView: View {
-//    
-//    @State var selectedImages: [Image] = []
-//    @State var showBotaoGaleria: Bool = false
-//    @State var showGaleriaSelecionada: Bool = false
-//    
-//    var body: some View {
-//        NavigationStack {
-//            Text("Quantidade imagens selecionadas: \(selectedImages.count)")
-//            Button("Adicione Peças") {
-//                showBotaoGaleria = true
-//            }
-//            .navigationDestination(isPresented: $showGaleriaSelecionada) {
-//                Text("Galeria com imagens selecionadas: \(selectedImages.count)")
-//            }
-//        }
-//        .sheet(isPresented: $showBotaoGaleria) {
-//            BotaoGaleria(
-//                selectedImages: $selectedImages,
-//                showGaleriaSelecionada: $showGaleriaSelecionada
-//            )
-//        }
-//    }
-//}
-//
-//struct BotaoGaleria: View {
-//    
-//    @Environment(\.dismiss) var dismiss
-//    
-//    @State private var selectedItens = [PhotosPickerItem] ()
-//    @State var showingPhotosPicker: Bool = false
-//    @Binding var selectedImages: [Image]
-//    @Binding var showGaleriaSelecionada: Bool
-//    
-//    var body: some View {
-//        NavigationStack {
-//            Button("Selecionar da Galeria") {
-//                showingPhotosPicker = true
-//            }
-//        }
-//        .photosPicker(isPresented: $showingPhotosPicker, selection: $selectedItens, matching: .images)
-//        .toolbar {
-//            Button("Select Imagens") {
-//                showingPhotosPicker = true
-//            }
-//        }
-//        .onChange(of: selectedItens){
-//            Task {
-//                selectedImages.removeAll()
-//                
-//                for item in selectedItens {
-//                    if let image = try? await item.loadTransferable(type: Image.self) {
-//                        selectedImages.append(image)
-//                    }
-//                }
-//                
-//                dismiss()
-//                
-//                showGaleriaSelecionada = true
-//            }
-//        }
-//    }
-//}

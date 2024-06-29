@@ -36,7 +36,7 @@ struct Adicionar: View {
                 Finalizar(roupas: $selectedImages)
             }
         }
-        .navigationTitle("Adicionar peças")
+//        .navigationTitle("Adicionar peças")
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showBotaoGaleria) {
             BotaoGaleria(
@@ -60,6 +60,7 @@ struct BotaoGaleria: View {
                 BotaoFoto(selectedImages: $selectedImages, showGaleriaSelecionada: $showGaleriaSelecionada)
                     .buttonStyle(MyButtonStyle(color: Color.accentColor))
                     .padding(.bottom, 15)
+                
 
                 Button("Selecionar da Galeria") {
                     showingPhotosPicker = true

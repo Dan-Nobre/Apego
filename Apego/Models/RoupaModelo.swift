@@ -7,8 +7,6 @@
 //
 import SwiftData
 import SwiftUI
-
-
 //categoria
 //cor
 
