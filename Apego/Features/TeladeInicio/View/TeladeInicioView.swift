@@ -119,6 +119,7 @@ struct TeladeInicioView: View {
                         headerOffset = value
                     }
                 }
+                .coordinateSpace(name: "scrollView")
             }
         }
     }
