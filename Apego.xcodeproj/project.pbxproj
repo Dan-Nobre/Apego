@@ -41,6 +41,9 @@
 		8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */; };
 		8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CE2C25B5A1005A1260 /* Inicio.swift */; };
 		8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */; };
+		8C3185AB2C2EF04E0024AD9C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3185AA2C2EF04E0024AD9C /* StoreKit.framework */; };
+		8C3185AE2C2EFEAF0024AD9C /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3185AD2C2EFEAF0024AD9C /* SplashScreenView.swift */; };
+		8C3185B12C2EFEF60024AD9C /* simple-keyframe-animations in Frameworks */ = {isa = PBXBuildFile; productRef = 8C3185B02C2EFEF60024AD9C /* simple-keyframe-animations */; };
 		8C31F9282C23B4130007FD86 /* Cores.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C31F9272C23B4130007FD86 /* Cores.mlmodel */; };
 		8C72EB592C2AE35600307987 /* EffectsPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB582C2AE35600307987 /* EffectsPipeline.swift */; };
 		8C72EB5B2C2AE4DB00307987 /* RemoverFundo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB5A2C2AE4DB00307987 /* RemoverFundo.swift */; };
@@ -49,13 +52,13 @@
 		8C72EB642C2B56AD00307987 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB632C2B56AD00307987 /* Tip.swift */; };
 		8C72EB662C2B56CA00307987 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB652C2B56CA00307987 /* TipView.swift */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
+		8CC1CEC52C303D6500C4BF8F /* MyImageClassifierCP.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8CC1CEC42C303D6500C4BF8F /* MyImageClassifierCP.mlmodel */; };
 		8CE8D1082C2A31CF0011BA83 /* OrganizarViewTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */; };
 		8CE8D10A2C2A363C0011BA83 /* ModelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */; };
 		8CE8D10C2C2A38760011BA83 /* filterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D10B2C2A38760011BA83 /* filterModel.swift */; };
 		8CFBA3E62C22049F0001E7D9 /* AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3E52C22049F0001E7D9 /* AddPhoto.swift */; };
 		8CFBA3E92C2204F10001E7D9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3E82C2204F10001E7D9 /* ViewModel.swift */; };
 		8CFBA3EB2C220BFB0001E7D9 /* RemoveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */; };
-		8CFBA3F92C234B000001E7D9 /* MyImageClassifierCP.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3F82C234B000001E7D9 /* MyImageClassifierCP.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +97,9 @@
 		8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPecasSheet.swift; sourceTree = "<group>"; };
 		8C1298CE2C25B5A1005A1260 /* Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inicio.swift; sourceTree = "<group>"; };
 		8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicioView.swift; sourceTree = "<group>"; };
+		8C3185AA2C2EF04E0024AD9C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8C3185AC2C2EFB740024AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8C3185AD2C2EFEAF0024AD9C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8C31F9272C23B4130007FD86 /* Cores.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Cores.mlmodel; sourceTree = "<group>"; };
 		8C72EB582C2AE35600307987 /* EffectsPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsPipeline.swift; sourceTree = "<group>"; };
 		8C72EB5A2C2AE4DB00307987 /* RemoverFundo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoverFundo.swift; sourceTree = "<group>"; };
@@ -102,13 +108,13 @@
 		8C72EB632C2B56AD00307987 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		8C72EB652C2B56CA00307987 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		8CC1CEC42C303D6500C4BF8F /* MyImageClassifierCP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MyImageClassifierCP.mlmodel; path = ../../Downloads/MyImageClassifierCP.mlmodel; sourceTree = "<group>"; };
 		8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewTela.swift; sourceTree = "<group>"; };
 		8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFilter.swift; sourceTree = "<group>"; };
 		8CE8D10B2C2A38760011BA83 /* filterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterModel.swift; sourceTree = "<group>"; };
 		8CFBA3E52C22049F0001E7D9 /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
 		8CFBA3E82C2204F10001E7D9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveBackground.swift; sourceTree = "<group>"; };
-		8CFBA3F82C234B000001E7D9 /* MyImageClassifierCP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyImageClassifierCP.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3185AB2C2EF04E0024AD9C /* StoreKit.framework in Frameworks */,
+				8C3185B12C2EFEF60024AD9C /* simple-keyframe-animations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,13 +149,15 @@
 		6505DB852C20A0F40048CA79 = {
 			isa = PBXGroup;
 			children = (
+				8C3185AD2C2EFEAF0024AD9C /* SplashScreenView.swift */,
 				8C1298CE2C25B5A1005A1260 /* Inicio.swift */,
-				8CFBA3F82C234B000001E7D9 /* MyImageClassifierCP.mlmodel */,
+				8CC1CEC42C303D6500C4BF8F /* MyImageClassifierCP.mlmodel */,
 				8C31F9272C23B4130007FD86 /* Cores.mlmodel */,
 				8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */,
 				6505DB902C20A0F40048CA79 /* Apego */,
 				8C79F2752C20AB7B00E915BB /* .swiftlint.yml */,
 				6505DB8F2C20A0F40048CA79 /* Products */,
+				8C3185A92C2EF04E0024AD9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +172,7 @@
 		6505DB902C20A0F40048CA79 /* Apego */ = {
 			isa = PBXGroup;
 			children = (
+				8C3185AC2C2EFB740024AD9C /* Info.plist */,
 				8C79F2832C20AE2200E915BB /* Features */,
 				6505DBA82C20A2C20048CA79 /* Models */,
 				6505DBA32C20A2810048CA79 /* Resources */,
@@ -265,6 +276,14 @@
 				65312D202C21D57B00E2684E /* CombinarView.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8C3185A92C2EF04E0024AD9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C3185AA2C2EF04E0024AD9C /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8C72EB552C2AE30900307987 /* RemoveBackground */ = {
@@ -443,6 +462,9 @@
 			dependencies = (
 			);
 			name = Apego;
+			packageProductDependencies = (
+				8C3185B02C2EFEF60024AD9C /* simple-keyframe-animations */,
+			);
 			productName = Apego;
 			productReference = 6505DB8E2C20A0F40048CA79 /* Apego.app */;
 			productType = "com.apple.product-type.application";
@@ -471,6 +493,9 @@
 				Base,
 			);
 			mainGroup = 6505DB852C20A0F40048CA79;
+			packageReferences = (
+				8C3185AF2C2EFEF60024AD9C /* XCRemoteSwiftPackageReference "simple-keyframe-animations" */,
+			);
 			productRefGroup = 6505DB8F2C20A0F40048CA79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -525,6 +550,7 @@
 				4CE212862C28AA210074BE42 /* SaveImageView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */,
+				8C3185AE2C2EFEAF0024AD9C /* SplashScreenView.swift in Sources */,
 				6521B1212C2B08E900E2E3FE /* FinalizarView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				650BDC0C2C24CF34005F1D56 /* EditarPeca.swift in Sources */,
@@ -540,9 +566,9 @@
 				8C72EB5F2C2B047C00307987 /* VielModelCam.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
 				656CBC022C25B3F7007C7AF7 /* MyTab.swift in Sources */,
-				8CFBA3F92C234B000001E7D9 /* MyImageClassifierCP.mlmodel in Sources */,
 				6521B11F2C2B02A600E2E3FE /* AdicionarView.swift in Sources */,
 				4CE738682C27B0790092E692 /* RoupaModelo.swift in Sources */,
+				8CC1CEC52C303D6500C4BF8F /* MyImageClassifierCP.mlmodel in Sources */,
 				6505DB922C20A0F40048CA79 /* ApegoApp.swift in Sources */,
 				6505DBA72C20A2BB0048CA79 /* Util.swift in Sources */,
 				4CBD2F6A2C29C46900459CAA /* ContentView.swift in Sources */,
@@ -698,11 +724,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
-				DEVELOPMENT_TEAM = 55WBX8T52B;
+				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Apego/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "O aplicativo usa a câmera para detectar objetos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -714,7 +741,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dan-nobre-Dan-Nobre.Apego";
+				PRODUCT_BUNDLE_IDENTIFIER = "Taissa-Taissa.Apego";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -728,11 +755,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
-				DEVELOPMENT_TEAM = 55WBX8T52B;
+				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Apego/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "O aplicativo usa a câmera para detectar objetos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -744,7 +772,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dan-nobre-Dan-Nobre.Apego";
+				PRODUCT_BUNDLE_IDENTIFIER = "Taissa-Taissa.Apego";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -774,6 +802,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C3185AF2C2EFEF60024AD9C /* XCRemoteSwiftPackageReference "simple-keyframe-animations" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/juliasaboya/simple-keyframe-animations";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C3185B02C2EFEF60024AD9C /* simple-keyframe-animations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C3185AF2C2EFEF60024AD9C /* XCRemoteSwiftPackageReference "simple-keyframe-animations" */;
+			productName = "simple-keyframe-animations";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6505DB862C20A0F40048CA79 /* Project object */;
 }

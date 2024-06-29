@@ -14,7 +14,7 @@ struct Inicio: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image("avatar")
+                Image("bonecoavatar")
                 
                 Text("Adicione suas peças")
                     .font(.system(size: 20, weight: .semibold))
