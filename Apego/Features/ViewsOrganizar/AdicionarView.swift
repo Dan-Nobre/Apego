@@ -25,9 +25,8 @@ struct Adicionar: View {
                 Button("Continue") {
                     showBotaoGaleria = true
                 }
-                .buttonStyle(MyButtonStyle(color: Color.accentColor))
-                .padding(.top, 20)
-                .padding(.bottom, 20)
+                .buttonStyle(MySecButtonStyle(color: Color.accentColor))
+                .padding()
                 .bold()
                 Spacer()
             }
@@ -65,13 +64,13 @@ struct BotaoGaleria: View {
                 Button("Selecionar da Galeria") {
                     showingPhotosPicker = true
                 }
-                .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                .buttonStyle(MySecButtonStyle(color: Color.accentColor))
                 .padding(.bottom, 15)
 
                 Button("Cancelar") {
                     dismiss()
                 }
-                .buttonStyle(MySecButtonStyle(color: Color.cinzinha))
+                .buttonStyle(MyCancelStyle(color: Color.cinzinha))
             }
             .bold()
         }

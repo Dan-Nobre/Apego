@@ -16,6 +16,20 @@ struct MySecButtonStyle: ButtonStyle {
             .frame(width: 352, height: 49)
             .background(color)
             .cornerRadius(10)
+            .foregroundColor(.white)
+            .font(.body)
+    }
+}
+
+struct MyCancelStyle: ButtonStyle {
+    
+    let color: Color
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 352, height: 49)
+            .background(color)
+            .cornerRadius(10)
             .foregroundColor(.black)
             .font(.body)
     }
@@ -43,7 +57,7 @@ struct MyButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(width: 352, height: 49)
+            .frame(maxWidth: .infinity, maxHeight: 49)
             .background(color)
             .cornerRadius(10)
             .foregroundColor(.white)
