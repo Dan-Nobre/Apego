@@ -45,6 +45,11 @@ struct TeladeInicioView: View {
             roupa.isDesapegada = true
         }
     }
+    private func reapegarPeca() {
+        if let roupa = roupaSelecionada {
+            roupa.isDesapegada = false
+        }
+    }
     private func filterClothing(by category: String?) {
         filteredPecas = category?.isEmpty == false ? roupas.filter { $0.categoria == category } : roupas
     }
@@ -97,13 +102,12 @@ struct TeladeInicioView: View {
                 //                                    .background(.thickMaterial)
                 //                                }
                 //                            )
-                .background(roupas.isEmpty ? Color.terroso.opacity(0.2) : Color.white)
+//                .background(roupas.isEmpty ? Color.terroso.opacity(0.2) : Color.white)
             }
             .onChange(of: roupas) { _ in
                 filterClothing(by: selectedCategory)
             }
         }
-        
     }
     
     private var scrollPrincipal: some View {
@@ -144,7 +148,7 @@ struct TeladeInicioView: View {
     }
     private var semRoupasView: some View {
         VStack {
-            Image("avatar")
+            Image("bonecoavatar")
             Text("Adicione suas peças")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(Color.black.opacity(0.8))
@@ -185,12 +189,14 @@ struct TeladeInicioView: View {
     }
     
     private var gridRoupas: some View {
-        
         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2)) {
             ForEach(filteredPecas, id: \.self) { roupa in
                 
                 CardRoupa2(roupa: roupa, isSelected: roupa == roupaSelecionada)
-                
+                    .onTapGesture {
+                        roupaSelecionada = roupa
+                        showSheetDetail.toggle()
+                    }
                     .contextMenu {
                         Button(action: {
                             roupaSelecionada = roupa
@@ -199,34 +205,35 @@ struct TeladeInicioView: View {
                             Label("Combinar", systemImage: "circlebadge.2")
                                 .foregroundColor(.red)
                         }
-                        Button(action: {
-                            roupaParaApego = roupa
-                            showApegoView = true
-                        }) {
-                            Label("Desapegar", systemImage: "shippingbox")
-                                .foregroundColor(.red)
-                        }
                         
-                        Button(role: .destructive) {
+                        if roupa.isDesapegada {
+                            Button(action: {
+                                roupaSelecionada = roupa
+                                reapegarPeca()
+                                
+                            }) {
+                                Label("Devolver ao armário", systemImage: "trash")
+                            }
+                        } else {
+                            Button(action: {
+                                roupaSelecionada = roupa
+                                desapegarPeca()
+                                
+                            }) {
+                                Label("Desapegar", systemImage: "trash")
+                            }
+                        }
+                        Button(role: .destructive, action: {
                             roupaSelecionada = roupa
                             alertaExcluir = true
-                        } label: {
+                            
+                        }) {
                             Label("Apagar", systemImage: "trash")
                         }
                         
                     }
-                
-//                    .popoverTip(cliqueTip)
-                    .onTapGesture {
-                        roupaSelecionada = roupa
-                        showSheetDetail.toggle()
-                    }
-                
             }
         }
-        
-        .popoverTip(combinarPecaTip)
-        
         .alert(isPresented: $alertaExcluir) {
             Alert(
                 title: Text("Excluir peça"),
@@ -238,9 +245,8 @@ struct TeladeInicioView: View {
             )
         }
         .padding()
-        
+
     }
-    
 }
 
 struct ViewOffsetKey: PreferenceKey {

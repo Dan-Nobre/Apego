@@ -16,7 +16,7 @@ struct TabBar: View {
                     Label("Organizar", systemImage: "cabinet")
                 }
             
-            ApegoView(roupa: RoupaModelo(categoria: "Exemplo", foto: nil, cor: "Exemplo", pecasCombinadas: []))                
+            ApegoView()                
                 .tabItem {
                     Label("Apego", systemImage: "shippingbox.fill")
                     Color.cinzinha
