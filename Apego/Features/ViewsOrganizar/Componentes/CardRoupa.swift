@@ -195,11 +195,8 @@ struct CardRoupa2: View {
                     .cornerRadius(8)
             }
         }
-        //        .padding()
-        //        .background(Color.white)
-        //        .cornerRadius(8)
-        //        .shadow(radius: 4)
     }
 }
+
 
 
