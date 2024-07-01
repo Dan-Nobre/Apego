@@ -17,6 +17,7 @@ struct CombinacoesView: View {
             
             if roupa.pecasCombinadas.isEmpty {
                 VStack (alignment: .center) {
+                    
                     Text("Você ainda não fez combinações com essa peça!")
                         .multilineTextAlignment(.center)
                 }

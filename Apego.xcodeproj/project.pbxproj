@@ -52,6 +52,8 @@
 		8C72EB642C2B56AD00307987 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB632C2B56AD00307987 /* Tip.swift */; };
 		8C72EB662C2B56CA00307987 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB652C2B56CA00307987 /* TipView.swift */; };
 		8C75BA9D2C32F9640083A54B /* MyImageClassifierCP.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BA9C2C32F9640083A54B /* MyImageClassifierCP.mlmodel */; };
+		8C75BA9F2C32FBA00083A54B /* Segmented Control in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BA9E2C32FBA00083A54B /* Segmented Control */; };
+		8C75BAA12C32FBFB0083A54B /* CombinacoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BAA02C32FBFB0083A54B /* CombinacoesView.swift */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
 		8CE8D1082C2A31CF0011BA83 /* OrganizarViewTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */; };
 		8CE8D10A2C2A363C0011BA83 /* ModelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */; };
@@ -111,6 +113,8 @@
 		8C72EB632C2B56AD00307987 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		8C72EB652C2B56CA00307987 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		8C75BA9C2C32F9640083A54B /* MyImageClassifierCP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyImageClassifierCP.mlmodel; sourceTree = "<group>"; };
+		8C75BA9E2C32FBA00083A54B /* Segmented Control */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Segmented Control"; path = "View/Segmented Control"; sourceTree = SOURCE_ROOT; };
+		8C75BAA02C32FBFB0083A54B /* CombinacoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinacoesView.swift; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewTela.swift; sourceTree = "<group>"; };
 		8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFilter.swift; sourceTree = "<group>"; };
@@ -411,6 +415,8 @@
 			children = (
 				8CEEBDD12C30A0A700406A61 /* GeralView.swift */,
 				8CEEBDD52C30A0BF00406A61 /* CombinarRoupaView.swift */,
+				8C75BAA02C32FBFB0083A54B /* CombinacoesView.swift */,
+				8C75BA9E2C32FBA00083A54B /* Segmented Control */,
 				8CEEBDCF2C30A09100406A61 /* RoupaDetailSheet.swift */,
 				8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */,
 				8C72EB622C2B569300307987 /* TipDicas */,
@@ -525,6 +531,7 @@
 			files = (
 				8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */,
 				6505DB9B2C20A0F50048CA79 /* Preview Assets.xcassets in Resources */,
+				8C75BA9F2C32FBA00083A54B /* Segmented Control in Resources */,
 				6505DB982C20A0F50048CA79 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,6 +611,7 @@
 				656CBC042C25B596007C7AF7 /* EdicaoGeralPecas.swift in Sources */,
 				65600FAB2C25C1C4004557B6 /* MyDropDown.swift in Sources */,
 				8CFBA3E92C2204F10001E7D9 /* ViewModel.swift in Sources */,
+				8C75BAA12C32FBFB0083A54B /* CombinacoesView.swift in Sources */,
 				650BDC0A2C247230005F1D56 /* BotaoContinuar.swift in Sources */,
 				8CFBA3EB2C220BFB0001E7D9 /* RemoveBackground.swift in Sources */,
 				8C72EB612C2B2DE400307987 /* CamPreview.swift in Sources */,
