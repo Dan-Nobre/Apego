@@ -211,7 +211,7 @@ struct TeladeInicioView: View {
                                 desapegarPeca()
                                 
                             }) {
-                                Label("Desapegar", systemImage: "tshippingbox")
+                                Label("Desapegar", systemImage: "shippingbox")
                             }
                         
                         Button(role: .destructive, action: {
