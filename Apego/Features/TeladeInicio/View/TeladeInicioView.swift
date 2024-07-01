@@ -72,7 +72,7 @@ struct TeladeInicioView: View {
                 }
                 .toolbarBackground(Color.rosinha)
                 .coordinateSpace(name: "scrollView")
-                .navigationBarTitle("Organizar", displayMode: .inline)
+                .navigationBarTitle("Armrio", displayMode: .inline)
                 .scrollIndicators(.hidden)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .sheet(isPresented: $showSheetDetail, onDismiss: {
@@ -206,23 +206,14 @@ struct TeladeInicioView: View {
                                 .foregroundColor(.red)
                         }
                         
-                        if roupa.isDesapegada {
-                            Button(action: {
-                                roupaSelecionada = roupa
-                                reapegarPeca()
-                                
-                            }) {
-                                Label("Devolver ao armário", systemImage: "trash")
-                            }
-                        } else {
-                            Button(action: {
+                        Button(action: {
                                 roupaSelecionada = roupa
                                 desapegarPeca()
                                 
                             }) {
-                                Label("Desapegar", systemImage: "trash")
+                                Label("Desapegar", systemImage: "tshippingbox")
                             }
-                        }
+                        
                         Button(role: .destructive, action: {
                             roupaSelecionada = roupa
                             alertaExcluir = true
@@ -237,7 +228,7 @@ struct TeladeInicioView: View {
         }
         
         
-        .popoverTip(combinarPecaTip)
+//        .popoverTip()combinarPecaTip
         .alert(isPresented: $alertaExcluir) {
             Alert(
                 title: Text("Excluir peça"),
