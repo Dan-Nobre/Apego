@@ -1,15 +1,27 @@
+import SwiftUI
 import PhotosUI
 import SwiftData
-import TipKit
 
 let categorias = ["Sem categoria", "Camisa", "Calça", "Vestido", "Casaco", "Short", "Saia", "Blusa", "Camiseta"]
 let cores = ["Sem cor", "Vermelho", "Verde", "Azul", "Amarelo", "Preto", "Branco", "Roxo", "Laranja"]
 
 struct TeladeInicioView: View {
     
+    init() {
+        let appearance = UISegmentedControl.appearance()
+        appearance.selectedSegmentTintColor = UIColor.white
+        appearance.setTitleTextAttributes([.foregroundColor: UIColor.terroso], for: .selected)
+        appearance.setTitleTextAttributes([.foregroundColor: UIColor.terroso], for: .normal)
+        UIPageControl.appearance().currentPageIndicatorTintColor = .terroso
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.terroso.withAlphaComponent(0.2)
+        UIPageControl.appearance().backgroundStyle = .minimal
+    }
+    
     @Environment(\.modelContext) private var modelContext
     
     @State private var alertaExcluir = false
+    
+    @State private var alertaDesapegar = false
     
     @State private var title = "Organizar"
     @State private var showSheetDetail = false
@@ -19,23 +31,18 @@ struct TeladeInicioView: View {
     @State private var filteredPecas: [RoupaModelo] = []
     @State private var selectedCategory: String? = "Sem categoria"
     
-    
-    
     @State private var size = CGSize(width: 50, height: 50)
     @State private var isHeaderSticky = false
     @State private var headerOffset: CGFloat = 0
     
-    let cliqueTip = cliqueEdite()
-    let combinarPecaTip = CombinarPecaTip()
-    
-    @State private var showApegoView = false
-    @State private var roupaParaApego: RoupaModelo?
-    
-    
-    
     private func deletarPeca() {
         if let roupa = roupaSelecionada {
             modelContext.delete(roupa)
+        }
+    }
+    private func desapegarPeca() {
+        if let roupa = roupaSelecionada {
+            roupa.isDesapegada = true
         }
     }
     private func filterClothing(by category: String?) {
@@ -46,27 +53,26 @@ struct TeladeInicioView: View {
         NavigationStack {
             ScrollViewReader { proxy in
                 scrollPrincipal
-                    .toolbarTitleDisplayMode(.inlineLarge)
-                    .toolbar {
-                        ToolbarItem(placement: .topBarTrailing) {
-                            NavigationLink(destination: Adicionar()) {
-                                Image(systemName: "camera.viewfinder")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(Color.terroso)
-                            }
+                .toolbarTitleDisplayMode(.inlineLarge)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink(destination: Adicionar()) {
+                            Image(systemName: "camera.viewfinder")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(Color.terroso)
                         }
                     }
-                    .toolbarBackground(Color.rosinha)
-                    .coordinateSpace(name: "scrollView")
-                    .navigationBarTitle("Organizar", displayMode: .inline)
-                    .scrollIndicators(.hidden)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .sheet(isPresented: $showSheetDetail, onDismiss: {
-                        filterClothing(by: selectedCategory)
-                    })
-                {
+                }
+                .toolbarBackground(Color.rosinha)
+                .coordinateSpace(name: "scrollView")
+                .navigationBarTitle("Organizar", displayMode: .inline)
+                .scrollIndicators(.hidden)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .sheet(isPresented: $showSheetDetail, onDismiss: {
+                    filterClothing(by: selectedCategory)
+                }) {
                     if let roupaSelecionada = roupaSelecionada {
                         RoupaDetailSheet(roupa: roupaSelecionada)
                     }
@@ -81,23 +87,21 @@ struct TeladeInicioView: View {
                         CombinarRoupaView(roupa: roupaSelecionada)
                     }
                 }
-//                .background(roupas.isEmpty ? Color.terroso.opacity(0.2) : Color.white)
-                
-                .navigationDestination(isPresented: $showApegoView) {
-                    if let roupaParaApego = roupaParaApego {
-                        ApegoView(roupa: roupaParaApego)
-                    }
-                }
-                
-                
+                //                .blendMode(.multiply)
+                //                .background(.thickMaterial)
+                //
+                //                .toolbarBackground(
+                //                                ZStack {
+                //                                    (isHeaderSticky ? Color.white : Color.rosinha)
+                //                                    .blendMode(.multiply)
+                //                                    .background(.thickMaterial)
+                //                                }
+                //                            )
+                .background(roupas.isEmpty ? Color.terroso.opacity(0.2) : Color.white)
             }
-            .onChange(of: roupas)
-            { _ in
+            .onChange(of: roupas) { _ in
                 filterClothing(by: selectedCategory)
             }
-            
-            
-            
         }
         
     }
@@ -127,6 +131,8 @@ struct TeladeInicioView: View {
             }
         }
     }
+
+    
     private var roupasMap: some View {
         VStack {
             if filteredPecas.isEmpty {
@@ -138,7 +144,7 @@ struct TeladeInicioView: View {
     }
     private var semRoupasView: some View {
         VStack {
-            Image("bonecoavatar")
+            Image("avatar")
             Text("Adicione suas peças")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(Color.black.opacity(0.8))
@@ -170,6 +176,11 @@ struct TeladeInicioView: View {
                 }
             }
             .padding()
+            
+            .background(isHeaderSticky ? Color.white : Color.rosinha)
+            //            .background(isHeaderSticky ? Color.white : Color.terroso.opacity(0.5))
+            //            .blendMode(isHeaderSticky ? .normal : .multiply)
+            //                                .background(.thinMaterial)
         }
     }
     

@@ -4,9 +4,9 @@ struct GeralView: View {
     @Bindable var roupa: RoupaModelo
     @State private var tempCategoriaSelecionada: String
     @State private var tempCorSelecionada: String
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) private var dismiss
     
-    init(roupa: RoupaModelo) {
+    init(roupa: RoupaModelo, isToggled: Binding<Bool>) {
         self.roupa = roupa
         _tempCategoriaSelecionada = State(initialValue: roupa.categoria)
         _tempCorSelecionada = State(initialValue: roupa.cor)
@@ -69,14 +69,12 @@ struct GeralView: View {
                 roupa.categoria = tempCategoriaSelecionada
                 roupa.cor = tempCorSelecionada
                 dismiss()
-                print("clicou")
-                
             }) {
                 Text("Salvar")
             }
             .frame(maxWidth: .infinity, maxHeight: 52)
             .bold()
-            .background(Color.accentColor)
+            .background(Color.terroso)
             .cornerRadius(10)
             .foregroundColor(.white)
             .font(.body)

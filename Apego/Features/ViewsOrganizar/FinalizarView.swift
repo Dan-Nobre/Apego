@@ -8,8 +8,6 @@ struct Finalizar: View {
     @Environment(\.modelContext) private var modelContext
     @State private var selectedImage: UIImage?
     
-
-
     var body: some View {
         NavigationStack {
             VStack {
@@ -39,7 +37,7 @@ struct Finalizar: View {
             guard let foto = roupa.jpegData(compressionQuality: 0.1) else {
                 continue
             }
-            let model = RoupaModelo(categoria: "Sem categoria", foto: foto, cor: "Sem cor", pecasCombinadas: [])
+            let model = RoupaModelo(categoria: "Sem categoria", foto: foto, cor: "Sem cor", pecasCombinadas: [], isDesapegada: false)
             modelContext.insert(model)
             
         }

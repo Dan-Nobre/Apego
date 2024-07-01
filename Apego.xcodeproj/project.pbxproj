@@ -125,6 +125,11 @@
 		8CFBA3E52C22049F0001E7D9 /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
 		8CFBA3E82C2204F10001E7D9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveBackground.swift; sourceTree = "<group>"; };
+		8CFBA3F82C234B000001E7D9 /* MyImageClassifierCP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyImageClassifierCP.mlmodel; sourceTree = "<group>"; };
+		FF86FA3E2C3067A10015A3C8 /* CombinacoesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinacoesView.swift; sourceTree = "<group>"; };
+		FF86FA3F2C3067A10015A3C8 /* GeralView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeralView.swift; sourceTree = "<group>"; };
+		FF86FA412C3067A10015A3C8 /* RoupaDetailSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoupaDetailSheet.swift; sourceTree = "<group>"; };
+		FF86FA422C3067A10015A3C8 /* CombinarRoupaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinarRoupaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +355,9 @@
 			isa = PBXGroup;
 			children = (
 				8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */,
+				FF86FA422C3067A10015A3C8 /* CombinarRoupaView.swift */,
+				FF86FA412C3067A10015A3C8 /* RoupaDetailSheet.swift */,
+				FF86FA402C3067A10015A3C8 /* Segmented Control */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -560,6 +568,7 @@
 			files = (
 				65312D212C21D57B00E2684E /* CombinarView.swift in Sources */,
 				4CE738662C27AF960092E692 /* PersistenceController.swift in Sources */,
+				FF86FA462C3067A10015A3C8 /* CombinarRoupaView.swift in Sources */,
 				8CFBA3E62C22049F0001E7D9 /* AddPhoto.swift in Sources */,
 				4CE2128B2C28B5890074BE42 /* ImagePickerModel.swift in Sources */,
 				4CE212862C28AA210074BE42 /* SaveImageView.swift in Sources */,
@@ -605,6 +614,7 @@
 				658835952C29B03E0095E0C2 /* ViewController.swift in Sources */,
 				656CBC042C25B596007C7AF7 /* EdicaoGeralPecas.swift in Sources */,
 				65600FAB2C25C1C4004557B6 /* MyDropDown.swift in Sources */,
+				FF86FA442C3067A10015A3C8 /* GeralView.swift in Sources */,
 				8CFBA3E92C2204F10001E7D9 /* ViewModel.swift in Sources */,
 				650BDC0A2C247230005F1D56 /* BotaoContinuar.swift in Sources */,
 				8CEEBDD42C30A0B200406A61 /* CombinacoesView.swift in Sources */,
