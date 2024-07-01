@@ -9,25 +9,23 @@ import SwiftUI
 
 struct TabBar: View {
     var body: some View {
+        
         TabView{
             TeladeInicioView()
                 .tabItem{
                     Label("Organizar", systemImage: "cabinet")
                 }
-//            CombinarView()
-//                .tabItem{
-//                    Image(systemName: "circlebadge.2.fill") .font(.system(size: 22))
-//                    Text("Combinar")
-////                    Label("Combinar", systemImage: "circlebadge.2.fill")
-//                }
-            ApegoView()
+            
+            ApegoView(roupa: RoupaModelo(categoria: "Exemplo", foto: nil, cor: "Exemplo", pecasCombinadas: []))                
                 .tabItem {
                     Label("Apego", systemImage: "shippingbox.fill")
+                    Color.cinzinha
                 }
         }
+        .background(Color.white)
     }
+      
 }
-
 #Preview {
     TabBar()
 }

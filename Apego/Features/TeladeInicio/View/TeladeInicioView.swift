@@ -1,21 +1,11 @@
-import SwiftUI
 import PhotosUI
 import SwiftData
+import TipKit
 
 let categorias = ["Sem categoria", "Camisa", "Calça", "Vestido", "Casaco", "Short", "Saia", "Blusa", "Camiseta"]
 let cores = ["Sem cor", "Vermelho", "Verde", "Azul", "Amarelo", "Preto", "Branco", "Roxo", "Laranja"]
 
 struct TeladeInicioView: View {
-    
-    init() {
-        let appearance = UISegmentedControl.appearance()
-        appearance.selectedSegmentTintColor = UIColor.white
-        appearance.setTitleTextAttributes([.foregroundColor: UIColor.terroso], for: .selected)
-        appearance.setTitleTextAttributes([.foregroundColor: UIColor.terroso], for: .normal)
-        UIPageControl.appearance().currentPageIndicatorTintColor = .terroso
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor.terroso.withAlphaComponent(0.2)
-        UIPageControl.appearance().backgroundStyle = .minimal
-    }
     
     @Environment(\.modelContext) private var modelContext
     
@@ -29,12 +19,19 @@ struct TeladeInicioView: View {
     @State private var filteredPecas: [RoupaModelo] = []
     @State private var selectedCategory: String? = "Sem categoria"
     
-    @State private var showDesapegarView = false // view combinar
-
+    
     
     @State private var size = CGSize(width: 50, height: 50)
     @State private var isHeaderSticky = false
     @State private var headerOffset: CGFloat = 0
+    
+    let cliqueTip = cliqueEdite()
+    let combinarPecaTip = CombinarPecaTip()
+    
+    @State private var showApegoView = false
+    @State private var roupaParaApego: RoupaModelo?
+    
+    
     
     private func deletarPeca() {
         if let roupa = roupaSelecionada {
@@ -49,26 +46,27 @@ struct TeladeInicioView: View {
         NavigationStack {
             ScrollViewReader { proxy in
                 scrollPrincipal
-                .toolbarTitleDisplayMode(.inlineLarge)
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        NavigationLink(destination: Adicionar()) {
-                            Image(systemName: "camera.viewfinder")
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(Color.terroso)
+                    .toolbarTitleDisplayMode(.inlineLarge)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            NavigationLink(destination: Adicionar()) {
+                                Image(systemName: "camera.viewfinder")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.terroso)
+                            }
                         }
                     }
-                }
-                .toolbarBackground(Color.rosinha)
-                .coordinateSpace(name: "scrollView")
-                .navigationBarTitle("Organizar", displayMode: .inline)
-                .scrollIndicators(.hidden)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .sheet(isPresented: $showSheetDetail, onDismiss: {
-                    filterClothing(by: selectedCategory)
-                }) {
+                    .toolbarBackground(Color.rosinha)
+                    .coordinateSpace(name: "scrollView")
+                    .navigationBarTitle("Organizar", displayMode: .inline)
+                    .scrollIndicators(.hidden)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .sheet(isPresented: $showSheetDetail, onDismiss: {
+                        filterClothing(by: selectedCategory)
+                    })
+                {
                     if let roupaSelecionada = roupaSelecionada {
                         RoupaDetailSheet(roupa: roupaSelecionada)
                     }
@@ -83,13 +81,25 @@ struct TeladeInicioView: View {
                         CombinarRoupaView(roupa: roupaSelecionada)
                     }
                 }
-                .background(roupas.isEmpty ? Color.terroso.opacity(0.2) : Color.white)
-            
+//                .background(roupas.isEmpty ? Color.terroso.opacity(0.2) : Color.white)
+                
+                .navigationDestination(isPresented: $showApegoView) {
+                    if let roupaParaApego = roupaParaApego {
+                        ApegoView(roupa: roupaParaApego)
+                    }
+                }
+                
+                
             }
-            .onChange(of: roupas) { _ in
+            .onChange(of: roupas)
+            { _ in
                 filterClothing(by: selectedCategory)
             }
+            
+            
+            
         }
+        
     }
     
     private var scrollPrincipal: some View {
@@ -113,11 +123,10 @@ struct TeladeInicioView: View {
                         headerOffset = value
                     }
                 }
+                .coordinateSpace(name: "scrollView")
             }
         }
     }
-
-    
     private var roupasMap: some View {
         VStack {
             if filteredPecas.isEmpty {
@@ -127,7 +136,6 @@ struct TeladeInicioView: View {
             }
         }
     }
-    
     private var semRoupasView: some View {
         VStack {
             Image("bonecoavatar")
@@ -162,16 +170,16 @@ struct TeladeInicioView: View {
                 }
             }
             .padding()
-            
-            .background(isHeaderSticky ? Color.white : Color.rosinha)
         }
     }
     
     private var gridRoupas: some View {
+        
         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2)) {
             ForEach(filteredPecas, id: \.self) { roupa in
                 
                 CardRoupa2(roupa: roupa, isSelected: roupa == roupaSelecionada)
+                
                     .contextMenu {
                         Button(action: {
                             roupaSelecionada = roupa
@@ -181,8 +189,8 @@ struct TeladeInicioView: View {
                                 .foregroundColor(.red)
                         }
                         Button(action: {
-                            roupaSelecionada = roupa
-                           showDesapegarView = true
+                            roupaParaApego = roupa
+                            showApegoView = true
                         }) {
                             Label("Desapegar", systemImage: "shippingbox")
                                 .foregroundColor(.red)
@@ -194,18 +202,19 @@ struct TeladeInicioView: View {
                         } label: {
                             Label("Apagar", systemImage: "trash")
                         }
+                        
                     }
+                
+//                    .popoverTip(cliqueTip)
                     .onTapGesture {
                         roupaSelecionada = roupa
                         showSheetDetail.toggle()
                     }
+                
             }
         }
-//        .fullScreenCover(isPresented: $showDesapegarView) {
-//            if let roupaSelecionada = roupaSelecionada {
-//                ApegoView(roupa: roupaSelecionada)
-//            }
-//        }
+        
+        .popoverTip(combinarPecaTip)
         
         .alert(isPresented: $alertaExcluir) {
             Alert(
@@ -218,7 +227,9 @@ struct TeladeInicioView: View {
             )
         }
         .padding()
+        
     }
+    
 }
 
 struct ViewOffsetKey: PreferenceKey {
@@ -227,8 +238,6 @@ struct ViewOffsetKey: PreferenceKey {
         value += nextValue()
     }
 }
-
 #Preview {
-   TeladeInicioView()
+    TeladeInicioView()
 }
-

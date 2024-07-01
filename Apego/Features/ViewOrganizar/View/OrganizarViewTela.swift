@@ -11,7 +11,7 @@ struct OrganizarViewTela: View {
     @ObservedObject var viewModel = ClothingViewModel()
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
-    let editarPecaTip = EditarPecaTip()
+   
     
     let categories = ["Sem categoria", "Camisas", "Blusas", "Shorts", "Saias", "Vestidos"]
     var body: some View {
@@ -56,7 +56,7 @@ struct OrganizarViewTela: View {
                                         .cornerRadius(8)
                     
                                 }
-                                .popoverTip(editarPecaTip)
+//                                .popoverTip(editarPecaTip)
                                 .padding()
                             }
                         }

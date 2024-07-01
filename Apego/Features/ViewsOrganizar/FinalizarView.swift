@@ -41,6 +41,7 @@ struct Finalizar: View {
             }
             let model = RoupaModelo(categoria: "Sem categoria", foto: foto, cor: "Sem cor", pecasCombinadas: [])
             modelContext.insert(model)
+            
         }
         dismiss()
     }

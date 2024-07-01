@@ -57,6 +57,10 @@
 		8CE8D1082C2A31CF0011BA83 /* OrganizarViewTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */; };
 		8CE8D10A2C2A363C0011BA83 /* ModelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */; };
 		8CE8D10C2C2A38760011BA83 /* filterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D10B2C2A38760011BA83 /* filterModel.swift */; };
+		8CEEBDD02C30A09100406A61 /* RoupaDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBDCF2C30A09100406A61 /* RoupaDetailSheet.swift */; };
+		8CEEBDD22C30A0A700406A61 /* GeralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBDD12C30A0A700406A61 /* GeralView.swift */; };
+		8CEEBDD42C30A0B200406A61 /* CombinacoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBDD32C30A0B200406A61 /* CombinacoesView.swift */; };
+		8CEEBDD62C30A0BF00406A61 /* CombinarRoupaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBDD52C30A0BF00406A61 /* CombinarRoupaView.swift */; };
 		8CFBA3E62C22049F0001E7D9 /* AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3E52C22049F0001E7D9 /* AddPhoto.swift */; };
 		8CFBA3E92C2204F10001E7D9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3E82C2204F10001E7D9 /* ViewModel.swift */; };
 		8CFBA3EB2C220BFB0001E7D9 /* RemoveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */; };
@@ -114,6 +118,10 @@
 		8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewTela.swift; sourceTree = "<group>"; };
 		8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFilter.swift; sourceTree = "<group>"; };
 		8CE8D10B2C2A38760011BA83 /* filterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterModel.swift; sourceTree = "<group>"; };
+		8CEEBDCF2C30A09100406A61 /* RoupaDetailSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoupaDetailSheet.swift; sourceTree = "<group>"; };
+		8CEEBDD12C30A0A700406A61 /* GeralView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeralView.swift; path = "../../../../../../Downloads/Arquivo-2/Segmented Control/GeralView.swift"; sourceTree = "<group>"; };
+		8CEEBDD32C30A0B200406A61 /* CombinacoesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinacoesView.swift; sourceTree = "<group>"; };
+		8CEEBDD52C30A0BF00406A61 /* CombinarRoupaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinarRoupaView.swift; sourceTree = "<group>"; };
 		8CFBA3E52C22049F0001E7D9 /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
 		8CFBA3E82C2204F10001E7D9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveBackground.swift; sourceTree = "<group>"; };
@@ -402,6 +410,10 @@
 		8CE8D1012C2A31810011BA83 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8CEEBDD12C30A0A700406A61 /* GeralView.swift */,
+				8CEEBDD52C30A0BF00406A61 /* CombinarRoupaView.swift */,
+				8CEEBDCF2C30A09100406A61 /* RoupaDetailSheet.swift */,
+				8CEEBDD32C30A0B200406A61 /* CombinacoesView.swift */,
 				8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */,
 				8C72EB622C2B569300307987 /* TipDicas */,
 			);
@@ -557,11 +569,13 @@
 				6521B1212C2B08E900E2E3FE /* FinalizarView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				650BDC0C2C24CF34005F1D56 /* EditarPeca.swift in Sources */,
+				8CEEBDD62C30A0BF00406A61 /* CombinarRoupaView.swift in Sources */,
 				8C72EB592C2AE35600307987 /* EffectsPipeline.swift in Sources */,
 				8CE8D10C2C2A38760011BA83 /* filterModel.swift in Sources */,
 				65312D1F2C21D56400E2684E /* ApegoView.swift in Sources */,
 				650BDC052C246292005F1D56 /* CardAddPeca.swift in Sources */,
 				6505DB962C20A0F40048CA79 /* Item.swift in Sources */,
+				8CEEBDD02C30A09100406A61 /* RoupaDetailSheet.swift in Sources */,
 				655173542C2238CE002948AA /* Botoes.swift in Sources */,
 				4CE212892C28B22E0074BE42 /* ImageListView.swift in Sources */,
 				65312D1D2C21D51800E2684E /* TabBar.swift in Sources */,
@@ -593,9 +607,11 @@
 				65600FAB2C25C1C4004557B6 /* MyDropDown.swift in Sources */,
 				8CFBA3E92C2204F10001E7D9 /* ViewModel.swift in Sources */,
 				650BDC0A2C247230005F1D56 /* BotaoContinuar.swift in Sources */,
+				8CEEBDD42C30A0B200406A61 /* CombinacoesView.swift in Sources */,
 				8C31F9282C23B4130007FD86 /* Cores.mlmodel in Sources */,
 				8CFBA3EB2C220BFB0001E7D9 /* RemoveBackground.swift in Sources */,
 				8C72EB612C2B2DE400307987 /* CamPreview.swift in Sources */,
+				8CEEBDD22C30A0A700406A61 /* GeralView.swift in Sources */,
 				6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,18 +744,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
 				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Apego/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "O aplicativo usa a câmera para detectar objetos";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Permita acesso a camera para fazer upload de fotos das suas peças";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -759,18 +776,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
 				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Apego/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "O aplicativo usa a câmera para detectar objetos";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Permita acesso a camera para fazer upload de fotos das suas peças";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

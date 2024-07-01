@@ -43,8 +43,12 @@ struct Adicionar: View {
                 showGaleriaSelecionada: $showGaleriaSelecionada
             )
         }
+//        .background(Color.terroso.opacity(0.2))
     }
+        
 }
+   
+
 
 struct BotaoGaleria: View {
     @Environment(\.dismiss) var dismiss
@@ -92,5 +96,7 @@ struct BotaoGaleria: View {
                 showGaleriaSelecionada = true
             }
         }
+        .background(Color.terroso.opacity(0.2))
+        .ignoresSafeArea()
     }
 }

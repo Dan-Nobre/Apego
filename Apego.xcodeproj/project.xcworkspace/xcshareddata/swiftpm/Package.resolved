@@ -4,7 +4,7 @@
     {
       "identity" : "simple-keyframe-animations",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/juliasaboya/simple-keyframe-animations.git",
+      "location" : "https://github.com/juliasaboya/simple-keyframe-animations",
       "state" : {
         "branch" : "main",
         "revision" : "43e587ea49558f80f8888ea07c1fe28dedfcad52"
