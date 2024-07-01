@@ -127,6 +127,7 @@ struct TeladeInicioView: View {
             }
         }
     }
+    
     private var semRoupasView: some View {
         VStack {
             Image("bonecoavatar")
