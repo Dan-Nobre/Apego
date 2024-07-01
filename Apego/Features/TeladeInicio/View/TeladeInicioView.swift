@@ -72,7 +72,7 @@ struct TeladeInicioView: View {
                 }
                 .toolbarBackground(Color.rosinha)
                 .coordinateSpace(name: "scrollView")
-                .navigationBarTitle("Armrio", displayMode: .inline)
+                .navigationBarTitle("Armário", displayMode: .inline)
                 .scrollIndicators(.hidden)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .sheet(isPresented: $showSheetDetail, onDismiss: {
