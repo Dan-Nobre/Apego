@@ -31,5 +31,3 @@ final class RoupaModelo: ObservableObject, Identifiable, Hashable, Equatable {
         self.isDesapegada = isDesapegada
     }
 }
-
-
