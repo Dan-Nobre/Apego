@@ -1,29 +1,36 @@
 import SwiftUI
+import PhotosUI
+import SwiftData
+
 
 struct ApegoView: View {
+    
+    @Query private var roupas: [RoupaModelo]
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
-                Spacer()
-                Text("Tudo quieto por enquanto 👀")
-                    .font(.system(size: 17, weight: .semibold))
-                    .foregroundColor(Color.black.opacity(0.8))
-                Spacer()
-            }
-            .navigationTitle("Apego")
-            .toolbarTitleDisplayMode(.inlineLarge)
-            .navigationBarTitleDisplayMode(.automatic)
-            .background(
-                ZStack {
-                    LinearGradient(gradient: Gradient(colors: [Color.terroso.opacity(0.2), Color.terroso.opacity(0.2)]), startPoint: .top, endPoint: .bottom)
-                        .ignoresSafeArea()
-                    Image("gambiarra")
-                        .resizable()
-                        .scaledToFill()
-                        .ignoresSafeArea()
+                ScrollView(.vertical) {
+                    if roupas.filter({ roupa in roupa.isDesapegada }).isEmpty {
+                        Text("Nenhuma peça desapegada encontrada.")
+                            .padding()
+                    } else {
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
+                            ForEach(roupas.filter { roupa in roupa.isDesapegada }, id: \.self) { roupa in
+                                CardRoupaMenor(roupa: roupa, isSelected: false)
+                            }
+                        }
+                    }
                 }
-            )
+                
+                .padding()
+                .navigationTitle("Apego")
+                .toolbarTitleDisplayMode(.inlineLarge)
+                .navigationBarTitleDisplayMode(.automatic)
+            }
+            
         }
+        
     }
 }
 

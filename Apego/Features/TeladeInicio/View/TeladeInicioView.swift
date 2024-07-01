@@ -21,6 +21,8 @@ struct TeladeInicioView: View {
     
     @State private var alertaExcluir = false
     
+    @State private var alertaDesapegar = false
+    
     @State private var title = "Organizar"
     @State private var showSheetDetail = false
     @State private var showSheetCombo = false
@@ -36,6 +38,11 @@ struct TeladeInicioView: View {
     private func deletarPeca() {
         if let roupa = roupaSelecionada {
             modelContext.delete(roupa)
+        }
+    }
+    private func desapegarPeca() {
+        if let roupa = roupaSelecionada {
+            roupa.isDesapegada = true
         }
     }
     private func filterClothing(by category: String?) {
@@ -193,6 +200,13 @@ struct TeladeInicioView: View {
                             Label("Combinar", systemImage: "circlebadge.2")
                                 .foregroundColor(.red)
                         }
+                        Button(action: {
+                            roupaSelecionada = roupa
+                            desapegarPeca()
+                            
+                        }) {
+                            Label("Desapegar", systemImage: "trash")
+                        }
                         Button(role: .destructive, action: {
                             roupaSelecionada = roupa
                             alertaExcluir = true
@@ -200,6 +214,7 @@ struct TeladeInicioView: View {
                         }) {
                             Label("Apagar", systemImage: "trash")
                         }
+                        
                         
                     }
             }
@@ -215,6 +230,7 @@ struct TeladeInicioView: View {
             )
         }
         .padding()
+
     }
 }
 

@@ -16,13 +16,9 @@ struct RoupaDetailSheet: View {
     @State private var alerta = false
     
     @State private var toggleState = false
-    
-    func deletarPeca() {
-        modelContext.delete(roupa)
-        dismiss()
-    }
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 VStack {
                     if let foto = roupa.foto, let uiImage = UIImage(data: foto) {
@@ -56,7 +52,7 @@ struct RoupaDetailSheet: View {
                     }
                     
                     if menuSelecionado == 0 {
-                        GeralView(roupa: roupa, isToggled: $toggleState)
+                        GeralView(roupa: roupa)
                     } else {
                         CombinacoesView(roupa: roupa)
                     }

@@ -17,16 +17,18 @@ final class RoupaModelo: ObservableObject, Identifiable, Hashable, Equatable {
     
     var id: UUID
     var categoria: String
-    @Attribute(.externalStorage) let foto: Data?
+    let foto: Data?
     var cor: String
     var pecasCombinadas: [RoupaModelo]
+    var isDesapegada: Bool
     
-    init(categoria: String, foto: Data? = nil, cor: String, pecasCombinadas: [RoupaModelo]) {
+    init(categoria: String, foto: Data? = nil, cor: String, pecasCombinadas: [RoupaModelo], isDesapegada: Bool) {
         self.id = UUID()
         self.categoria = categoria
         self.foto = foto
         self.cor = cor
         self.pecasCombinadas = pecasCombinadas
+        self.isDesapegada = isDesapegada
     }
 }
 
