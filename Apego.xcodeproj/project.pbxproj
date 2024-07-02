@@ -42,7 +42,6 @@
 		8C1298CD2C25B3F3005A1260 /* AdicionarPecasSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */; };
 		8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1298CE2C25B5A1005A1260 /* Inicio.swift */; };
 		8C201D2C2C20BD97001D7636 /* TeladeInicioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */; };
-		8C3185AB2C2EF04E0024AD9C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3185AA2C2EF04E0024AD9C /* StoreKit.framework */; };
 		8C3185AE2C2EFEAF0024AD9C /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3185AD2C2EFEAF0024AD9C /* SplashScreenView.swift */; };
 		8C3185B12C2EFEF60024AD9C /* simple-keyframe-animations in Frameworks */ = {isa = PBXBuildFile; productRef = 8C3185B02C2EFEF60024AD9C /* simple-keyframe-animations */; };
 		8C72EB592C2AE35600307987 /* EffectsPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB582C2AE35600307987 /* EffectsPipeline.swift */; };
@@ -102,7 +101,6 @@
 		8C1298CC2C25B3F3005A1260 /* AdicionarPecasSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarPecasSheet.swift; sourceTree = "<group>"; };
 		8C1298CE2C25B5A1005A1260 /* Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inicio.swift; sourceTree = "<group>"; };
 		8C201D2B2C20BD97001D7636 /* TeladeInicioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeladeInicioView.swift; sourceTree = "<group>"; };
-		8C3185AA2C2EF04E0024AD9C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		8C3185AC2C2EFB740024AD9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8C3185AD2C2EFEAF0024AD9C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8C72EB582C2AE35600307987 /* EffectsPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsPipeline.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C3185AB2C2EF04E0024AD9C /* StoreKit.framework in Frameworks */,
 				8C3185B12C2EFEF60024AD9C /* simple-keyframe-animations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +288,6 @@
 		8C3185A92C2EF04E0024AD9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8C3185AA2C2EF04E0024AD9C /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -746,7 +742,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Taissa-Taissa.Apego";
+				PRODUCT_BUNDLE_IDENTIFIER = "Taissa-Taissa2.Apego";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -1,19 +1,24 @@
-// Finalizar.swift
-import SwiftUI
-import SwiftData
+
+ import SwiftUI
+ import SwiftData
 
 struct Finalizar: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var roupas: [UIImage]
     @Environment(\.modelContext) private var modelContext
-    @State private var selectedImage: UIImage?
+    @State private var clothingTypes: [String]
+
+    init(roupas: Binding<[UIImage]>) {
+        self._roupas = roupas
+        self._clothingTypes = State(initialValue: Array(repeating: "", count: roupas.wrappedValue.count))
+    }
     
     var body: some View {
         NavigationStack {
             VStack {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
-                    ForEach(roupas, id: \.self) { roupa in
-                        CardRoupa(roupa: roupa)
+                    ForEach(roupas.indices, id: \.self) { index in
+                        CardRoupa(roupa: roupas[index], clothingType: $clothingTypes[index])
                     }
                 }
                 .padding()
@@ -24,7 +29,7 @@ struct Finalizar: View {
                     }
                 }
                 .padding()
-                .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                .buttonStyle(MyButtonStyle(color: Color.terroso))
                 Spacer()
             }
         }
@@ -33,15 +38,17 @@ struct Finalizar: View {
     }
 
     func save() {
-        for roupa in roupas {
+        for (index, roupa) in roupas.enumerated() {
             guard let foto = roupa.jpegData(compressionQuality: 0.1) else {
                 continue
             }
-            let model = RoupaModelo(categoria: "Sem categoria", foto: foto, cor: "Sem cor", pecasCombinadas: [], isDesapegada: false)
+            let model = RoupaModelo(categoria: clothingTypes[index], foto: foto, cor: "Sem cor", pecasCombinadas: [], isDesapegada: false)
             modelContext.insert(model)
-            
         }
         dismiss()
     }
-
 }
+
+
+
+ 

@@ -11,11 +11,11 @@ import Vision
 
 struct CardRoupa: View {
     let roupa: UIImage
-    @State private var clothingType = ""
+    @Binding var clothingType: String
     
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 11)
+            RoundedRectangle(cornerRadius: 90)
                 .stroke(
                     Color.gray.opacity(0.5),
                     style: StrokeStyle(lineWidth: 3, dash: [5, 5])
@@ -33,19 +33,14 @@ struct CardRoupa: View {
             Spacer()
            
             ZStack {
-//                RoundedRectangle(cornerRadius: 10)
-//                    .frame(width: 101, height: 37)
-//                    .foregroundColor(.bege)
-//                    .overlay {
-                        VStack {
-                            Text("Tipo de roupa")
-                                .font(.system(size: 13))
-                                .foregroundColor(.principal)
-                            Text(clothingType)
-                                .font(.system(size: 15, weight: .bold))
-                                .foregroundColor(.principal)
-                        }
-                    
+                VStack {
+                    Text("Tipo de roupa")
+                        .font(.system(size: 13))
+                        .foregroundColor(.principal)
+                    Text(clothingType)
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundColor(.principal)
+                }
             }
         }
     }
@@ -93,24 +88,25 @@ struct CardRoupa: View {
     }
 }
 
-#Preview {
-    NavigationStack {
-        
-        VStack {
-            LazyVGrid(columns: Array(repeating: GridItem(.fixed(100)), count: 3)) {
-                ForEach([0,1,2], id: \.self) { _ in
-                    CardRoupa(roupa: UIImage(named: "bonecoavatar")!)
-                }
-            }
-            .padding()
-            BotaoSalvar()
-                .buttonStyle(MyButtonStyle(color: Color.accentColor))
-            Spacer()
-        }
-    }
-    .navigationTitle("Adicione peças")
-    .navigationBarTitleDisplayMode(.inline)
-}
+
+//#Preview {
+//    NavigationStack {
+//        
+//        VStack {
+//            LazyVGrid(columns: Array(repeating: GridItem(.fixed(100)), count: 3)) {
+//                ForEach([0,1,2], id: \.self) { _ in
+//                    CardRoupa(roupa: UIImage(named: "bonecoavatar")!)
+//                }
+//            }
+//            .padding()
+//            BotaoSalvar()
+//                .buttonStyle(MyButtonStyle(color: Color.accentColor))
+//            Spacer()
+//        }
+//    }
+//    .navigationTitle("Adicione peças")
+//    .navigationBarTitleDisplayMode(.inline)
+//}
 struct CardRoupaMenorCombo: View {
     var roupa: RoupaModelo
     var isSelected: Bool
