@@ -224,6 +224,7 @@ struct TeladeInicioView: View {
                     }
             }
         }
+        .popoverTip(CombinarPecaTip())
         .alert(isPresented: $alertaExcluir) {
             Alert(
                 title: Text("Excluir peça"),
