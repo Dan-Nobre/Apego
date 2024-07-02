@@ -10,10 +10,11 @@ struct GeralView: View {
         self.roupa = roupa
         _tempCategoriaSelecionada = State(initialValue: roupa.categoria)
         _tempCorSelecionada = State(initialValue: roupa.cor)
+        
     }
     
     var body: some View {
-        VStack {
+        NavigationStack {
             VStack(alignment: .leading, spacing: 10) {
                 Text("Categoria")
                     .font(.headline)

@@ -22,7 +22,7 @@ struct RoupaDetailSheet: View {
         dismiss()
     }
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 VStack {
                     if let foto = roupa.foto, let uiImage = UIImage(data: foto) {

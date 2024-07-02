@@ -52,18 +52,17 @@
 		8C72EB642C2B56AD00307987 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB632C2B56AD00307987 /* Tip.swift */; };
 		8C72EB662C2B56CA00307987 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72EB652C2B56CA00307987 /* TipView.swift */; };
 		8C75BA9D2C32F9640083A54B /* MyImageClassifierCP.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BA9C2C32F9640083A54B /* MyImageClassifierCP.mlmodel */; };
-		8C75BA9F2C32FBA00083A54B /* Segmented Control in Resources */ = {isa = PBXBuildFile; fileRef = 8C75BA9E2C32FBA00083A54B /* Segmented Control */; };
 		8C75BAA12C32FBFB0083A54B /* CombinacoesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C75BAA02C32FBFB0083A54B /* CombinacoesView.swift */; };
 		8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 8C79F2752C20AB7B00E915BB /* .swiftlint.yml */; };
 		8CE8D1082C2A31CF0011BA83 /* OrganizarViewTela.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */; };
 		8CE8D10A2C2A363C0011BA83 /* ModelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */; };
 		8CE8D10C2C2A38760011BA83 /* filterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE8D10B2C2A38760011BA83 /* filterModel.swift */; };
 		8CEEBDD02C30A09100406A61 /* RoupaDetailSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBDCF2C30A09100406A61 /* RoupaDetailSheet.swift */; };
-		8CEEBDD22C30A0A700406A61 /* GeralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBDD12C30A0A700406A61 /* GeralView.swift */; };
 		8CEEBDD62C30A0BF00406A61 /* CombinarRoupaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBDD52C30A0BF00406A61 /* CombinarRoupaView.swift */; };
 		8CFBA3E62C22049F0001E7D9 /* AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3E52C22049F0001E7D9 /* AddPhoto.swift */; };
 		8CFBA3E92C2204F10001E7D9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3E82C2204F10001E7D9 /* ViewModel.swift */; };
 		8CFBA3EB2C220BFB0001E7D9 /* RemoveBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */; };
+		FF06C1AB2C342DD800CBDE22 /* GeralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF06C1AA2C342DD800CBDE22 /* GeralView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,18 +112,17 @@
 		8C72EB632C2B56AD00307987 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		8C72EB652C2B56CA00307987 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		8C75BA9C2C32F9640083A54B /* MyImageClassifierCP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyImageClassifierCP.mlmodel; sourceTree = "<group>"; };
-		8C75BA9E2C32FBA00083A54B /* Segmented Control */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Segmented Control"; path = "View/Segmented Control"; sourceTree = SOURCE_ROOT; };
 		8C75BAA02C32FBFB0083A54B /* CombinacoesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinacoesView.swift; sourceTree = "<group>"; };
 		8C79F2752C20AB7B00E915BB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizarViewTela.swift; sourceTree = "<group>"; };
 		8CE8D1092C2A363C0011BA83 /* ModelFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFilter.swift; sourceTree = "<group>"; };
 		8CE8D10B2C2A38760011BA83 /* filterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterModel.swift; sourceTree = "<group>"; };
 		8CEEBDCF2C30A09100406A61 /* RoupaDetailSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoupaDetailSheet.swift; sourceTree = "<group>"; };
-		8CEEBDD12C30A0A700406A61 /* GeralView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeralView.swift; path = "../../../../../../Downloads/Arquivo-2/Segmented Control/GeralView.swift"; sourceTree = "<group>"; };
 		8CEEBDD52C30A0BF00406A61 /* CombinarRoupaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinarRoupaView.swift; sourceTree = "<group>"; };
 		8CFBA3E52C22049F0001E7D9 /* AddPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhoto.swift; sourceTree = "<group>"; };
 		8CFBA3E82C2204F10001E7D9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8CFBA3EA2C220BFB0001E7D9 /* RemoveBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveBackground.swift; sourceTree = "<group>"; };
+		FF06C1AA2C342DD800CBDE22 /* GeralView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeralView.swift; path = "Apego/Features/TeladeInicio/View/Arquivo/Segmented Control/GeralView.swift"; sourceTree = SOURCE_ROOT; };
 		FF86FA412C3067A10015A3C8 /* RoupaDetailSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoupaDetailSheet.swift; sourceTree = "<group>"; };
 		FF86FA422C3067A10015A3C8 /* CombinarRoupaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinarRoupaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -402,8 +400,6 @@
 		8CE8D1002C2A31440011BA83 /* ViewOrganizar */ = {
 			isa = PBXGroup;
 			children = (
-				8CE8D1062C2A31B80011BA83 /* Componentes */,
-				8CE8D1052C2A31AF0011BA83 /* ViewModel */,
 				8CE8D1022C2A31860011BA83 /* Model */,
 				8CE8D1012C2A31810011BA83 /* View */,
 			);
@@ -413,10 +409,9 @@
 		8CE8D1012C2A31810011BA83 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8CEEBDD12C30A0A700406A61 /* GeralView.swift */,
+				FF06C1AA2C342DD800CBDE22 /* GeralView.swift */,
 				8CEEBDD52C30A0BF00406A61 /* CombinarRoupaView.swift */,
 				8C75BAA02C32FBFB0083A54B /* CombinacoesView.swift */,
-				8C75BA9E2C32FBA00083A54B /* Segmented Control */,
 				8CEEBDCF2C30A09100406A61 /* RoupaDetailSheet.swift */,
 				8CE8D1072C2A31CF0011BA83 /* OrganizarViewTela.swift */,
 				8C72EB622C2B569300307987 /* TipDicas */,
@@ -431,20 +426,6 @@
 				8CE8D10B2C2A38760011BA83 /* filterModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		8CE8D1052C2A31AF0011BA83 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		8CE8D1062C2A31B80011BA83 /* Componentes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Componentes;
 			sourceTree = "<group>";
 		};
 		8CFBA3E42C2204830001E7D9 /* AddPhoto */ = {
@@ -531,7 +512,6 @@
 			files = (
 				8C79F2762C20AB7B00E915BB /* .swiftlint.yml in Resources */,
 				6505DB9B2C20A0F50048CA79 /* Preview Assets.xcassets in Resources */,
-				8C75BA9F2C32FBA00083A54B /* Segmented Control in Resources */,
 				6505DB982C20A0F50048CA79 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +548,7 @@
 				8CFBA3E62C22049F0001E7D9 /* AddPhoto.swift in Sources */,
 				4CE2128B2C28B5890074BE42 /* ImagePickerModel.swift in Sources */,
 				4CE212862C28AA210074BE42 /* SaveImageView.swift in Sources */,
+				FF06C1AB2C342DD800CBDE22 /* GeralView.swift in Sources */,
 				6505DB942C20A0F40048CA79 /* TextField.swift in Sources */,
 				8C1298CF2C25B5A1005A1260 /* Inicio.swift in Sources */,
 				8C3185AE2C2EFEAF0024AD9C /* SplashScreenView.swift in Sources */,
@@ -615,7 +596,6 @@
 				650BDC0A2C247230005F1D56 /* BotaoContinuar.swift in Sources */,
 				8CFBA3EB2C220BFB0001E7D9 /* RemoveBackground.swift in Sources */,
 				8C72EB612C2B2DE400307987 /* CamPreview.swift in Sources */,
-				8CEEBDD22C30A0A700406A61 /* GeralView.swift in Sources */,
 				6505DBAA2C20A2CD0048CA79 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -750,7 +730,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
-				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
+				DEVELOPMENT_TEAM = DPMZ78T8S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Apego/Info.plist;
@@ -782,7 +762,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Apego/Preview Content\"";
-				DEVELOPMENT_TEAM = 5HHC6W5Z4U;
+				DEVELOPMENT_TEAM = DPMZ78T8S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Apego/Info.plist;

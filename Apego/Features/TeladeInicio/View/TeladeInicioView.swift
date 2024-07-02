@@ -111,35 +111,35 @@ struct TeladeInicioView: View {
     }
     
     private var scrollPrincipal: some View {
-        VStack {
-            if roupas.isEmpty {
-                semRoupasView
-            } else {
-                ScrollView {
-                    LazyVStack(alignment: .center, pinnedViews: [.sectionHeaders]) {
-                        Section(header: filtroCategorias) {
-                            roupasMap
+            VStack {
+                if roupas.isEmpty || roupas.filter({ roupa in !roupa.isDesapegada }).isEmpty {
+                    semRoupasView
+                } else {
+                    ScrollView {
+                        LazyVStack(alignment: .center, pinnedViews: [.sectionHeaders]) {
+                            Section(header: filtroCategorias) {
+                                roupasMap
+                            }
+                        }
+                        .onChange(of: headerOffset) { newValue in
+                            isHeaderSticky = newValue <= 0
+                        }
+                        .background(GeometryReader {
+                            Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scrollView")).minY)
+                        })
+                        .onPreferenceChange(ViewOffsetKey.self) { value in
+                            headerOffset = value
                         }
                     }
-                    .onChange(of: headerOffset) { newValue in
-                        isHeaderSticky = newValue <= 0
-                    }
-                    .background(GeometryReader {
-                        Color.clear.preference(key: ViewOffsetKey.self, value: -$0.frame(in: .named("scrollView")).minY)
-                    })
-                    .onPreferenceChange(ViewOffsetKey.self) { value in
-                        headerOffset = value
-                    }
+                    .coordinateSpace(name: "scrollView")
                 }
-                .coordinateSpace(name: "scrollView")
             }
         }
-    }
 
     
     private var roupasMap: some View {
         VStack {
-            if filteredPecas.isEmpty {
+            if filteredPecas.isEmpty || filteredPecas.filter({ roupa in !roupa.isDesapegada }).isEmpty {
                 Text("Nenhuma peça encontrada.").padding()
             } else {
                 gridRoupas
@@ -190,7 +190,7 @@ struct TeladeInicioView: View {
     
     private var gridRoupas: some View {
         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2)) {
-            ForEach(filteredPecas, id: \.self) { roupa in
+            ForEach(filteredPecas.filter { roupa in !roupa.isDesapegada }, id: \.self) { roupa in
                 
                 CardRoupa2(roupa: roupa, isSelected: roupa == roupaSelecionada)
                     .onTapGesture {
@@ -205,15 +205,13 @@ struct TeladeInicioView: View {
                             Label("Combinar", systemImage: "circlebadge.2")
                                 .foregroundColor(.red)
                         }
-                        
                         Button(action: {
-                                roupaSelecionada = roupa
-                                desapegarPeca()
-                                
-                            }) {
-                                Label("Desapegar", systemImage: "shippingbox")
-                            }
-                        
+                            roupaSelecionada = roupa
+                            desapegarPeca()
+                            
+                        }) {
+                            Label("Desapegar", systemImage: "trash")
+                        }
                         Button(role: .destructive, action: {
                             roupaSelecionada = roupa
                             alertaExcluir = true
@@ -222,13 +220,10 @@ struct TeladeInicioView: View {
                             Label("Apagar", systemImage: "trash")
                         }
                         
+                        
                     }
             }
-            
         }
-        
-        
-//        .popoverTip()combinarPecaTip
         .alert(isPresented: $alertaExcluir) {
             Alert(
                 title: Text("Excluir peça"),
