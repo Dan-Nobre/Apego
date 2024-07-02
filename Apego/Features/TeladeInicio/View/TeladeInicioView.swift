@@ -2,7 +2,7 @@ import SwiftUI
 import PhotosUI
 import SwiftData
 
-let categorias = ["Sem categoria", "Camisa", "Calça", "Vestido", "Casaco", "Short", "Saia", "Blusa", "Camiseta"]
+let categorias = ["Todas as peças", "Camisa", "Calça", "Vestido", "Casaco", "Short", "Saia", "Blusa", "Camiseta"]
 let cores = ["Sem cor", "Vermelho", "Verde", "Azul", "Amarelo", "Preto", "Branco", "Roxo", "Laranja"]
 
 struct TeladeInicioView: View {
@@ -29,7 +29,7 @@ struct TeladeInicioView: View {
     @State private var roupaSelecionada: RoupaModelo?
     @Query private var roupas: [RoupaModelo]
     @State private var filteredPecas: [RoupaModelo] = []
-    @State private var selectedCategory: String? = "Sem categoria"
+    @State private var selectedCategory: String? = "Todas as peças"
     
     @State private var size = CGSize(width: 50, height: 50)
     @State private var isHeaderSticky = false
@@ -51,8 +51,12 @@ struct TeladeInicioView: View {
         }
     }
     private func filterClothing(by category: String?) {
-        filteredPecas = category?.isEmpty == false ? roupas.filter { $0.categoria == category } : roupas
-    }
+            if category == "Todas as peças" {
+                filteredPecas = roupas
+            } else {
+                filteredPecas = roupas.filter { $0.categoria == category }
+            }
+        }
     var body: some View {
         
         NavigationStack {
@@ -64,7 +68,7 @@ struct TeladeInicioView: View {
                         NavigationLink(destination: Adicionar()) {
                             Image(systemName: "camera.viewfinder")
                                 .resizable()
-                                .scaledToFill()
+                                .scaledToFit()
                                 .frame(width: 30, height: 30)
                                 .foregroundColor(Color.terroso)
                         }

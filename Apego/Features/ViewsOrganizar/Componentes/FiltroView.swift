@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct FiltroView: View {
-    let categorias = ["Sem categoria", "Camisa", "Calça", "Vestido", "Casaco", "Short", "Saia", "Blusa", "Camiseta"]
+    let categorias = ["Todas as peças", "Camisa", "Calça", "Vestido", "Casaco", "Short", "Saia", "Blusa", "Camiseta"]
     let cores = ["Sem cor", "Vermelho", "Verde", "Azul", "Amarelo", "Preto", "Branco", "Roxo", "Laranja"]
 
     @State private var selectedCategory: String? = "Sem categoria"
