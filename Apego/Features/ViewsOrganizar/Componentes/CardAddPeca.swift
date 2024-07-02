@@ -31,7 +31,7 @@ struct CardAddPeca: View {
 //                BotaoFoto(showCam: $isPresented, selectedCam: $)
 //                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
                 BotaoRolo()
-                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                    .buttonStyle(MyButtonStyle(color: Color.terroso))
               
                 BotaoCancelar()
                     .buttonStyle(MySecButtonStyle(color: Color.cinzaClaro))

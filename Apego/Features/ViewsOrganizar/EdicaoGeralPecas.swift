@@ -22,7 +22,7 @@ struct EdicaoGeralPecas: View {
             MyDropDown(title: "Ocasião", prompt: "Escolha a ocasião", options: ["Casamento", "Festa", "Dia-a-dia"], selection: $categoriaSelecionada)
                 .padding(.bottom, 14)
             BotaoFinalizar()
-                .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                .buttonStyle(MyButtonStyle(color: Color.terroso))
         }
         
         //nao esta preenchendo a categoria ali no lugar do prompt

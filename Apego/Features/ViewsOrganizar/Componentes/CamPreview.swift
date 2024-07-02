@@ -8,7 +8,7 @@ struct CamPreview: View {
                 .cornerRadius(20)
                 .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.accentColor, lineWidth: 2)
+                    .stroke(Color.terroso, lineWidth: 2)
                 )
                     .clipShape(RoundedRectangle(cornerRadius: 20))
         }

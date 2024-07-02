@@ -37,7 +37,7 @@ struct CombinarRoupaView: View {
                             .bold()
                         
                         Toggle("", isOn: $modoGrid)
-                            .toggleStyle(SwitchToggleStyle(tint: .accentColor))
+                            .toggleStyle(SwitchToggleStyle(tint: .terroso))
                     }
                     Text("O modo grade permite uma visualização mais rápida de todas as peças. Clique para alternar entre modos de exibição")
                         .font(.system(size: 14))

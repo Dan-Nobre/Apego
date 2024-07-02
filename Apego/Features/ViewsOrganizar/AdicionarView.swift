@@ -25,7 +25,7 @@ struct Adicionar: View {
                 Button("Continuar") {
                     showBotaoGaleria = true
                 }
-                .buttonStyle(MySecButtonStyle(color: Color.accentColor))
+                .buttonStyle(MySecButtonStyle(color: Color.terroso))
                 .padding()
                 .bold()
                 Spacer()
@@ -61,14 +61,14 @@ struct BotaoGaleria: View {
         NavigationStack {
             VStack {
                 BotaoFoto(selectedImages: $selectedImages, showGaleriaSelecionada: $showGaleriaSelecionada)
-                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                    .buttonStyle(MyButtonStyle(color: Color.terroso))
                     .padding(.bottom, 15)
                 
 
                 Button("Selecionar da galeria") {
                     showingPhotosPicker = true
                 }
-                .buttonStyle(MySecButtonStyle(color: Color.accentColor))
+                .buttonStyle(MySecButtonStyle(color: Color.terroso))
                 .padding(.bottom, 15)
 
                 Button("Cancelar") {

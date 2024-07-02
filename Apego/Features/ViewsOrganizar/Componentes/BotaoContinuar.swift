@@ -29,7 +29,7 @@ struct BotaoContinuar: View {
 //                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
 //                    .padding(.bottom, 15)
                 BotaoVariasImagens(selectedImages: $selectedImages)
-                    .buttonStyle(MyButtonStyle(color: Color.accentColor))
+                    .buttonStyle(MyButtonStyle(color: Color.terroso))
                     .padding(.bottom, 15)
                 BotaoCancelar()
                     .buttonStyle(MySecButtonStyle(color: Color.cinzinha))

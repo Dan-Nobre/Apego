@@ -18,7 +18,7 @@ struct AdicionarPecasSheet: View {
                 Text("Adicionar peças!")
                     .bold()
                     .font(.system(size: 28))
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.terroso)
                 
                 CamPreview()
                     .padding(.bottom, 15)
@@ -27,13 +27,13 @@ struct AdicionarPecasSheet: View {
                     HStack(alignment: .top){
                         Image(systemName: "sun.max")
                         Text("Utilize um local com ")
-                        + Text("luz natural").foregroundColor(Color.accentColor)
+                        + Text("luz natural").foregroundColor(Color.terroso)
                     }
                     .padding(.bottom, 15)
                     HStack(alignment: .top){
                         Image(systemName: "person.and.background.dotted")
                         Text("Fundo neutro")
-                            .foregroundColor(Color.accentColor)
+                            .foregroundColor(Color.terroso)
                         + Text(" te ajuda no enquadramento")
                     }
                     .lineLimit(2, reservesSpace: true)
@@ -41,7 +41,7 @@ struct AdicionarPecasSheet: View {
                     HStack(alignment: .top){
                         Image(systemName: "square.dashed")
                         Text("Centralizar a câmera")
-                            .foregroundColor(Color.accentColor)
+                            .foregroundColor(Color.terroso)
                         + Text(" na peça dá uma foto melhor")
                     }
                     .lineLimit(2, reservesSpace: true)
@@ -49,7 +49,7 @@ struct AdicionarPecasSheet: View {
                     HStack(alignment: .top){
                         Image(systemName: "wand.and.stars.inverse")
                         Text("Sombras e objetos")
-                            .foregroundColor(Color.accentColor)
+                            .foregroundColor(Color.terroso)
                         + Text(" do local podem atrapalhar no recorte do fundo")
                     }
                     .lineLimit(2, reservesSpace: true)

@@ -25,7 +25,7 @@ struct BotaoFoto: View {
             }) {
                 Text("Tirar nova foto")
             }
-            .buttonStyle(MySecButtonStyle(color: Color.accentColor))
+            .buttonStyle(MySecButtonStyle(color: Color.terroso))
             .sheet(isPresented: $isShowingPicker) {
                 CameraImagePicker(image: self.$inputImage, clothingType: self.$clothingType) //sheet camera
                     .ignoresSafeArea()
@@ -68,7 +68,7 @@ struct BotaoRolo: View {
                     .scaledToFit()
                     .frame(width: 300, height: 300)
             }
-            .buttonStyle(MyButtonStyle(color: Color.accentColor))
+            .buttonStyle(MyButtonStyle(color: Color.terroso))
             .onChange(of: tirarRoloItem) {
                 Task {
                     if let loaded = try? await tirarRoloItem?.loadTransferable(type: Image.self){
