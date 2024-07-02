@@ -15,23 +15,26 @@ struct Finalizar: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
-                    ForEach(roupas.indices, id: \.self) { index in
-                        CardRoupa(roupa: roupas[index], clothingType: $clothingTypes[index])
+            ScrollView (.vertical, showsIndicators: false) {
+                VStack {
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
+                        ForEach(roupas.indices, id: \.self) { index in
+                            CardRoupa(roupa: roupas[index], clothingType: $clothingTypes[index])
+                        }
                     }
-                }
-                .padding()
-                Button(action: save) {
-                    VStack {
-                        Text("Salvar")
-                            .bold()
+                    .padding()
+                    Button(action: save) {
+                        VStack {
+                            Text("Salvar")
+                                .bold()
+                        }
                     }
+                    .padding()
+                    .buttonStyle(MyButtonStyle(color: Color.terroso))
+                    Spacer()
                 }
-                .padding()
-                .buttonStyle(MyButtonStyle(color: Color.terroso))
-                Spacer()
             }
+            
         }
         .navigationTitle("Adicionar peças")
         .navigationBarTitleDisplayMode(.inline)
